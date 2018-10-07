@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Scroll, ControlType, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
+import RegisterContext from "./RegisterContext";
 
 interface Props {
   direction: "horizontal" | "vertical";
@@ -36,6 +37,14 @@ export class Parallax extends React.Component<Props> {
           break;
       }
     });
+  };
+
+  registerLayer = layerConfigs => {
+    this.layerConfigs.push(layerConfigs);
+  };
+
+  unregisterLayer = layerConfigs => {
+    // TODO
   };
 
   static defaultProps = { ...Scroll.defaultProps };
@@ -81,13 +90,19 @@ export class Parallax extends React.Component<Props> {
   };
 
   render() {
-    const rootElement = this.props.children[0];
-    // console.log(rootElement);
+    const { children } = this.props;
 
-    if (rootElement) {
+    if (React.Children.count(children) > 0) {
       return (
         <Scroll {...this.props} onMove={this.handleScroll}>
-          {this.cloneAndMakeLayersAnimatable(rootElement)}
+          <RegisterContext.Provider
+            value={{
+              registerLayer: this.registerLayer,
+              unregisterLayer: this.unregisterLayer
+            }}
+          >
+            {children}
+          </RegisterContext.Provider>
         </Scroll>
       );
     } else {

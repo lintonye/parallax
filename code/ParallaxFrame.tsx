@@ -1,10 +1,41 @@
 import * as React from "react";
-import { PropertyControls, ControlType, Frame } from "framer";
+import { PropertyControls, ControlType, Frame, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
+import RegisterContext from "./RegisterContext";
 
 interface Props {
   speed: number;
   direction: string;
+}
+
+interface RegistrarProps {
+  registerLayer: (layerConfig) => any;
+  unregisterLayer: (layerConfig) => any;
+}
+
+class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
+  registerLayer = props => {
+    const { left: originLeft, top: originTop, registerLayer } = props;
+    this.left = Animatable(originLeft);
+    this.top = Animatable(originTop);
+    registerLayer({
+      left: this.left,
+      top: this.top,
+      props,
+      originLeft,
+      originTop
+    });
+  };
+  componentDidMount = () => {
+    this.registerLayer(this.props);
+  };
+  render() {
+    return (
+      <Frame {...this.props} background={null} left={this.left} top={this.top}>
+        {this.props.children}
+      </Frame>
+    );
+  }
 }
 
 export class ParallaxFrame extends React.Component {
@@ -37,9 +68,17 @@ export class ParallaxFrame extends React.Component {
       );
     } else {
       return (
-        <Frame {...this.props} background={null}>
-          {children}
-        </Frame>
+        <RegisterContext.Consumer>
+          {({ registerLayer, unregisterLayer }) => (
+            <ParallaxLayerRegistrar
+              {...this.props}
+              registerLayer={registerLayer}
+              unregisterLayer={unregisterLayer}
+            >
+              {children}
+            </ParallaxLayerRegistrar>
+          )}
+        </RegisterContext.Consumer>
       );
     }
   }
