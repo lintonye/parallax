@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PropertyControls, ControlType } from "framer";
+import { PropertyControls, ControlType, Frame } from "framer";
 import EmptyConnector from "./EmptyConnector";
 
 interface Props {
@@ -36,7 +36,11 @@ export class ParallaxFrame extends React.Component {
         />
       );
     } else {
-      return <div>{children}</div>;
+      return (
+        <Frame {...this.props} background={null}>
+          {children}
+        </Frame>
+      );
     }
   }
 }

@@ -1,20 +1,41 @@
 import * as React from "react";
-import { Scroll, ControlType } from "framer";
+import { Scroll, ControlType, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
 
 interface Props {
   direction: "horizontal" | "vertical";
 }
 
+const cloneAndUpdateProps = (getUpdatePropsFun, node) => {
+  if (!React.isValidElement<{ children }>(node)) return node;
+  const updateProps = getUpdatePropsFun(node);
+  const clonedChildren = React.Children.map(node.props.children, c =>
+    cloneAndUpdateProps(getUpdatePropsFun, c)
+  );
+  return React.cloneElement(node, updateProps, clonedChildren);
+};
+
 export class Parallax extends React.Component<Props> {
   static displayName = "Parallax Scroll";
 
-  state = {
-    pageX: 0,
-    pageY: 0
-  };
   handleScroll = e => {
-    this.setState({ pageX: e.x, pageY: e.y });
+    const { x, y } = e;
+    this.layerConfigs.forEach(({ left, top, props, originLeft, originTop }) => {
+      const { speed, direction } = props;
+      const scrollPosition = this.props.direction === "vertical" ? y : -x;
+      const newTop = (scrollPosition * speed) / 10 + originTop;
+      const newLeft = (-scrollPosition * speed) / 10 + originLeft;
+      // console.log(props, left, top, newLeft, newTop);
+
+      switch (direction) {
+        case "vertical":
+          top.set(newTop);
+          break;
+        case "horizontal":
+          left.set(newLeft);
+          break;
+      }
+    });
   };
 
   static defaultProps = { ...Scroll.defaultProps };
@@ -28,41 +49,36 @@ export class Parallax extends React.Component<Props> {
     directionLock: {} // Remove the directionLock property from Scroll
   };
 
-  cloneAndOffsetParallaxFramesElements = (elements = []) =>
-    elements.map(e => {
-      const { componentIdentifier } = e.props;
-      if (
-        componentIdentifier &&
-        componentIdentifier.includes("ParallaxFrame")
-      ) {
-        const { speed, direction } = e.props.children[0].props;
-        const scrollPosition =
-          this.props.direction === "vertical"
-            ? this.state.pageY
-            : -this.state.pageX;
-        const translateY = (scrollPosition * speed) / 10;
-        const translateX = (-scrollPosition * speed) / 10;
-        const vertical = { top: translateY };
-        const horizontal = { left: translateX };
-        const style =
-          direction === "vertical"
-            ? vertical
-            : direction === "horizontal"
-              ? horizontal
-              : { ...horizontal, ...vertical };
+  layerConfigs = [];
 
-        return this.cloneAndOffsetParallaxFrames(e, { style });
+  cloneAndMakeLayersAnimatable = e => {
+    this.layerConfigs = [];
+    const makeAnimatable = n => {
+      const {
+        componentIdentifier,
+        left: originLeft,
+        top: originTop,
+        children
+      } = n.props;
+      if (/ParallaxFrame/.test(componentIdentifier)) {
+        const left = Animatable(originLeft);
+        const top = Animatable(originTop);
+        // props of ParallaxFrame component are stored in a direct child element
+        const compProps = children[0].props;
+        this.layerConfigs.push({
+          left,
+          top,
+          props: compProps,
+          originLeft,
+          originTop
+        });
+        return { left, top };
       } else {
-        return this.cloneAndOffsetParallaxFrames(e);
+        return null;
       }
-    });
-
-  cloneAndOffsetParallaxFrames = (e, props = null) =>
-    React.cloneElement(
-      e,
-      props,
-      this.cloneAndOffsetParallaxFramesElements(e.props.children)
-    );
+    };
+    return cloneAndUpdateProps(makeAnimatable, e);
+  };
 
   render() {
     const rootElement = this.props.children[0];
@@ -71,7 +87,7 @@ export class Parallax extends React.Component<Props> {
     if (rootElement) {
       return (
         <Scroll {...this.props} onMove={this.handleScroll}>
-          {this.cloneAndOffsetParallaxFrames(rootElement)}
+          {this.cloneAndMakeLayersAnimatable(rootElement)}
         </Scroll>
       );
     } else {
