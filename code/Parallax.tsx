@@ -21,20 +21,14 @@ export class Parallax extends React.Component<Props> {
   handleScroll = e => {
     const { x, y } = e;
     this.layerConfigs.forEach(({ left, top, props, originLeft, originTop }) => {
-      const { speed, direction } = props;
+      const { speedX, speedY } = props;
       const scrollPosition = this.props.direction === "vertical" ? y : -x;
-      const newTop = (scrollPosition * speed) / 10 + originTop;
-      const newLeft = (-scrollPosition * speed) / 10 + originLeft;
+      const newTop = (scrollPosition * speedY) / 10 + originTop;
+      const newLeft = (-scrollPosition * speedX) / 10 + originLeft;
       // console.log(props, left, top, newLeft, newTop);
 
-      switch (direction) {
-        case "vertical":
-          top.set(newTop);
-          break;
-        case "horizontal":
-          left.set(newLeft);
-          break;
-      }
+      top.set(newTop);
+      left.set(newLeft);
     });
   };
 

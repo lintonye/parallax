@@ -3,27 +3,28 @@ import { PropertyControls, ControlType, Frame } from "framer";
 import EmptyConnector from "./EmptyConnector";
 
 interface Props {
-  speed: number;
-  direction: string;
+  speedX: number;
+  speedY: number;
 }
 
 export class ParallaxFrame extends React.Component {
   static displayName = "Parallax Layer";
   static defaultProps = {
-    speed: 0,
-    direction: "vertical"
+    speedX: 0,
+    speedY: 0
   };
   static propertyControls: PropertyControls<Props> = {
-    speed: {
+    speedX: {
       type: ControlType.Number,
-      title: "Speed",
       min: -50,
-      max: 50
+      max: 50,
+      title: "Speed X"
     },
-    direction: {
-      type: ControlType.SegmentedEnum,
-      title: "Direction",
-      options: ["horizontal", "vertical"]
+    speedY: {
+      type: ControlType.Number,
+      min: -50,
+      max: 50,
+      title: "Speed Y"
     }
   };
   render() {
