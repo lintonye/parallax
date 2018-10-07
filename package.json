@@ -1,0 +1,23 @@
+{
+	"main": "build/index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/react": "^16.0.31",
+		"framer": "^0.8.0"
+	},
+	"peerDependencies": {
+		"framer": "^0.8.0",
+		"react": "^16.3.0",
+		"react-dom": "^16.3.0"
+	},
+	"framer": {
+		"id": "a34493cf-104a-47b0-8e80-586424e0929e",
+		"displayName": "Parallax"
+	},
+	"author": "Linton Ye",
+	"dependencies": {
+		"@framer/benjamin.profile": "^1.11.0"
+	},
+	"name": "@framer/lintonye.parallax",
+	"version": "1.12.0"
+}

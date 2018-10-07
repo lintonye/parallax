@@ -1,0 +1,7 @@
+node_modules
+.backups
+.cache
+build
+design
+*.log
+.npmrc
