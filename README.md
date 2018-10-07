@@ -11,5 +11,6 @@ Check out this tweet for a quick demo: https://twitter.com/lintonye/status/10422
 - 10/07/2018
   - Better scrolling performance
   - We can now independently configure speed X and Y of a layer.
+  - Pin in scroll direction
 - 10/02/2018 - Support horizontal scroll
 - 09/18/2018 - Use Scroll component instead of the hacky div
