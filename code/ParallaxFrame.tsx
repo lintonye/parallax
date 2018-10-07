@@ -5,15 +5,21 @@ import EmptyConnector from "./EmptyConnector";
 interface Props {
   speedX: number;
   speedY: number;
+  pinned: boolean;
 }
 
 export class ParallaxFrame extends React.Component {
   static displayName = "Parallax Layer";
   static defaultProps = {
     speedX: 0,
-    speedY: 0
+    speedY: 0,
+    pinned: false
   };
   static propertyControls: PropertyControls<Props> = {
+    pinned: {
+      type: ControlType.Boolean,
+      title: "Pinned in scroll direction"
+    },
     speedX: {
       type: ControlType.Number,
       min: -50,
