@@ -4,8 +4,9 @@ import EmptyConnector from "./EmptyConnector";
 import RegisterContext from "./RegisterContext";
 
 interface Props {
-  speed: number;
-  direction: string;
+  speedX: number;
+  speedY: number;
+  pinned: boolean;
 }
 
 interface RegistrarProps {
@@ -41,20 +42,26 @@ class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
 export class ParallaxFrame extends React.Component {
   static displayName = "Parallax Layer";
   static defaultProps = {
-    speed: 0,
-    direction: "vertical"
+    speedX: 0,
+    speedY: 0,
+    pinned: false
   };
   static propertyControls: PropertyControls<Props> = {
-    speed: {
-      type: ControlType.Number,
-      title: "Speed",
-      min: -50,
-      max: 50
+    pinned: {
+      type: ControlType.Boolean,
+      title: "Pinned in scroll direction"
     },
-    direction: {
-      type: ControlType.SegmentedEnum,
-      title: "Direction",
-      options: ["horizontal", "vertical"]
+    speedX: {
+      type: ControlType.Number,
+      min: -50,
+      max: 50,
+      title: "Speed X"
+    },
+    speedY: {
+      type: ControlType.Number,
+      min: -50,
+      max: 50,
+      title: "Speed Y"
     }
   };
   render() {
