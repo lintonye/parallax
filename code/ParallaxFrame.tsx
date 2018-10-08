@@ -1,11 +1,50 @@
 import * as React from "react";
-import { PropertyControls, ControlType, Frame } from "framer";
+import { PropertyControls, ControlType, Frame, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
+import { RegisterContext } from "./RegisterContext";
 
 interface Props {
   speedX: number;
   speedY: number;
   pinned: boolean;
+}
+
+interface RegistrarProps {
+  registerLayer: (layerConfig) => any;
+  unregisterLayer: (layerConfig) => any;
+}
+
+class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
+  layerConfig = {
+    left: Animatable(0),
+    top: Animatable(0),
+    props: null
+  };
+  componentDidMount() {
+    const { registerLayer } = this.props;
+    if (registerLayer) {
+      this.layerConfig.props = this.props;
+      registerLayer(this.layerConfig);
+    }
+  }
+  componentWillUnmount() {
+    const { unregisterLayer } = this.props;
+    if (unregisterLayer) {
+      unregisterLayer(this.layerConfig);
+    }
+  }
+  render() {
+    return (
+      <Frame
+        {...this.props}
+        background={null}
+        left={this.layerConfig.left}
+        top={this.layerConfig.top}
+      >
+        {this.props.children}
+      </Frame>
+    );
+  }
 }
 
 export class ParallaxFrame extends React.Component {
@@ -34,7 +73,7 @@ export class ParallaxFrame extends React.Component {
     }
   };
   render() {
-    const { children } = this.props;
+    const { children, ...restProps } = this.props;
     if (React.Children.count(children) === 0) {
       return (
         <EmptyConnector
@@ -44,9 +83,19 @@ export class ParallaxFrame extends React.Component {
       );
     } else {
       return (
-        <Frame {...this.props} background={null}>
-          {children}
-        </Frame>
+        <RegisterContext.Consumer>
+          {({ registerLayer, unregisterLayer }) => {
+            return (
+              <ParallaxLayerRegistrar
+                {...restProps}
+                registerLayer={registerLayer}
+                unregisterLayer={unregisterLayer}
+              >
+                {children}
+              </ParallaxLayerRegistrar>
+            );
+          }}
+        </RegisterContext.Consumer>
       );
     }
   }
