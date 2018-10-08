@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PropertyControls, ControlType, Frame, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
-import RegisterContext from "./RegisterContext";
+import { RegisterContext } from "./RegisterContext";
 
 interface Props {
   speedX: number;
@@ -17,15 +17,17 @@ interface RegistrarProps {
 class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
   registerLayer = props => {
     const { left: originLeft, top: originTop, registerLayer } = props;
-    this.left = Animatable(originLeft);
-    this.top = Animatable(originTop);
-    registerLayer({
-      left: this.left,
-      top: this.top,
-      props,
-      originLeft,
-      originTop
-    });
+    if (registerLayer) {
+      this.left = Animatable(originLeft);
+      this.top = Animatable(originTop);
+      registerLayer({
+        left: this.left,
+        top: this.top,
+        props,
+        originLeft,
+        originTop
+      });
+    }
   };
   componentDidMount = () => {
     this.registerLayer(this.props);
@@ -65,7 +67,13 @@ export class ParallaxFrame extends React.Component {
     }
   };
   render() {
-    const { children } = this.props;
+    const { children, ...restProps } = this.props;
+    /**
+     * This approach does not seem to work!
+     * restProps does NOT include location information (left, top)
+     * Framer X create a parent Frame for each component, which
+     * includes left and top, but it's not accessible from here.
+     */
     if (React.Children.count(children) === 0) {
       return (
         <EmptyConnector
@@ -76,15 +84,17 @@ export class ParallaxFrame extends React.Component {
     } else {
       return (
         <RegisterContext.Consumer>
-          {({ registerLayer, unregisterLayer }) => (
-            <ParallaxLayerRegistrar
-              {...this.props}
-              registerLayer={registerLayer}
-              unregisterLayer={unregisterLayer}
-            >
-              {children}
-            </ParallaxLayerRegistrar>
-          )}
+          {({ registerLayer, unregisterLayer }) => {
+            return (
+              <ParallaxLayerRegistrar
+                {...restProps}
+                registerLayer={registerLayer}
+                unregisterLayer={unregisterLayer}
+              >
+                {children}
+              </ParallaxLayerRegistrar>
+            );
+          }}
         </RegisterContext.Consumer>
       );
     }

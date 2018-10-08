@@ -1,20 +1,11 @@
 import * as React from "react";
 import { Scroll, ControlType, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
-import RegisterContext from "./RegisterContext";
+import { RegisterContext } from "./RegisterContext";
 
 interface Props {
   direction: "horizontal" | "vertical";
 }
-
-const cloneAndUpdateProps = (getUpdatePropsFun, node) => {
-  if (!React.isValidElement<{ children }>(node)) return node;
-  const updateProps = getUpdatePropsFun(node);
-  const clonedChildren = React.Children.map(node.props.children, c =>
-    cloneAndUpdateProps(getUpdatePropsFun, c)
-  );
-  return React.cloneElement(node, updateProps, clonedChildren);
-};
 
 export class Parallax extends React.Component<Props> {
   static displayName = "Parallax Scroll";
@@ -27,7 +18,7 @@ export class Parallax extends React.Component<Props> {
       const scrollPosition = direction === "vertical" ? y : -x;
       const newTop = (scrollPosition * speedY) / 10 + originTop;
       const newLeft = (-scrollPosition * speedX) / 10 + originLeft;
-      // console.log(props, left, top, newLeft, newTop);
+      console.log(props, left, top, newLeft, newTop);
       top.set(newTop);
       left.set(newLeft);
       if (pinned) {
@@ -38,6 +29,7 @@ export class Parallax extends React.Component<Props> {
   };
 
   registerLayer = layerConfigs => {
+    console.log("registerLayer:", layerConfigs);
     this.layerConfigs.push(layerConfigs);
   };
 
@@ -57,35 +49,6 @@ export class Parallax extends React.Component<Props> {
   };
 
   layerConfigs = [];
-
-  cloneAndMakeLayersAnimatable = e => {
-    this.layerConfigs = [];
-    const makeAnimatable = n => {
-      const {
-        componentIdentifier,
-        left: originLeft,
-        top: originTop,
-        children
-      } = n.props;
-      if (/ParallaxFrame/.test(componentIdentifier)) {
-        const left = Animatable(originLeft);
-        const top = Animatable(originTop);
-        // props of ParallaxFrame component are stored in a direct child element
-        const compProps = children[0].props;
-        this.layerConfigs.push({
-          left,
-          top,
-          props: compProps,
-          originLeft,
-          originTop
-        });
-        return { left, top };
-      } else {
-        return null;
-      }
-    };
-    return cloneAndUpdateProps(makeAnimatable, e);
-  };
 
   render() {
     const { children } = this.props;
