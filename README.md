@@ -8,6 +8,8 @@ Check out this tweet for a quick demo: https://twitter.com/lintonye/status/10422
 
 ## Updates
 
+- 10/08/2018
+  - Better performance - (dev note: no more cloning of children)
 - 10/07/2018
   - Better scrolling performance
   - We can now independently configure speed X and Y of a layer.
