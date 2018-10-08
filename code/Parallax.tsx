@@ -13,28 +13,28 @@ export class Parallax extends React.Component<Props> {
   handleScroll = e => {
     const { x, y } = e;
     const { direction } = this.props;
-    this.layerConfigs.forEach(({ left, top, props, originLeft, originTop }) => {
+    this.layerConfigs.forEach(({ left, top, props }) => {
       const { speedX, speedY, pinned } = props;
       const scrollPosition = direction === "vertical" ? y : -x;
-      const newTop = (scrollPosition * speedY) / 10 + originTop;
-      const newLeft = (-scrollPosition * speedX) / 10 + originLeft;
-      console.log(props, left, top, newLeft, newTop);
+      const newTop = (scrollPosition * speedY) / 10;
+      const newLeft = (-scrollPosition * speedX) / 10;
+      // console.log(props, left, top, newLeft, newTop);
       top.set(newTop);
       left.set(newLeft);
       if (pinned) {
-        if (direction === "vertical") top.set(originTop - y);
-        else if (direction === "horizontal") left.set(originLeft - x);
+        if (direction === "vertical") top.set(-y);
+        else if (direction === "horizontal") left.set(-x);
       }
     });
   };
 
   registerLayer = layerConfigs => {
-    console.log("registerLayer:", layerConfigs);
+    // console.log("registerLayer:", layerConfigs);
     this.layerConfigs.push(layerConfigs);
   };
 
   unregisterLayer = layerConfigs => {
-    // TODO
+    this.layerConfigs = this.layerConfigs.filter(c => c !== layerConfigs);
   };
 
   static defaultProps = { ...Scroll.defaultProps };

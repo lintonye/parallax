@@ -15,26 +15,35 @@ interface RegistrarProps {
 }
 
 class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
-  registerLayer = props => {
-    const { left: originLeft, top: originTop, registerLayer } = props;
+  layerConfig = {
+    left: Animatable(0),
+    top: Animatable(0),
+    props: null
+  };
+  constructor(props) {
+    super(props);
+    this.layerConfig.props = props;
+  }
+  componentWillMount = () => {
+    const { registerLayer } = this.props;
     if (registerLayer) {
-      this.left = Animatable(originLeft);
-      this.top = Animatable(originTop);
-      registerLayer({
-        left: this.left,
-        top: this.top,
-        props,
-        originLeft,
-        originTop
-      });
+      registerLayer(this.layerConfig);
     }
   };
-  componentDidMount = () => {
-    this.registerLayer(this.props);
+  componentWillUnmount = () => {
+    const { unregisterLayer } = this.props;
+    if (unregisterLayer) {
+      unregisterLayer(this.layerConfig);
+    }
   };
   render() {
     return (
-      <Frame {...this.props} background={null} left={this.left} top={this.top}>
+      <Frame
+        {...this.props}
+        background={null}
+        left={this.layerConfig.left}
+        top={this.layerConfig.top}
+      >
         {this.props.children}
       </Frame>
     );
@@ -68,12 +77,6 @@ export class ParallaxFrame extends React.Component {
   };
   render() {
     const { children, ...restProps } = this.props;
-    /**
-     * This approach does not seem to work!
-     * restProps does NOT include location information (left, top)
-     * Framer X create a parent Frame for each component, which
-     * includes left and top, but it's not accessible from here.
-     */
     if (React.Children.count(children) === 0) {
       return (
         <EmptyConnector
