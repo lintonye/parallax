@@ -20,22 +20,19 @@ class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
     top: Animatable(0),
     props: null
   };
-  constructor(props) {
-    super(props);
-    this.layerConfig.props = props;
-  }
-  componentWillMount = () => {
+  componentDidMount() {
     const { registerLayer } = this.props;
     if (registerLayer) {
+      this.layerConfig.props = this.props;
       registerLayer(this.layerConfig);
     }
-  };
-  componentWillUnmount = () => {
+  }
+  componentWillUnmount() {
     const { unregisterLayer } = this.props;
     if (unregisterLayer) {
       unregisterLayer(this.layerConfig);
     }
-  };
+  }
   render() {
     return (
       <Frame
