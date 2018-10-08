@@ -55,16 +55,16 @@ export class Parallax extends React.Component<Props> {
 
     if (React.Children.count(children) > 0) {
       return (
-        <Scroll {...this.props} onMove={this.handleScroll}>
-          <RegisterContext.Provider
-            value={{
-              registerLayer: this.registerLayer,
-              unregisterLayer: this.unregisterLayer
-            }}
-          >
+        <RegisterContext.Provider
+          value={{
+            registerLayer: this.registerLayer,
+            unregisterLayer: this.unregisterLayer
+          }}
+        >
+          <Scroll {...this.props} onMove={this.handleScroll}>
             {children}
-          </RegisterContext.Provider>
-        </Scroll>
+          </Scroll>
+        </RegisterContext.Provider>
       );
     } else {
       return (
