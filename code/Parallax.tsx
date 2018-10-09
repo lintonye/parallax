@@ -2,6 +2,7 @@ import * as React from "react";
 import { Scroll, ControlType, Animatable } from "framer";
 import EmptyConnector from "./EmptyConnector";
 import { RegisterContext } from "./RegisterContext";
+import * as math from "mathjs";
 
 interface Props {
   direction: "horizontal" | "vertical";
@@ -14,17 +15,33 @@ export class Parallax extends React.Component<Props> {
     const { x, y } = e;
     const { direction } = this.props;
     this.layerConfigs.forEach(({ left, top, props }) => {
-      const { speedX, speedY, pinned } = props;
-      const scrollPosition = direction === "vertical" ? y : -x;
-      const newTop = (scrollPosition * speedY) / 10;
-      const newLeft = (-scrollPosition * speedX) / 10;
-      // console.log(props, left, top, newLeft, newTop);
+      const {
+        speedX,
+        speedY,
+        pinned,
+        inputMode = "speed",
+        xExpr,
+        yExpr
+      } = props;
+      const scrollPosition = direction === "vertical" ? y : x;
+      let newLeft = 0,
+        newTop = 0;
+      if (inputMode === "speed") {
+        newTop = (scrollPosition * speedY) / 10;
+        newLeft = (scrollPosition * speedX) / 10;
+        // console.log(props, left, top, newLeft, newTop);
+        if (pinned) {
+          if (direction === "vertical") newTop = -y;
+          else if (direction === "horizontal") newLeft = -x;
+        }
+      } else {
+        // position expr
+        const scope = { s: scrollPosition };
+        newTop = math.eval(yExpr, scope);
+        newLeft = math.eval(xExpr, scope);
+      }
       top.set(newTop);
       left.set(newLeft);
-      if (pinned) {
-        if (direction === "vertical") top.set(-y);
-        else if (direction === "horizontal") left.set(-x);
-      }
     });
   };
 
