@@ -4,8 +4,11 @@ import EmptyConnector from "./EmptyConnector";
 import { RegisterContext } from "./RegisterContext";
 
 interface Props {
+  inputMode: "position" | "speed";
   speedX: number;
   speedY: number;
+  xExpr: string;
+  yExpr: string;
   pinned: boolean;
 }
 
@@ -50,26 +53,48 @@ class ParallaxLayerRegistrar extends React.Component<RegistrarProps> {
 export class ParallaxFrame extends React.Component {
   static displayName = "Parallax Layer";
   static defaultProps = {
+    inputMode: "speed",
     speedX: 0,
     speedY: 0,
+    xExpr: "0",
+    yExpr: "0",
     pinned: false
   };
   static propertyControls: PropertyControls<Props> = {
+    inputMode: {
+      type: ControlType.SegmentedEnum,
+      title: "Input",
+      options: ["speed", "position"],
+      optionTitles: ["Speed", "Position Expr"]
+    },
     pinned: {
       type: ControlType.Boolean,
-      title: "Pinned in scroll direction"
+      title: "Pinned in scroll direction",
+      hidden: ({ inputMode }) => inputMode !== "speed"
     },
     speedX: {
       type: ControlType.Number,
       min: -50,
       max: 50,
-      title: "Speed X"
+      title: "Speed X",
+      hidden: ({ inputMode }) => inputMode !== "speed"
     },
     speedY: {
       type: ControlType.Number,
       min: -50,
       max: 50,
-      title: "Speed Y"
+      title: "Speed Y",
+      hidden: ({ inputMode }) => inputMode !== "speed"
+    },
+    xExpr: {
+      type: ControlType.String,
+      title: "X",
+      hidden: ({ inputMode }) => inputMode !== "position"
+    },
+    yExpr: {
+      type: ControlType.String,
+      title: "Y",
+      hidden: ({ inputMode }) => inputMode !== "position"
     }
   };
   render() {
