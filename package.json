@@ -17,8 +17,9 @@
 	"author": "Linton Ye",
 	"dependencies": {
 		"@framer/benjamin.profile": "^1.11.0",
+		"@framer/benjamin.web-fonts": "^1.5.0",
 		"mathjs": "^5.2.0"
 	},
 	"name": "@framer/lintonye.parallax",
-	"version": "1.16.0"
+	"version": "1.17.0"
 }
