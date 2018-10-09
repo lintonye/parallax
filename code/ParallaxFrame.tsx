@@ -69,7 +69,7 @@ export class ParallaxFrame extends React.Component {
     },
     pinned: {
       type: ControlType.Boolean,
-      title: "Pinned in scroll direction",
+      title: "Pin in scroll direction",
       hidden: ({ inputMode }) => inputMode !== "speed"
     },
     speedX: {
