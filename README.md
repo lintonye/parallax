@@ -2,7 +2,10 @@
 
 Move layers at different speed when scrolling.
 
-Check out this tweet for a quick demo: https://twitter.com/lintonye/status/1042262028339933184
+Check out some quick demos: 
+
+- https://twitter.com/lintonye/status/1049727463343812608
+- https://twitter.com/lintonye/status/1042262028339933184
 
 # Getting started
 
