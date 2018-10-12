@@ -19,7 +19,7 @@ Check out some quick demos:
 - Input: _Speed_ or _Position_
   - _Speed_
     - _Pin in scrolling direction_
-      - if _true_ and the _direction_ of parent _Parallax_ is _vertical_, the Y position of the layer remains the same when scrolling.
+      - if _true_ and the _direction_ of parent _Parallax_ is _vertical_, the Y position of the layer remains the same when scrolling. It works similarly when the parent _direction_ is _horizontal_.
     - _Speed X_
       - if 0: the layer scrolls along with the rest of the content
       - if positive: the layer scrolls in the same direction as the scrolling
