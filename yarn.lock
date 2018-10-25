@@ -262,9 +262,9 @@ fraction.js@4.0.9:
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.0.9.tgz#ef7aa1ad47ef600021ad7fa7991dfd56c3b5f7c8"
 
-framer@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/framer/-/framer-0.8.0.tgz#79928b5e16af2594683f0a3f70d044a3219d8a3d"
+framer@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/framer/-/framer-0.9.0.tgz#9852ffe5fc6972ff6682591538760688f398e964"
   dependencies:
     draft-js "0.10.4"
     eventemitter3 "^3.1.0"
@@ -295,7 +295,7 @@ immutable@^3.8.2:
 
 immutable@~3.7.4:
   version "3.7.6"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
+  resolved "http://registry.npmjs.org/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
 
 indefinite-observable@^1.0.1:
   version "1.0.1"
