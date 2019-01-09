@@ -9,6 +9,9 @@ interface Props {
 }
 
 export class Parallax extends React.Component<Props> {
+  lastX?: number;
+  lastY?: number;
+  lastTimestamp?: number;
   static displayName = "Parallax Scroll";
 
   handleScroll = e => {
