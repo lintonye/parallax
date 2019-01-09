@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Scroll, ControlType, Animatable } from "framer";
+import { Scroll, ControlType, Animatable, animate } from "framer";
 import EmptyConnector from "./EmptyConnector";
 import { RegisterContext } from "./RegisterContext";
 import * as math from "mathjs";
@@ -13,6 +13,20 @@ export class Parallax extends React.Component<Props> {
 
   handleScroll = e => {
     const { x, y } = e;
+    let vx = 0,
+      vy = 0;
+    if (
+      typeof this.lastX !== "undefined" &&
+      typeof this.lastY !== "undefined"
+    ) {
+      const duration = Date.now() - this.lastTimestamp;
+
+      vx = (x - this.lastX) / duration;
+      vy = (y - this.lastY) / duration;
+    }
+    this.lastX = x;
+    this.lastY = y;
+    this.lastTimestamp = Date.now();
     const { direction } = this.props;
     this.layerConfigs.forEach(({ left, top, props }) => {
       const {
@@ -36,10 +50,12 @@ export class Parallax extends React.Component<Props> {
         }
       } else {
         // position expr
-        const scope = { s: scrollPosition };
+        const scope = { s: scrollPosition, vx, vy };
         newTop = math.eval(yExpr, scope);
         newLeft = math.eval(xExpr, scope);
+        // console.log(scope, "newTop", newTop, "lastY", this.lastY);
       }
+
       top.set(newTop);
       left.set(newLeft);
     });
