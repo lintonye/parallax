@@ -4,22 +4,25 @@ const data = Data({ headerTop: Animatable(0) });
 
 let isAnimating = false;
 
-async function setHeaderTop(top) {
+async function setHeaderTop(animation) {
   if (!isAnimating) {
     isAnimating = true;
-    await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
+    await animation.finished;
     isAnimating = false;
   }
 }
 
 export const Scroll: Override = () => {
   return {
-    onScroll({ s, vy, scrollMax }) {
-      const headerHeight = 81;
-      if (vy > 0 && s > -scrollMax) {
-        setHeaderTop(0);
-      } else if (vy < 0 && s <= -headerHeight) {
-        setHeaderTop(-headerHeight);
+    onScroll({ s, vy }) {
+      if (vy < 0) {
+        setHeaderTop(
+          animate.ease(data.headerTop, -81, {
+            duration: 0.1
+          })
+        );
+      } else if (vy > 0 || s >= 0) {
+        setHeaderTop(animate.ease(data.headerTop, 0, { duration: 0.1 }));
       }
     }
   };
