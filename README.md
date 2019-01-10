@@ -36,6 +36,8 @@ Check out some quick demos:
     - _Y:_ Same as _X_ but in Y direction
 
 # Change Log
+- 01/10/2019
+  - Add override functions for sticky scrolls (Doc pending)
 - 10/09/2018
   - Support controlling positions with math expressions
 - 10/08/2018
