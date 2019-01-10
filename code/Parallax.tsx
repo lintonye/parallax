@@ -4,8 +4,15 @@ import EmptyConnector from "./EmptyConnector";
 import { RegisterContext } from "./RegisterContext";
 import * as math from "mathjs";
 
+type ScrollProps = {
+  s: number;
+  vx: number;
+  vy: number;
+};
+
 interface Props {
   direction: "horizontal" | "vertical";
+  onScroll: (scrollProps: ScrollProps) => void;
 }
 
 export class Parallax extends React.Component<Props> {
@@ -23,14 +30,30 @@ export class Parallax extends React.Component<Props> {
       typeof this.lastY !== "undefined"
     ) {
       const duration = Date.now() - this.lastTimestamp;
-
       vx = (x - this.lastX) / duration;
       vy = (y - this.lastY) / duration;
     }
     this.lastX = x;
     this.lastY = y;
     this.lastTimestamp = Date.now();
-    const { direction } = this.props;
+    const { direction, onScroll } = this.props;
+    const scrollPosition = direction === "vertical" ? y : x;
+    const scrollMaxX = this.props.children[0].props.width - this.props.width;
+    const scrollMaxY = this.props.children[0].props.height - this.props.height;
+    const scrollMax = direction === "vertical" ? scrollMaxY : scrollMaxX;
+    const scrollProps = {
+      s: scrollPosition,
+      sx: x,
+      sy: y,
+      vx,
+      vy,
+      direction,
+      scrollMax,
+      scrollMaxX,
+      scrollMaxY
+    };
+    onScroll && onScroll(scrollProps);
+
     this.layerConfigs.forEach(({ left, top, props }) => {
       const {
         speedX,
@@ -40,7 +63,6 @@ export class Parallax extends React.Component<Props> {
         xExpr,
         yExpr
       } = props;
-      const scrollPosition = direction === "vertical" ? y : x;
       let newLeft = 0,
         newTop = 0;
       if (inputMode === "speed") {
@@ -53,9 +75,8 @@ export class Parallax extends React.Component<Props> {
         }
       } else {
         // position expr
-        const scope = { s: scrollPosition, vx, vy };
-        newTop = math.eval(yExpr, scope);
-        newLeft = math.eval(xExpr, scope);
+        newTop = math.eval(yExpr, scrollProps);
+        newLeft = math.eval(xExpr, scrollProps);
         // console.log(scope, "newTop", newTop, "lastY", this.lastY);
       }
 
