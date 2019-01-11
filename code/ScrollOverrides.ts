@@ -23,6 +23,53 @@ export function stickyScrollY(...stickyTopRanges) {
   return [scrollOverrides, layerOverrides];
 }
 
+export function scrollAwayHeader() {
+  const data = Data({ headerTop: Animatable(0) });
+
+  let isAnimating = false;
+
+  async function setHeaderTop(top) {
+    if (!isAnimating) {
+      isAnimating = true;
+      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
+      isAnimating = false;
+    }
+  }
+
+  let headerHeight = 0;
+
+  const scrollOverrides = props => {
+    let lastY, vy, lastTimestamp;
+    //TODO this is a bad way to determine the scroll height
+    const scrollMax =
+      props.children[0].props.children[0].props.height - props.height;
+    return {
+      onMove({ y }) {
+        if (typeof lastY !== "undefined") {
+          vy = (y - lastY) / (Date.now() - lastTimestamp);
+        }
+        lastY = y;
+        lastTimestamp = Date.now();
+        // console.log("vy", vy, "scrollMax", scrollMax);
+
+        if (vy > 0 && y > -scrollMax) {
+          setHeaderTop(0);
+        } else if (vy < 0 && y <= -headerHeight) {
+          setHeaderTop(-headerHeight);
+        }
+      }
+    };
+  };
+
+  const layerOverrides = props => {
+    headerHeight = props.height;
+    return {
+      top: data.headerTop
+    };
+  };
+  return [scrollOverrides, layerOverrides];
+}
+
 export function mergeOverrides(...overrides) {
   return overrides.reduce((merged, o) => {
     for (let key in o) {
