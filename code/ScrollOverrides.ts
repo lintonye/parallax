@@ -1,4 +1,47 @@
-import { Data, animate, Animatable } from "framer";
+import { Data, animate, Animatable, transform } from "framer";
+
+function validateSOParams(params) {
+  //TODO
+}
+
+function toNegativeRange(positiveRange) {
+  return [-positiveRange[1], -positiveRange[0]];
+}
+
+function processOneOperation(operation, scrollRange, result) {}
+
+export function scrollOverrides(...params) {
+  validateSOParams(params);
+  const result = {};
+  for (let i = 0; i < params.length; i += 2) {
+    const scrollRange = toNegativeRange(params[i]);
+    const operations = params[i + 1];
+    operations.forEach(operation => {
+      processOneOperation(operation, scrollRange, result);
+    });
+  }
+  return result;
+}
+
+export function modulate(propName, outputRange, dataValue?) {
+  // TODO validate outputRange
+  const data = Data({ value: Animatable(0) });
+  const dvalue = dataValue || data.value;
+  return {
+    $$$scroll: ([min, max]) => props => ({
+      onMove({ y }) {
+        const output = transform(
+          [{ y: min }, { y: max }],
+          [{ v: outputRange[0] }, { v: outputRange[1] }]
+        )(y);
+        dvalue.set(output.v);
+      }
+    }),
+    $$$layer: range => props => ({
+      [propName]: dvalue
+    })
+  };
+}
 
 export function stickyScrollY(...stickyTopRanges) {
   const data = Data({ top: Animatable(0) });
@@ -68,6 +111,35 @@ export function scrollAwayHeader() {
     };
   };
   return [scrollOverrides, layerOverrides];
+}
+
+export function scrollAwayHeader(headerHeight, scrollMax) {
+  const data = Data({ headerTop: Animatable(0) });
+  let isAnimating = false;
+
+  async function setHeaderTop(top) {
+    if (!isAnimating) {
+      isAnimating = true;
+      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
+      isAnimating = false;
+    }
+  }
+
+  const overrides = scrollOverrides(
+    [headerHeight, scrollMax],
+    [
+      {
+        op: ({ vy, y }) => {
+          if (vy > 0 && y > -scrollMax) {
+            setHeaderTop(0);
+          } else if (vy < 0 && y <= -headerHeight) {
+            setHeaderTop(-headerHeight);
+          }
+        }
+      }
+    ]
+  );
+  return [overrides.scroll, overrides.header];
 }
 
 export function mergeOverrides(...overrides) {
