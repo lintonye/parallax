@@ -9,25 +9,72 @@ function toNegativeRange(positiveRange) {
   return positiveRange.map(n => -n);
 }
 
+function isInRange(v: number, range: [number, number]) {
+  const min = Math.min(range[0], range[1]);
+  const max = Math.max(range[0], range[1]);
+  return min <= v && v <= max;
+}
+
+const wrapFuncsWithRangeCheck = (overrides, inRange) => {
+  const result = {};
+  for (let key in overrides) {
+    const value = overrides[key];
+    let newValue = value;
+    if (typeof value === "function") {
+      newValue = args => (inRange ? value(args) : undefined);
+    }
+    result[key] = newValue;
+  }
+  return result;
+};
+
 function processOneOperation(operation, scrollRange, result) {
   const { id, op } = operation;
   const { scroll: oldScroll } = result;
-  result.scroll = props =>
-    mergeOverrides(
-      op.$$$scroll(scrollRange)(props),
+  let inRange = false;
+  result.scroll = props => {
+    let opOnMove,
+      restOverrides = {};
+    if (typeof op === "function") opOnMove = op;
+    else {
+      const { onMove, ...rest } = op.$$$scroll(scrollRange)(props);
+      opOnMove = onMove;
+      restOverrides = rest;
+    }
+
+    return mergeOverrides(
+      {
+        ...wrapFuncsWithRangeCheck(restOverrides, inRange),
+        onMove(scrollProps) {
+          inRange = isInRange(scrollProps.y, scrollRange);
+          if (inRange) {
+            opOnMove && opOnMove(scrollProps);
+          }
+        }
+      },
       oldScroll && oldScroll(props)
     );
-  const oldIdValue = result[id];
-  result[id] = props =>
-    mergeOverrides(
-      op.$$$layer(scrollRange)(props),
-      oldIdValue && oldIdValue(props)
-    );
+  };
+  if (typeof op === "object") {
+    const layerOp = op.$$$layer(scrollRange);
+    if (typeof layerOp === "function") {
+      const oldIdValue = result[id];
+      result[id] = props => {
+        return mergeOverrides(
+          // TODO should we wrap this with RangeCheck?
+          wrapFuncsWithRangeCheck(layerOp(props), inRange),
+          oldIdValue && oldIdValue(props)
+        );
+      };
+    } else {
+      throw `layerOp isn't a function! ${layerOp}`;
+    }
+  }
 }
 
 interface ScrollOverrides {
-  scroll: (props) => void;
-  [key: string]: (props) => void;
+  scroll: (props: object) => { onMove };
+  [key: string]: (props: object) => object;
 }
 
 export function scrollOverrides(...params): ScrollOverrides {
@@ -195,6 +242,7 @@ export function mergeOverrides(...overrides) {
               valueInMerged,
               o[key]
             );
+            throw `Incompatible types (key=${key})`;
           }
         } else {
           console.log(
