@@ -5,14 +5,34 @@ function validateSOParams(params) {
 }
 
 function toNegativeRange(positiveRange) {
-  return [-positiveRange[1], -positiveRange[0]];
+  // return [-positiveRange[1], -positiveRange[0]];
+  return positiveRange.map(n => -n);
 }
 
-function processOneOperation(operation, scrollRange, result) {}
+function processOneOperation(operation, scrollRange, result) {
+  const { id, op } = operation;
+  const { scroll: oldScroll } = result;
+  result.scroll = props =>
+    mergeOverrides(
+      op.$$$scroll(scrollRange)(props),
+      oldScroll && oldScroll(props)
+    );
+  const oldIdValue = result[id];
+  result[id] = props =>
+    mergeOverrides(
+      op.$$$layer(scrollRange)(props),
+      oldIdValue && oldIdValue(props)
+    );
+}
 
-export function scrollOverrides(...params) {
+interface ScrollOverrides {
+  scroll: (props) => void;
+  [key: string]: (props) => void;
+}
+
+export function scrollOverrides(...params): ScrollOverrides {
   validateSOParams(params);
-  const result = {};
+  const result = { scroll: undefined };
   for (let i = 0; i < params.length; i += 2) {
     const scrollRange = toNegativeRange(params[i]);
     const operations = params[i + 1];
@@ -28,13 +48,27 @@ export function modulate(propName, outputRange, dataValue?) {
   const data = Data({ value: Animatable(0) });
   const dvalue = dataValue || data.value;
   return {
-    $$$scroll: ([min, max]) => props => ({
+    $$$scroll: ([first, second]) => props => ({
       onMove({ y }) {
         const output = transform(
-          [{ y: min }, { y: max }],
-          [{ v: outputRange[0] }, { v: outputRange[1] }]
-        )(y);
-        dvalue.set(output.v);
+          [{ y: first }, { y: second }],
+          [{ [propName]: outputRange[0] }, { [propName]: outputRange[1] }],
+          { limit: true }
+        )({ y });
+        // console.log(
+        //   "onMove in modulate",
+        //   "outputRange",
+        //   outputRange,
+        //   "y",
+        //   y,
+        //   "min",
+        //   first,
+        //   "max",
+        //   second,
+        //   "output",
+        //   output
+        // );
+        dvalue.set(output[propName]);
       }
     }),
     $$$layer: range => props => ({
@@ -66,7 +100,7 @@ export function stickyScrollY(...stickyTopRanges) {
   return [scrollOverrides, layerOverrides];
 }
 
-export function scrollAwayHeader() {
+export function scrollAwayHeader_old() {
   const data = Data({ headerTop: Animatable(0) });
 
   let isAnimating = false;
@@ -113,61 +147,63 @@ export function scrollAwayHeader() {
   return [scrollOverrides, layerOverrides];
 }
 
-export function scrollAwayHeader(headerHeight, scrollMax) {
-  const data = Data({ headerTop: Animatable(0) });
-  let isAnimating = false;
+// export function scrollAwayHeader(headerHeight, scrollMax) {
+//   const data = Data({ headerTop: Animatable(0) });
+//   let isAnimating = false;
 
-  async function setHeaderTop(top) {
-    if (!isAnimating) {
-      isAnimating = true;
-      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
-      isAnimating = false;
-    }
-  }
+//   async function setHeaderTop(top) {
+//     if (!isAnimating) {
+//       isAnimating = true;
+//       await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
+//       isAnimating = false;
+//     }
+//   }
 
-  const overrides = scrollOverrides(
-    [headerHeight, scrollMax],
-    [
-      {
-        op: ({ vy, y }) => {
-          if (vy > 0 && y > -scrollMax) {
-            setHeaderTop(0);
-          } else if (vy < 0 && y <= -headerHeight) {
-            setHeaderTop(-headerHeight);
-          }
-        }
-      }
-    ]
-  );
-  return [overrides.scroll, overrides.header];
-}
+//   const overrides = scrollOverrides(
+//     [headerHeight, scrollMax],
+//     [
+//       {
+//         op: ({ vy, y }) => {
+//           if (vy > 0 && y > -scrollMax) {
+//             setHeaderTop(0);
+//           } else if (vy < 0 && y <= -headerHeight) {
+//             setHeaderTop(-headerHeight);
+//           }
+//         }
+//       }
+//     ]
+//   );
+//   return [overrides.scroll, overrides.header];
+// }
 
 export function mergeOverrides(...overrides) {
   return overrides.reduce((merged, o) => {
-    for (let key in o) {
-      const valueInMerged = merged[key];
-      if (typeof valueInMerged === "undefined") {
-        merged[key] = o[key];
-      } else if (typeof valueInMerged === "function") {
-        if (typeof o[key] === "function") {
-          merged[key] = args => {
-            valueInMerged(args);
-            o[key](args);
-          };
+    if (typeof o === "object") {
+      for (let key in o) {
+        const valueInMerged = merged[key];
+        if (typeof valueInMerged === "undefined") {
+          merged[key] = o[key];
+        } else if (typeof valueInMerged === "function") {
+          if (typeof o[key] === "function") {
+            merged[key] = args => {
+              valueInMerged(args);
+              o[key](args);
+            };
+          } else {
+            console.error(
+              `Incompatible types (key=${key})`,
+              valueInMerged,
+              o[key]
+            );
+          }
         } else {
-          console.error(
-            `Incompatible types (key=${key})`,
+          console.log(
+            `Key already appeared (key=${key}), using existing value`,
             valueInMerged,
+            "New value dropped",
             o[key]
           );
         }
-      } else {
-        console.log(
-          `Key already appeared (key=${key}), using existing value`,
-          valueInMerged,
-          "New value dropped",
-          o[key]
-        );
       }
     }
     return merged;
