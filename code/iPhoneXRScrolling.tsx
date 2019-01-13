@@ -1,5 +1,5 @@
 import { Data, animate, Override, Animatable, transform } from "framer";
-import { scrollOverrides, modulate } from "./ScrollOverrides";
+import { scrollOverrides, modulate, speedY } from "./ScrollOverrides";
 
 const data = Data({
   phoneNameSizeOpacity: Animatable(0),
@@ -19,17 +19,31 @@ const overrides = scrollOverrides(
     //   op: [modulate("scale", [1.5, 1.5]), modulate("rotationY", [30, 30])]
     // }
   ],
-  [200, 300],
+  [100, 350],
   [
     {
       id: "iPhoneXR",
-      op: [
-        // speedY(1.5),
-        modulate("rotationY", [30, 0]),
-        modulate("scale", [1.5, 1])
-      ]
+      op: speedY(2)
+    }
+  ],
+  [250, 400],
+  [
+    {
+      id: "iPhoneXR",
+      op: [modulate("scale", [1, 0.5])]
     }
   ]
+  // [300, 400],
+  // [
+  //   {
+  //     id: "iPhoneXR",
+  //     op: [
+  //       // modulate("rotationY", [50, 0]),
+  //       // modulate("rotationX", [10, 0]),
+  //       modulate("scale", [0.8, 0.5])
+  //     ]
+  //   }
+  // ]
   //   [300],
   //   [
   //     {
@@ -88,6 +102,6 @@ export const Scroll: Override = props => overrides.scroll(props);
 export const Blocker: Override = props => overrides.blocker(props);
 export const IPhoneXR: Override = props => ({
   ...overrides.iPhoneXR(props),
-  perspective: 2000,
-  rotationX: 10 // TODO why is this needed?
+  perspective: 1000
+  // rotationX: 10 // TODO why is this needed?
 });
