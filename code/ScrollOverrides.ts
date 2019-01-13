@@ -104,7 +104,7 @@ export function scrollOverrides(...params): ScrollOverrides {
 
 export function modulate(propName, outputRange, dataValue?) {
   // TODO validate outputRange
-  const data = Data({ value: Animatable(0) });
+  const data = Data({ value: Animatable(outputRange[0]) });
   const dvalue = dataValue || data.value;
   return {
     $$$scroll: ([first, second]) => props => ({
@@ -133,6 +133,27 @@ export function modulate(propName, outputRange, dataValue?) {
     $$$layer: range => props => ({
       [propName]: dvalue
     })
+  };
+}
+
+export function speedY(ratio) {
+  const data = Data({ top: Animatable(0) });
+  let initialTop = 0;
+  return {
+    $$$scroll: range => props => ({
+      onMove({ y }) {
+        data.top.set(y * ratio + initialTop);
+      }
+    }),
+    $$$layer: range => props => {
+      initialTop = props.top;
+      // console.log("initialTop", initialTop);
+
+      data.top.set(initialTop);
+      return {
+        top: data.top
+      };
+    }
   };
 }
 
