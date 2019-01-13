@@ -57,14 +57,20 @@ function processOneOperation(id: string, op, scrollRange, result) {
       opOnMove = onMove;
       restOverrides = rest;
     }
-
+    let lastY, lastTimeStamp;
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides, inRange),
         onMove(scrollProps) {
-          inRange = isInRange(scrollProps.y, scrollRange);
+          const { y } = scrollProps;
+          let vy = 0;
+          if (typeof lastY !== "undefined")
+            vy = -(y - lastY) / (Date.now() - lastTimeStamp);
+          lastTimeStamp = Date.now();
+          lastY = y;
+          inRange = isInRange(y, scrollRange);
           if (inRange) {
-            opOnMove && opOnMove(scrollProps);
+            opOnMove && opOnMove({ ...scrollProps, vy });
           }
         }
       },
