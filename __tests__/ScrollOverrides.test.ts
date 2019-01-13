@@ -42,6 +42,20 @@ test("should call onMove when in range", () => {
   expect(opRan).toBeTruthy();
 });
 
+test("should create multiple operations if multiple items as operations", () => {
+  const overrides = scrollOverrides(
+    [0, 20],
+    [
+      { id: "blocker", op: modulate("opacity", [0, 1]) },
+      { id: "iPhoneXR", op: modulate("scale", [1.5, 1.5]) }
+    ]
+  );
+  expect(typeof overrides.blocker).toBe("function");
+  expect(typeof overrides.iPhoneXR).toBe("function");
+  expect(overrides.blocker({}).opacity).toBeDefined();
+  expect(overrides.iPhoneXR({}).scale).toBeDefined();
+});
+
 test("should create multiple operations if id is array", () => {
   const overrides = scrollOverrides(
     [0, 20],
