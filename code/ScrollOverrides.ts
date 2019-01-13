@@ -15,6 +15,19 @@ function isInRange(v: number, range: [number, number]) {
   return min <= v && v <= max;
 }
 
+const DATA_STORE: Map<string, any> = new Map();
+function getDataFromStore(itemId: string, propName: string, defaultValue?) {
+  const key = itemId + "." + propName;
+  let justCreated = false;
+  let d = DATA_STORE.get(key);
+  if (typeof d === "undefined") {
+    d = Animatable(defaultValue);
+    DATA_STORE.set(key, d);
+    justCreated = true;
+  }
+  return [justCreated, d];
+}
+
 const wrapFuncsWithRangeCheck = (overrides, inRange) => {
   const result = {};
   for (let key in overrides) {
@@ -28,15 +41,19 @@ const wrapFuncsWithRangeCheck = (overrides, inRange) => {
   return result;
 };
 
+const getOpType = op =>
+  typeof op("dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
+
 function processOneOperation(id: string, op, scrollRange, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
+  const opType = getOpType(op);
   result.scroll = props => {
     let opOnMove,
       restOverrides = {};
-    if (typeof op === "function") opOnMove = op;
+    if (opType === "onMoveOnly") opOnMove = op(id);
     else {
-      const { onMove, ...rest } = op.$$$scroll(scrollRange)(props);
+      const { onMove, ...rest } = op(id).$$$scroll(scrollRange)(props);
       opOnMove = onMove;
       restOverrides = rest;
     }
@@ -54,8 +71,8 @@ function processOneOperation(id: string, op, scrollRange, result) {
       oldScroll && oldScroll(props)
     );
   };
-  if (typeof op === "object") {
-    const layerOp = op.$$$layer(scrollRange);
+  if (opType === "scrollAndLayer") {
+    const layerOp = op(id).$$$layer(scrollRange);
     if (typeof layerOp === "function") {
       const oldIdValue = result[id];
       result[id] = props => {
@@ -102,10 +119,11 @@ export function scrollOverrides(...params): ScrollOverrides {
   return result;
 }
 
-export function modulate(propName, outputRange, dataValue?) {
+export const modulate = (propName, outputRange, dataValue?) => itemId => {
   // TODO validate outputRange
-  const data = Data({ value: Animatable(outputRange[0]) });
-  const dvalue = dataValue || data.value;
+  const dvalue =
+    dataValue ||
+    getDataFromStore(itemId, propName, Animatable(outputRange[0]))[1];
   return {
     $$$scroll: ([first, second]) => props => ({
       onMove({ y }) {
@@ -134,49 +152,63 @@ export function modulate(propName, outputRange, dataValue?) {
       [propName]: dvalue
     })
   };
-}
+};
 
-export function speedY(ratio: number, dataValue?) {
-  const data = Data({ top: Animatable(0) });
-  let dtop = dataValue || data.top;
-  let initialTop = 0;
+export const speedY = (ratio: number, dataValue?) => itemId => {
+  let justCreated = false;
+  let dtop = dataValue;
+  if (typeof dataValue === "undefined") {
+    const [created, dstore] = getDataFromStore(itemId, "top", 0);
+    justCreated = created;
+    dtop = dstore;
+  }
+
+  let initialTop = undefined;
   return {
     $$$scroll: range => props => ({
       onMove({ y }) {
+        if (!justCreated && typeof initialTop === "undefined")
+          initialTop = dtop.get();
         dtop.set(y * ratio + initialTop);
       }
     }),
     $$$layer: range => props => {
-      initialTop = props.top;
       // console.log("initialTop", initialTop);
-
+      if (justCreated) initialTop = props.top;
       dtop.set(initialTop);
       return {
         top: dtop
       };
     }
   };
-}
+};
 
-export function stickyY(dataValue?) {
-  const data = Data({ top: Animatable(0) });
-  let dtop = dataValue || data.top;
-  let initialTop = 0;
+export const stickyY = (dataValue?) => itemId => {
+  let justCreated = false;
+  let dtop = dataValue;
+  if (typeof dataValue === "undefined") {
+    const [created, dstore] = getDataFromStore(itemId, "top", 0);
+    justCreated = created;
+    dtop = dstore;
+  }
+  let initialTop = undefined;
   return {
     $$$scroll: range => props => ({
       onMove({ y }) {
+        if (!justCreated && typeof initialTop === "undefined")
+          initialTop = dtop.get();
         dtop.set(range[0] - y + initialTop);
       }
     }),
     $$$layer: range => props => {
-      initialTop = props.top;
+      if (justCreated) initialTop = props.top;
       dtop.set(initialTop);
       return {
         top: dtop
       };
     }
   };
-}
+};
 
 export function stickyScrollY(...stickyTopRanges) {
   const data = Data({ top: Animatable(0) });

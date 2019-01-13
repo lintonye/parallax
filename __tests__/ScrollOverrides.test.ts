@@ -16,7 +16,7 @@ test("should not call onMove when out of range", () => {
     [
       {
         id: "name",
-        op: () => {
+        op: itemId => () => {
           fail("onMove is called!");
         }
       }
@@ -32,7 +32,7 @@ test("should call onMove when in range", () => {
     [
       {
         id: "name",
-        op: () => {
+        op: itemId => () => {
           opRan = true;
         }
       }

@@ -24,7 +24,7 @@ const overrides = scrollOverrides(
   [
     {
       id: "iPhoneXR",
-      op: speedY(2, data.iPhoneXRTop)
+      op: speedY(2)
     }
   ],
   [250, 500],
@@ -33,14 +33,14 @@ const overrides = scrollOverrides(
       id: "iPhoneXR",
       op: modulate("scale", [1, 0.5])
     }
+  ],
+  [450, 800],
+  [
+    {
+      id: "iPhoneXR",
+      op: stickyY()
+    }
   ]
-  // [450, 800],
-  // [
-  //   {
-  //     id: "iPhoneXR",
-  //     op: stickyY(data.iPhoneXRTop)
-  //   }
-  // ]
   // [300, 400],
   // [
   //   {
