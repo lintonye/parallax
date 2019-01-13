@@ -28,8 +28,7 @@ const wrapFuncsWithRangeCheck = (overrides, inRange) => {
   return result;
 };
 
-function processOneOperation(operation, scrollRange, result) {
-  const { id, op } = operation;
+function processOneOperation(id: string, op, scrollRange, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
   result.scroll = props => {
@@ -74,17 +73,30 @@ function processOneOperation(operation, scrollRange, result) {
 
 interface ScrollOverrides {
   scroll: (props: object) => { onMove };
-  [key: string]: (props: object) => object;
+  [key: string]: (props: object) => { [key: string]: any };
+}
+
+type Override = { [key: string]: any };
+
+interface Operation {
+  id: string | [string];
+  op: Override | [Override] | (() => any);
 }
 
 export function scrollOverrides(...params): ScrollOverrides {
   validateSOParams(params);
   const result = { scroll: undefined };
+  const isArray = a => a instanceof Array;
   for (let i = 0; i < params.length; i += 2) {
     const scrollRange = toNegativeRange(params[i]);
-    const operations = params[i + 1];
+    const operations: [Operation] = params[i + 1];
     operations.forEach(operation => {
-      processOneOperation(operation, scrollRange, result);
+      const { id, op } = operation;
+      const ids = (isArray(id) ? id : [id]) as [string];
+      const ops = isArray(op) ? op : [op];
+      ids.forEach(i =>
+        ops.forEach(o => processOneOperation(i, o, scrollRange, result))
+      );
     });
   }
   return result;

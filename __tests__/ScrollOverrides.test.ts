@@ -42,6 +42,31 @@ test("should call onMove when in range", () => {
   expect(opRan).toBeTruthy();
 });
 
+test("should create multiple operations if id is array", () => {
+  const overrides = scrollOverrides(
+    [0, 20],
+    [{ id: ["feature1", "feature2"], op: modulate("opacity", [0, 1]) }]
+  );
+  expect(typeof overrides.feature1).toBe("function");
+  expect(typeof overrides.feature2).toBe("function");
+});
+
+test("should create multiple operations if op is array", () => {
+  const overrides = scrollOverrides(
+    [0, 20],
+    [
+      {
+        id: "feature1",
+        op: [modulate("opacity", [0, 1]), modulate("scale", [1, 1.5])]
+      }
+    ]
+  );
+  expect(typeof overrides.feature1).toBe("function");
+  const resolvedOverride = overrides.feature1({});
+  expect(resolvedOverride.opacity).toBeDefined();
+  expect(resolvedOverride.scale).toBeDefined();
+});
+
 test.skip("should not call onTap when out of range", () => {
   //TODO
 });

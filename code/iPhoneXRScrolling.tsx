@@ -12,18 +12,18 @@ const data = Data({
 
 const overrides = scrollOverrides(
   [0, 200],
-  [{ id: "blocker", op: modulate("opacity", [0, 1]) }]
-  //   [200, 300],
-  //   [
-  //     {
-  //       id: "iPhoneXR",
-  //       op: [
-  //         speedY(1.5),
-  //         modulate("rotateY", [20, 0]),
-  //         modulate("scale", [1.5, 1])
-  //       ]
-  //     }
-  //   ],
+  [{ id: "blocker", op: modulate("opacity", [0, 1]) }],
+  [200, 300],
+  [
+    {
+      id: "iPhoneXR",
+      op: [
+        // speedY(1.5),
+        modulate("rotationY", [30, 0]),
+        modulate("scale", [1.5, 1])
+      ]
+    }
+  ]
   //   [300],
   //   [
   //     {
@@ -80,4 +80,8 @@ const overrides = scrollOverrides(
 
 export const Scroll: Override = props => overrides.scroll(props);
 export const Blocker: Override = props => overrides.blocker(props);
-export const IPhoneXR: Override = props => overrides.iphoneXR(props);
+export const IPhoneXR: Override = props => ({
+  ...overrides.iPhoneXR(props),
+  perspective: 2000,
+  rotationX: 10 // TODO why is this needed?
+});
