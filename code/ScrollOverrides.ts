@@ -183,7 +183,7 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
   };
 };
 
-export const stickyY = (dataValue?) => itemId => {
+export const stickyY = (defaultTop?, dataValue?) => itemId => {
   let justCreated = false;
   let dtop = dataValue;
   if (typeof dataValue === "undefined") {
@@ -191,7 +191,7 @@ export const stickyY = (dataValue?) => itemId => {
     justCreated = created;
     dtop = dstore;
   }
-  let initialTop = undefined;
+  let initialTop = defaultTop;
   return {
     $$$scroll: range => props => ({
       onMove({ y }) {
