@@ -136,22 +136,43 @@ export function modulate(propName, outputRange, dataValue?) {
   };
 }
 
-export function speedY(ratio) {
+export function speedY(ratio: number, dataValue?) {
   const data = Data({ top: Animatable(0) });
+  let dtop = dataValue || data.top;
   let initialTop = 0;
   return {
     $$$scroll: range => props => ({
       onMove({ y }) {
-        data.top.set(y * ratio + initialTop);
+        dtop.set(y * ratio + initialTop);
       }
     }),
     $$$layer: range => props => {
       initialTop = props.top;
       // console.log("initialTop", initialTop);
 
-      data.top.set(initialTop);
+      dtop.set(initialTop);
       return {
-        top: data.top
+        top: dtop
+      };
+    }
+  };
+}
+
+export function stickyY(dataValue?) {
+  const data = Data({ top: Animatable(0) });
+  let dtop = dataValue || data.top;
+  let initialTop = 0;
+  return {
+    $$$scroll: range => props => ({
+      onMove({ y }) {
+        dtop.set(range[0] - y + initialTop);
+      }
+    }),
+    $$$layer: range => props => {
+      initialTop = props.top;
+      dtop.set(initialTop);
+      return {
+        top: dtop
       };
     }
   };

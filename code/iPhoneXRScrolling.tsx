@@ -1,5 +1,5 @@
 import { Data, animate, Override, Animatable, transform } from "framer";
-import { scrollOverrides, modulate, speedY } from "./ScrollOverrides";
+import { scrollOverrides, modulate, speedY, stickyY } from "./ScrollOverrides";
 
 const data = Data({
   phoneNameSizeOpacity: Animatable(0),
@@ -7,7 +7,8 @@ const data = Data({
   feature2Opacity: Animatable(0),
   feature3Opacity: Animatable(0),
   feature4Opacity: Animatable(0),
-  feature5Opacity: Animatable(0)
+  feature5Opacity: Animatable(0),
+  iPhoneXRTop: Animatable(0)
 });
 
 const overrides = scrollOverrides(
@@ -23,24 +24,31 @@ const overrides = scrollOverrides(
   [
     {
       id: "iPhoneXR",
-      op: speedY(2)
+      op: speedY(2, data.iPhoneXRTop)
     }
   ],
-  [250, 400],
+  [250, 500],
   [
     {
       id: "iPhoneXR",
-      op: [modulate("scale", [1, 0.5])]
+      op: modulate("scale", [1, 0.5])
     }
   ]
+  // [450, 800],
+  // [
+  //   {
+  //     id: "iPhoneXR",
+  //     op: stickyY(data.iPhoneXRTop)
+  //   }
+  // ]
   // [300, 400],
   // [
   //   {
   //     id: "iPhoneXR",
   //     op: [
-  //       // modulate("rotationY", [50, 0]),
-  //       // modulate("rotationX", [10, 0]),
-  //       modulate("scale", [0.8, 0.5])
+  //       modulate("rotationY", [50, 0]),
+  //       modulate("rotationX", [10, 0])
+  //       // modulate("scale", [0.8, 0.5])
   //     ]
   //   }
   // ]
