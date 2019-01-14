@@ -31,10 +31,10 @@ const overrides = scrollOverrides(
   [
     {
       id: "iPhoneXR",
-      op: modulate("scale", [2, 1])
+      op: modulate("scale", [1.5, 1])
     }
   ],
-  [500, 1500],
+  [500, 1050],
   [
     {
       id: "iPhoneXR",
@@ -62,19 +62,19 @@ const overrides = scrollOverrides(
         });
       }
     }
-  ]
-  //   [300, 600],
-  //   [{ id: ["iPhoneXR", "phoneNameSize"], op: stickyY() }],
-  //   [300, 320],
-  //   [{ id: "feature1", op: modulate("opacity", [0, 1], data.feature1Opacity) }],
-  //   [320, 340],
-  //   [{ id: "feature2", op: modulate("opacity", [0, 1], data.feature2Opacity) }],
-  //   [340, 360],
-  //   [{ id: "feature3", op: modulate("opacity", [0, 1], data.feature3Opacity) }],
-  //   [360, 380],
-  //   [{ id: "feature4", op: modulate("opacity", [0, 1], data.feature4Opacity) }],
-  //   [380, 400],
-  //   [{ id: "feature5", op: modulate("opacity", [0, 1], data.feature5Opacity) }],
+  ],
+  [0, 3000],
+  [{ id: "featureContainer", op: modulate("top", [1230, 1230]) }],
+  [800, 850],
+  [{ id: "feature1", op: modulate("opacity", [0, 1]) }],
+  [850, 900],
+  [{ id: "feature2", op: modulate("opacity", [0, 1]) }],
+  [900, 950],
+  [{ id: "feature3", op: modulate("opacity", [0, 1]) }],
+  [950, 1000],
+  [{ id: "feature4", op: modulate("opacity", [0, 1]) }],
+  [1000, 1050],
+  [{ id: "feature5", op: modulate("opacity", [0, 1]) }]
   //   [410],
   //   [
   //     {
@@ -120,3 +120,12 @@ export const PhoneNameSize: Override = props => ({
   ...overrides.phoneNameSize(props),
   opacity: data.phoneNameSizeOpacity
 });
+
+export const FeatureContainer: Override = props =>
+  overrides.featureContainer(props);
+
+export const Feature1: Override = props => overrides.feature1(props);
+export const Feature2: Override = props => overrides.feature2(props);
+export const Feature3: Override = props => overrides.feature3(props);
+export const Feature4: Override = props => overrides.feature4(props);
+export const Feature5: Override = props => overrides.feature5(props);
