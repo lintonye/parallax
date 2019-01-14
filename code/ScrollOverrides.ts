@@ -44,6 +44,7 @@ const wrapFuncsWithRangeCheck = (overrides, inRange) => {
 const getOpType = op =>
   typeof op("dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
 
+const ONMOVE_CALLED_MAP = new Map();
 function processOneOperation(id: string, op, scrollRange, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
@@ -66,11 +67,33 @@ function processOneOperation(id: string, op, scrollRange, result) {
           let vy = 0;
           if (typeof lastY !== "undefined")
             vy = -(y - lastY) / (Date.now() - lastTimeStamp);
+          if (vy === 0) vy = 1; //TODO is this correct?
           lastTimeStamp = Date.now();
           lastY = y;
           inRange = isInRange(y, scrollRange);
           if (inRange) {
-            opOnMove && opOnMove({ ...scrollProps, vy });
+            const vyInMap = ONMOVE_CALLED_MAP.get(opOnMove);
+            const didntRunInThisDirection =
+              typeof vyInMap === "undefined" ||
+              Math.sign(vyInMap) !== Math.sign(vy);
+
+            // opType === "onMoveOnly" &&
+            //   console.log(
+            //     "vyInMap",
+            //     vyInMap,
+            //     "opOnMove",
+            //     opOnMove,
+            //     "didntRunInThisDirection",
+            //     didntRunInThisDirection
+            //   );
+
+            if (
+              opOnMove &&
+              (didntRunInThisDirection || opType === "scrollAndLayer")
+            ) {
+              opOnMove({ ...scrollProps, vy });
+              ONMOVE_CALLED_MAP.set(opOnMove, vy);
+            }
           }
         }
       },

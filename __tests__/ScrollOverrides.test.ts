@@ -25,7 +25,7 @@ test("should not call onMove when out of range", () => {
   overrides.scroll({}).onMove({ y: -21 });
 });
 
-test("should call onMove when in range", () => {
+test("should call onMove op when in range", () => {
   let opRan = false;
   const overrides = scrollOverrides(
     [0, 20],
@@ -40,6 +40,40 @@ test("should call onMove when in range", () => {
   );
   overrides.scroll({}).onMove({ y: -10 });
   expect(opRan).toBeTruthy();
+});
+
+test("should only call onMove op once when crossing range boundary", async () => {
+  let opRan = 0;
+  const overrides = scrollOverrides(
+    [0, 20],
+    [
+      {
+        id: "name",
+        op: itemId => () => {
+          opRan++;
+        }
+      }
+    ]
+  );
+  const { onMove } = overrides.scroll({});
+  const callOnMove = props =>
+    new Promise((resolve, reject) => {
+      setTimeout(() => resolve(), 50);
+    }).then(() => onMove(props));
+
+  let ys = [-10, -12, -14, -16, -18, -20, -22];
+  for (let y of ys) {
+    await callOnMove({ y });
+  }
+
+  expect(opRan).toBe(1);
+
+  ys = [-22, -20, -18, -16];
+  for (let y of ys) {
+    await callOnMove({ y });
+  }
+
+  expect(opRan).toBe(2);
 });
 
 test("should create multiple operations if multiple items as operations", () => {

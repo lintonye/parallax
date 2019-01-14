@@ -27,20 +27,21 @@ const overrides = scrollOverrides(
       op: speedY(2)
     }
   ],
-  [250, 500],
+  [300, 750],
   [
     {
       id: "iPhoneXR",
-      op: modulate("scale", [1, 0.5])
+      op: modulate("scale", [2, 1])
     }
   ],
-  [450, 800],
+  [500, 1500],
   [
     {
       id: "iPhoneXR",
       op: stickyY()
-    }
-  ]
+    },
+    { id: "phoneNameSize", op: stickyY(850) }
+  ],
   // [300, 400],
   // [
   //   {
@@ -52,14 +53,16 @@ const overrides = scrollOverrides(
   //     ]
   //   }
   // ]
-  //   [300],
-  //   [
-  //     {
-  //       op: ({ vy }) => {
-  //         animate(data.phoneNameSizeOpacity, vy < 0 ? 1 : 0);
-  //       }
-  //     }
-  //   ],
+  [750, 800],
+  [
+    {
+      op: itemId => ({ vy }) => {
+        animate.ease(data.phoneNameSizeOpacity, vy > 0 ? 1 : 0, {
+          duration: 0.2
+        });
+      }
+    }
+  ]
   //   [300, 600],
   //   [{ id: ["iPhoneXR", "phoneNameSize"], op: stickyY() }],
   //   [300, 320],
@@ -109,7 +112,11 @@ const overrides = scrollOverrides(
 export const Scroll: Override = props => overrides.scroll(props);
 export const Blocker: Override = props => overrides.blocker(props);
 export const IPhoneXR: Override = props => ({
-  ...overrides.iPhoneXR(props),
-  perspective: 1000
+  ...overrides.iPhoneXR(props)
+  // perspective: 1000
   // rotationX: 10 // TODO why is this needed?
+});
+export const PhoneNameSize: Override = props => ({
+  ...overrides.phoneNameSize(props),
+  opacity: data.phoneNameSizeOpacity
 });
