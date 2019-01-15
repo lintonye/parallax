@@ -119,6 +119,35 @@ test.skip("should not call onTap when out of range", () => {
   //TODO
 });
 
+test("should throw error when parameter number is 0 or odd", () => {
+  expect(() => scrollOverrides()).toThrow();
+  expect(() => scrollOverrides([0, 20])).toThrow();
+});
+
+test("should throw error when parameter number is not a range", () => {
+  expect(() =>
+    scrollOverrides([0], [{ id: "1", op: modulate("opacity", 0, 1) }])
+  ).toThrow(/Parameter \[0\] is not a range.*/);
+});
+
+test("should throw error when range[0] > range[1]", () => {
+  expect(() =>
+    scrollOverrides([20, 10], [{ id: "1", op: modulate("opacity", 0, 1) }])
+  ).toThrow(/Parameter \[20,10\] is not a range.*/);
+});
+
+test("should throw error when 2nd parameter is not an array", () => {
+  expect(() => scrollOverrides([0, 20], { id: 1 })).toThrow(
+    /Parameter {"id":1} is not a non-empty array.*/
+  );
+});
+
+test("should throw error when 2nd parameter does not include an operation", () => {
+  expect(() => scrollOverrides([0, 20], [{ id: "name" }])).toThrow(
+    /No valid op found.*/
+  );
+});
+
 // $$$scroll: {
 //   onMove({y}) {
 //     ...

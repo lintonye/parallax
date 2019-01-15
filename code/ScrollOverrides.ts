@@ -1,7 +1,79 @@
 import { Data, animate, Animatable, transform } from "framer";
 
+type ScrollOverrides = {
+  scroll: (props: object) => { onMove };
+  [key: string]: (props: object) => { [key: string]: any };
+};
+
+type Override = { [key: string]: any };
+
+type Range = [number, number];
+
+type Operation = {
+  id: string | [string];
+  op: Override | [Override] | (() => any);
+};
+
+const isArray = a => a instanceof Array;
+
 function validateSOParams(params) {
-  //TODO
+  const throwError = e => {
+    throw `${e}
+
+      Usage examples:
+
+        const overrides = scrollOverrides(
+          [0, 20],
+          [
+            { id: 'title', op: modulate('opacity', [0, 1]) }
+          ]
+        );
+
+        const overrides = scrollOverrides(
+          [0, 20],
+          [
+            { id: 'title', op: stickyY() }
+          ],
+          [20, 40],
+          [
+            { id: 'name', op: stickyY() },
+            { id: 'contact', op: modulate('opacity', [0, 1]) }
+          ]
+        );
+
+        const overrides = scrollOverrides(
+          [0, 20],
+          [
+            { id: ['title', 'name'], op: stickyY() }
+          ],
+          [20, 40],
+          [
+            { id: 'contact', op: [ stickyY(), modulate('opacity', [0, 1]) ] }
+          ],
+        );
+  `;
+  };
+  if (params.length === 0 || params.length % 2 !== 0) {
+    throwError(`The number of parameters must be even and greater than 0.`);
+  }
+  for (let i = 0; i < params.length; i += 2) {
+    const range = params[i];
+    if (!isFinite(range[0]) || !isFinite(range[1]) || range[0] > range[1]) {
+      throwError(`Parameter ${JSON.stringify(range)} is not a range.`);
+    }
+    const operations = params[i + 1];
+    if (!isArray(operations) || operations.length <= 0) {
+      throwError(
+        `Parameter ${JSON.stringify(operations)} is not a non-empty array.`
+      );
+    }
+    for (let j = 0; j < operations.length; j++) {
+      const { id, op } = operations[j];
+      if (typeof op !== "function" && !isArray(op)) {
+        throwError(`No valid op found in ${JSON.stringify(operations[j])}`);
+      }
+    }
+  }
 }
 
 function toNegativeRange(positiveRange) {
@@ -9,7 +81,7 @@ function toNegativeRange(positiveRange) {
   return positiveRange.map(n => -n);
 }
 
-function isInRange(v: number, range: [number, number]) {
+function isInRange(v: number, range: Range) {
   const min = Math.min(range[0], range[1]);
   const max = Math.max(range[0], range[1]);
   return min <= v && v <= max;
@@ -45,7 +117,7 @@ const getOpType = op =>
   typeof op("dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
 
 const ONMOVE_CALLED_MAP = new Map();
-function processOneOperation(id: string, op, scrollRange, result) {
+function processOneOperation(id: string, op, scrollRange: Range, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
   const opType = getOpType(op);
@@ -117,22 +189,9 @@ function processOneOperation(id: string, op, scrollRange, result) {
   }
 }
 
-interface ScrollOverrides {
-  scroll: (props: object) => { onMove };
-  [key: string]: (props: object) => { [key: string]: any };
-}
-
-type Override = { [key: string]: any };
-
-interface Operation {
-  id: string | [string];
-  op: Override | [Override] | (() => any);
-}
-
 export function scrollOverrides(...params): ScrollOverrides {
   validateSOParams(params);
   const result = { scroll: undefined };
-  const isArray = a => a instanceof Array;
   for (let i = 0; i < params.length; i += 2) {
     const scrollRange = toNegativeRange(params[i]);
     const operations: [Operation] = params[i + 1];
@@ -239,28 +298,28 @@ export const stickyY = (defaultTop?, dataValue?) => itemId => {
   };
 };
 
-export function stickyScrollY(...stickyTopRanges) {
-  const data = Data({ top: Animatable(0) });
-  let initialTop = 0;
-  const scrollOverrides = props => ({
-    onMove({ y }) {
-      const inRange = ([min, max], v) => min <= v && v <= max;
-      stickyTopRanges.forEach(range => {
-        if (inRange(range, Math.abs(y))) {
-          data.top.set(-y);
-        }
-      });
-    }
-  });
-  const layerOverrides = ({ top }) => {
-    data.top.set(top);
-    initialTop = top;
-    return {
-      top: data.top
-    };
-  };
-  return [scrollOverrides, layerOverrides];
-}
+// export function stickyScrollY(...stickyTopRanges) {
+//   const data = Data({ top: Animatable(0) });
+//   let initialTop = 0;
+//   const scrollOverrides = props => ({
+//     onMove({ y }) {
+//       const inRange = ([min, max], v) => min <= v && v <= max;
+//       stickyTopRanges.forEach(range => {
+//         if (inRange(range, Math.abs(y))) {
+//           data.top.set(-y);
+//         }
+//       });
+//     }
+//   });
+//   const layerOverrides = ({ top }) => {
+//     data.top.set(top);
+//     initialTop = top;
+//     return {
+//       top: data.top
+//     };
+//   };
+//   return [scrollOverrides, layerOverrides];
+// }
 
 export function scrollAwayHeader_old() {
   const data = Data({ headerTop: Animatable(0) });
