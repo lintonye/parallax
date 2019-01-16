@@ -1,6 +1,6 @@
 import * as React from "react";
 import { PropertyControls, ControlType, Frame, Animatable } from "framer";
-import EmptyConnector from "./EmptyConnector";
+import { EmptyConnector } from "./EmptyConnector";
 import { RegisterContext } from "./RegisterContext";
 
 interface Props {
@@ -103,7 +103,7 @@ export class ParallaxFrame extends React.Component {
       return (
         <EmptyConnector
           title="Parallax Layer"
-          description="Connect to a frame and adjust the &quot;speed&quot; prop in the properties panel"
+          description='Connect to a frame and adjust the "speed" prop in the properties panel'
         />
       );
     } else {

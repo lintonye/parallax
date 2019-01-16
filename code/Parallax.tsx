@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Scroll, ControlType, Animatable, animate } from "framer";
-import EmptyConnector from "./EmptyConnector";
+import { EmptyConnector } from "./EmptyConnector";
 import { RegisterContext } from "./RegisterContext";
 import * as math from "mathjs";
 export * from "./ScrollOverrides";
