@@ -271,7 +271,9 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
   };
 };
 
+// TODO perhaps should just call speedY(-1)?
 export const stickyY = (defaultTop?, dataValue?) => itemId => {
+  // return speedY(-1, dataValue)(itemId);
   let justCreated = false;
   let dtop = dataValue;
   if (typeof dataValue === "undefined") {
@@ -321,55 +323,9 @@ export const stickyY = (defaultTop?, dataValue?) => itemId => {
 //   return [scrollOverrides, layerOverrides];
 // }
 
-export function scrollAwayHeader_old() {
-  const data = Data({ headerTop: Animatable(0) });
-
-  let isAnimating = false;
-
-  async function setHeaderTop(top) {
-    if (!isAnimating) {
-      isAnimating = true;
-      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
-      isAnimating = false;
-    }
-  }
-
-  let headerHeight = 0;
-
-  const scrollOverrides = props => {
-    let lastY, vy, lastTimestamp;
-    //TODO this is a bad way to determine the scroll height
-    const scrollMax =
-      props.children[0].props.children[0].props.height - props.height;
-    return {
-      onMove({ y }) {
-        if (typeof lastY !== "undefined") {
-          vy = (y - lastY) / (Date.now() - lastTimestamp);
-        }
-        lastY = y;
-        lastTimestamp = Date.now();
-        // console.log("vy", vy, "scrollMax", scrollMax);
-
-        if (vy > 0 && y > -scrollMax) {
-          setHeaderTop(0);
-        } else if (vy < 0 && y <= -headerHeight) {
-          setHeaderTop(-headerHeight);
-        }
-      }
-    };
-  };
-
-  const layerOverrides = props => {
-    headerHeight = props.height;
-    return {
-      top: data.headerTop
-    };
-  };
-  return [scrollOverrides, layerOverrides];
-}
-
-// export function scrollAwayHeader(headerHeight, scrollMax) {
+// export function scrollAwayHeader_old() {
 //   const data = Data({ headerTop: Animatable(0) });
+
 //   let isAnimating = false;
 
 //   async function setHeaderTop(top) {
@@ -380,22 +336,71 @@ export function scrollAwayHeader_old() {
 //     }
 //   }
 
-//   const overrides = scrollOverrides(
-//     [headerHeight, scrollMax],
-//     [
-//       {
-//         op: ({ vy, y }) => {
-//           if (vy > 0 && y > -scrollMax) {
-//             setHeaderTop(0);
-//           } else if (vy < 0 && y <= -headerHeight) {
-//             setHeaderTop(-headerHeight);
-//           }
+//   let headerHeight = 0;
+
+//   const scrollOverrides = props => {
+//     let lastY, vy, lastTimestamp;
+//     //TODO this is a bad way to determine the scroll height
+//     const scrollMax =
+//       props.children[0].props.children[0].props.height - props.height;
+//     return {
+//       onMove({ y }) {
+//         if (typeof lastY !== "undefined") {
+//           vy = (y - lastY) / (Date.now() - lastTimestamp);
+//         }
+//         lastY = y;
+//         lastTimestamp = Date.now();
+//         // console.log("vy", vy, "scrollMax", scrollMax);
+
+//         if (vy > 0 && y > -scrollMax) {
+//           setHeaderTop(0);
+//         } else if (vy < 0 && y <= -headerHeight) {
+//           setHeaderTop(-headerHeight);
 //         }
 //       }
-//     ]
-//   );
-//   return [overrides.scroll, overrides.header];
+//     };
+//   };
+
+//   const layerOverrides = props => {
+//     headerHeight = props.height;
+//     return {
+//       top: data.headerTop
+//     };
+//   };
+//   return [scrollOverrides, layerOverrides];
 // }
+
+export function scrollAwayHeader(headerHeight: number, scrollMax: number) {
+  const data = Data({ headerTop: Animatable(0) });
+  let isAnimating = false;
+
+  async function setHeaderTop(top) {
+    if (!isAnimating) {
+      isAnimating = true;
+      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
+      isAnimating = false;
+    }
+  }
+
+  const overrides = scrollOverrides(
+    [headerHeight, scrollMax],
+    [
+      {
+        op: itemId => ({ vy, y }) => {
+          if (vy < 0 && y > -scrollMax) {
+            setHeaderTop(0);
+          } else if (vy > 0 && y <= -headerHeight) {
+            setHeaderTop(-headerHeight);
+          }
+        }
+      }
+    ]
+  );
+  const headerOverride = props => {
+    return { top: data.headerTop };
+  };
+  return [overrides.scroll, headerOverride];
+}
 
 export function mergeOverrides(...overrides) {
   return overrides.reduce((merged, o) => {
