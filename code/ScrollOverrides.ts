@@ -101,23 +101,23 @@ function getDataFromStore(itemId: string, propName: string, defaultValue?) {
 }
 
 const getOpType = op =>
-  typeof op("dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
+  typeof op("$$$dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
 
 const ONMOVE_CALLED_MAP = new Map();
 function processOneOperation(id: string, op, scrollRange: Range, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
   const wrapFuncsWithRangeCheck = overrides => {
-    const result = {};
+    const os = {};
     for (let key in overrides) {
       const value = overrides[key];
       let newValue = value;
       if (typeof value === "function") {
         newValue = args => (inRange ? value(args) : undefined);
       }
-      result[key] = newValue;
+      os[key] = newValue;
     }
-    return result;
+    return os;
   };
 
   const opType = getOpType(op);
@@ -172,8 +172,10 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
       oldScroll && oldScroll(props)
     );
   };
-  if (opType === "scrollAndLayer" && op(id).$$$layer) {
-    const layerOp = op(id).$$$layer(scrollRange);
+
+  const opWithId = op(id); // THIS IS A MUST!
+  if (opType === "scrollAndLayer" && typeof opWithId.$$$layer === "function") {
+    const layerOp = opWithId.$$$layer(scrollRange);
     if (typeof layerOp === "function") {
       const oldIdValue = result[id];
       result[id] = props => {
