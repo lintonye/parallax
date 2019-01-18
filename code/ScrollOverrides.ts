@@ -100,19 +100,6 @@ function getDataFromStore(itemId: string, propName: string, defaultValue?) {
   return [justCreated, d];
 }
 
-const wrapFuncsWithRangeCheck = (overrides, inRange) => {
-  const result = {};
-  for (let key in overrides) {
-    const value = overrides[key];
-    let newValue = value;
-    if (typeof value === "function") {
-      newValue = args => (inRange ? value(args) : undefined);
-    }
-    result[key] = newValue;
-  }
-  return result;
-};
-
 const getOpType = op =>
   typeof op("dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
 
@@ -120,6 +107,19 @@ const ONMOVE_CALLED_MAP = new Map();
 function processOneOperation(id: string, op, scrollRange: Range, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
+  const wrapFuncsWithRangeCheck = overrides => {
+    const result = {};
+    for (let key in overrides) {
+      const value = overrides[key];
+      let newValue = value;
+      if (typeof value === "function") {
+        newValue = args => (inRange ? value(args) : undefined);
+      }
+      result[key] = newValue;
+    }
+    return result;
+  };
+
   const opType = getOpType(op);
   result.scroll = props => {
     let opOnMove,
@@ -133,7 +133,7 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
     let lastY, lastTimeStamp;
     return mergeOverrides(
       {
-        ...wrapFuncsWithRangeCheck(restOverrides, inRange),
+        ...wrapFuncsWithRangeCheck(restOverrides),
         onMove(scrollProps) {
           const { y } = scrollProps;
           let vy = 0;
@@ -172,14 +172,13 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
       oldScroll && oldScroll(props)
     );
   };
-  if (opType === "scrollAndLayer") {
+  if (opType === "scrollAndLayer" && op(id).$$$layer) {
     const layerOp = op(id).$$$layer(scrollRange);
     if (typeof layerOp === "function") {
       const oldIdValue = result[id];
       result[id] = props => {
         return mergeOverrides(
-          // TODO should we wrap this with RangeCheck?
-          wrapFuncsWithRangeCheck(layerOp(props), inRange),
+          wrapFuncsWithRangeCheck(layerOp(props)),
           oldIdValue && oldIdValue(props)
         );
       };
@@ -297,6 +296,39 @@ export const stickyY = (defaultTop?, dataValue?) => itemId => {
         top: dtop
       };
     }
+  };
+};
+
+export const snapY = () => itemId => {
+  const [_, contentOffsetY] = getDataFromStore(
+    "$$$scroll",
+    "contentOffsetY",
+    0
+  );
+  let currentY = 0;
+  const snapIt = range => {
+    const mid = Math.abs((range[1] - range[0]) / 2);
+    // console.log("currentY", currentY, "mid", mid, "range", range);
+
+    if (Math.abs(currentY - range[0]) < mid) {
+      animate.ease(contentOffsetY, range[0], { duration: 0.2 });
+    } else {
+      animate.ease(contentOffsetY, range[1], { duration: 0.2 });
+    }
+  };
+  return {
+    $$$scroll: range => props => ({
+      onMove({ y }) {
+        currentY = y;
+      },
+      onMouseWheelEnd() {
+        snapIt(range);
+      },
+      onMouseUp() {
+        snapIt(range);
+      },
+      contentOffsetY
+    })
   };
 };
 

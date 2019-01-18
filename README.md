@@ -135,6 +135,8 @@ const overrides = scrollOverrides(
 
 
 # Change Log
+- 01/17/2019
+  - Add `snapY` function
 - 01/16/2019
   - Add support for advanced scroll interactions
 - 01/10/2019

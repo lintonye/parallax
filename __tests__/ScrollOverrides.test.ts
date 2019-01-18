@@ -1,4 +1,4 @@
-import { scrollOverrides, modulate } from "../code/ScrollOverrides";
+import { scrollOverrides, modulate, snapY } from "../code/ScrollOverrides";
 
 test("Single range, single operation", () => {
   const overrides = scrollOverrides(
@@ -146,6 +146,59 @@ test("should throw error when 2nd parameter does not include an operation", () =
   expect(() => scrollOverrides([0, 20], [{ id: "name" }])).toThrow(
     /No valid op found.*/
   );
+});
+
+test("snap should not produce error", () => {
+  const overrides = scrollOverrides(
+    [0, 439],
+    [{ op: snapY() }],
+    [440, 439 + 440],
+    [{ op: snapY() }]
+  );
+});
+
+test("should call other scroll override methods if in range", () => {
+  let called = false;
+  const overrides = scrollOverrides(
+    [0, 100],
+    [
+      {
+        op: itemId => ({
+          $$$scroll: range => props => ({
+            onMouseUp() {
+              called = true;
+            }
+          })
+        })
+      }
+    ]
+  );
+  const { onMove, onMouseUp }: { [key: string]: any } = overrides.scroll({});
+  onMove({ y: -10 });
+  onMouseUp();
+  expect(called).toBeTruthy();
+});
+
+test("should NOT call other scroll override methods if out of range", () => {
+  let called = false;
+  const overrides = scrollOverrides(
+    [0, 100],
+    [
+      {
+        op: itemId => ({
+          $$$scroll: range => props => ({
+            onMouseUp() {
+              called = true;
+            }
+          })
+        })
+      }
+    ]
+  );
+  const { onMove, onMouseUp }: { [key: string]: any } = overrides.scroll({});
+  onMove({ y: -200 });
+  onMouseUp();
+  expect(called).toBeFalsy();
 });
 
 // $$$scroll: {
