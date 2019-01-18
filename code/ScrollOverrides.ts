@@ -1,7 +1,9 @@
 import { Data, animate, Animatable, transform } from "framer";
 
+type OnMove = (params: { y: number; vy: number }) => any;
+
 type ScrollOverrides = {
-  scroll: (props: object) => { onMove };
+  scroll: (props: object) => { onMove: OnMove; [key: string]: any };
   [key: string]: (props: object) => { [key: string]: any };
 };
 

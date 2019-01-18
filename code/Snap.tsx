@@ -13,4 +13,17 @@ const overrides = scrollOverrides(
   [{ op: snapY() }]
 );
 
-export const Scroll: Override = props => overrides.scroll(props);
+// export const Scroll: Override = props => overrides.scroll(props);
+let scrollContentOffsetY;
+
+export const ScrollToLayer1: Override = () => ({
+  onTap() {
+    animate(scrollContentOffsetY, 800);
+  }
+});
+
+export const Scroll: Override = props => {
+  const os = overrides.scroll(props);
+  scrollContentOffsetY = os.contentOffsetY;
+  return os;
+};
