@@ -15,7 +15,8 @@ const overrides = scrollOverrides(
     { id: "speedminus1", op: speedY(-1) },
     { id: "speedminus2", op: speedY(-2) },
     { id: "speed1", op: speedY(1) },
-    { id: "opacity", op: modulate("opacity", [1, 0]) }
+    { id: "opacity", op: modulate("opacity", [1, 0]) },
+    { id: "bg", op: modulate("background", ["red", "black"]) }
   ],
   [600, 650],
   [
@@ -45,6 +46,7 @@ export const Speedminus1: Override = props => overrides.speedminus1(props);
 export const Speedminus2: Override = props => overrides.speedminus2(props);
 export const Speed1: Override = props => overrides.speed1(props);
 export const Opacity: Override = props => overrides.opacity(props);
+export const Bg: Override = props => overrides.bg(props);
 export const TriggerAnimation: Override = props => ({
   rotation: data.rotation
 });
