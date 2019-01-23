@@ -339,7 +339,7 @@ exports.__framer__ = package
 /*! exports provided: main, license, devDependencies, peerDependencies, framer, author, dependencies, name, version, scripts, default */
 /***/ (function(module) {
 
-module.exports = {"main":"dist/index.js","license":"MIT","devDependencies":{"@types/jest":"^23.3.12","@types/react":"^16.0.31","ReactDOM":"./ReactDOM","framer":"^0.10.2","jest":"^23.6.0","react":"^16.3.0","react-dom":"^16.3.0","ts-jest":"^23.10.5","typescript":"^3.2.2"},"peerDependencies":{"framer":"^0.10.2","react":"^16.3.0","react-dom":"^16.3.0"},"framer":{"id":"a34493cf-104a-47b0-8e80-586424e0929e","displayName":"Parallax"},"author":"Linton Ye","dependencies":{"mathjs":"^5.2.0"},"name":"@framer/lintonye.parallax","version":"1.29.0","scripts":{"test":"jest"}};
+module.exports = {"main":"dist/index.js","license":"MIT","devDependencies":{"@types/jest":"^23.3.12","@types/react":"^16.0.31","ReactDOM":"./ReactDOM","framer":"^0.10.2","jest":"^23.6.0","react":"^16.3.0","react-dom":"^16.3.0","ts-jest":"^23.10.5","typescript":"^3.2.2"},"peerDependencies":{"framer":"^0.10.2","react":"^16.3.0","react-dom":"^16.3.0"},"framer":{"id":"a34493cf-104a-47b0-8e80-586424e0929e","displayName":"Parallax"},"author":"Linton Ye","dependencies":{"mathjs":"^5.2.0"},"name":"@framer/lintonye.parallax","version":"1.30.0","scripts":{"test":"jest"}};
 
 /***/ }),
 

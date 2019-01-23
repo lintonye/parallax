@@ -1,5 +1,11 @@
 # Overview
 
+![sticky-headers](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsticky-scroll.gif?1548273386530)
+
+![iphoneXR](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2FiPhoneXR.gif?1548081080925)
+
+![svgtracing](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsvg-tracing.gif?1548081080531)
+
 This module makes it easy to create advanced scroll interactions. There are two ways of using the module:
 
 - Non-coding: just drag and drop components, you'll be able to move layers at different speed when scrolling.
