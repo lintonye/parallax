@@ -18,7 +18,7 @@ let scrollContentOffsetY;
 
 export const ScrollToLayer1: Override = () => ({
   onTap() {
-    animate(scrollContentOffsetY, 800);
+    animate(scrollContentOffsetY, -800);
   }
 });
 

@@ -258,8 +258,11 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
   return {
     $$$scroll: range => props => ({
       onMove({ y }) {
-        if (!justCreated && typeof initialTop === "undefined")
+        if (!justCreated && typeof initialTop === "undefined") {
           initialTop = dtop.get();
+          console.log("initalTop", initialTop);
+        }
+
         dtop.set(y * ratio + initialTop);
       }
     }),
