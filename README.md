@@ -13,7 +13,7 @@ Check out some quick demos:
 
 Demo file:
 
-- https://www.dropbox.com/s/3ghxji5xdwk4nm0/parallax-demos.framerx?dl=0
+- https://www.dropbox.com/s/6tpjipqxyftbz1v/parallax-webinar.framerx?dl=0
 
 # Getting started
 
@@ -133,6 +133,8 @@ const overrides = scrollOverrides(
 )
 ```
 
+# Contact
+Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
 - 01/17/2019
