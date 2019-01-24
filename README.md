@@ -143,6 +143,8 @@ const overrides = scrollOverrides(
 Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 01/23/2019
+  - Fix issue in `speedY` and `stickyY` that causes layer to jump locations when crossing ranges
 - 01/17/2019
   - Add `snapY` function
 - 01/16/2019
