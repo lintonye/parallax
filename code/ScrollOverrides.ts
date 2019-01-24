@@ -258,10 +258,9 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
   return {
     $$$scroll: range => props => ({
       onMove({ y }) {
-        if (!justCreated && typeof initialTop === "undefined")
+        if (!justCreated && typeof initialTop === "undefined") {
           initialTop = dtop.get();
         }
-
         dtop.set((y - range[0]) * ratio + initialTop);
       }
     }),
@@ -276,33 +275,32 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
   };
 };
 
-// TODO perhaps should just call speedY(-1)?
-export const stickyY = (defaultTop?, dataValue?) => itemId => {
-  // return speedY(-1, dataValue)(itemId);
-  let justCreated = false;
-  let dtop = dataValue;
-  if (typeof dataValue === "undefined") {
-    const [created, dstore] = getDataFromStore(itemId, "top", 0);
-    justCreated = created;
-    dtop = dstore;
-  }
-  let initialTop = defaultTop;
-  return {
-    $$$scroll: range => props => ({
-      onMove({ y }) {
-        if (!justCreated && typeof initialTop === "undefined")
-          initialTop = dtop.get();
-        dtop.set(range[0] - y + initialTop);
-      }
-    }),
-    $$$layer: range => props => {
-      if (justCreated) initialTop = props.top;
-      dtop.set(initialTop);
-      return {
-        top: dtop
-      };
-    }
-  };
+export const stickyY = (dataValue?) => itemId => {
+  return speedY(-1, dataValue)(itemId);
+  // let justCreated = false;
+  // let dtop = dataValue;
+  // if (typeof dataValue === "undefined") {
+  //   const [created, dstore] = getDataFromStore(itemId, "top", 0);
+  //   justCreated = created;
+  //   dtop = dstore;
+  // }
+  // let initialTop = defaultTop;
+  // return {
+  //   $$$scroll: range => props => ({
+  //     onMove({ y }) {
+  //       if (!justCreated && typeof initialTop === "undefined")
+  //         initialTop = dtop.get();
+  //       dtop.set(range[0] - y + initialTop);
+  //     }
+  //   }),
+  //   $$$layer: range => props => {
+  //     if (justCreated) initialTop = props.top;
+  //     dtop.set(initialTop);
+  //     return {
+  //       top: dtop
+  //     };
+  //   }
+  // };
 };
 
 export const snapY = () => itemId => {
