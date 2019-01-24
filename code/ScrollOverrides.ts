@@ -263,7 +263,7 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
           console.log("initalTop", initialTop);
         }
 
-        dtop.set(y * ratio + initialTop);
+        dtop.set((y - range[0]) * ratio + initialTop);
       }
     }),
     $$$layer: range => props => {
