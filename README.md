@@ -1,5 +1,11 @@
 # Overview
 
+![sticky-headers](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsticky-scroll.gif?1548273386530)
+
+![iphoneXR](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2FiPhoneXR.gif?1548081080925)
+
+![svgtracing](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsvg-tracing.gif?1548081080531)
+
 This module makes it easy to create advanced scroll interactions. There are two ways of using the module:
 
 - Non-coding: just drag and drop components, you'll be able to move layers at different speed when scrolling.
@@ -13,7 +19,7 @@ Check out some quick demos:
 
 Demo file:
 
-- https://www.dropbox.com/s/3ghxji5xdwk4nm0/parallax-demos.framerx?dl=0
+- https://www.dropbox.com/s/6tpjipqxyftbz1v/parallax-webinar.framerx?dl=0
 
 # Getting started
 
@@ -133,8 +139,12 @@ const overrides = scrollOverrides(
 )
 ```
 
+# Contact
+Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 01/23/2019
+  - Fix issue in `speedY` and `stickyY` that causes layer to jump locations when crossing ranges
 - 01/17/2019
   - Add `snapY` function
 - 01/16/2019
