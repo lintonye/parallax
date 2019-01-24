@@ -275,33 +275,34 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
   };
 };
 
-export const stickyY = (dataValue?) => itemId => {
-  return speedY(-1, dataValue)(itemId);
-  // let justCreated = false;
-  // let dtop = dataValue;
-  // if (typeof dataValue === "undefined") {
-  //   const [created, dstore] = getDataFromStore(itemId, "top", 0);
-  //   justCreated = created;
-  //   dtop = dstore;
-  // }
-  // let initialTop = defaultTop;
-  // return {
-  //   $$$scroll: range => props => ({
-  //     onMove({ y }) {
-  //       if (!justCreated && typeof initialTop === "undefined")
-  //         initialTop = dtop.get();
-  //       dtop.set(range[0] - y + initialTop);
-  //     }
-  //   }),
-  //   $$$layer: range => props => {
-  //     if (justCreated) initialTop = props.top;
-  //     dtop.set(initialTop);
-  //     return {
-  //       top: dtop
-  //     };
-  //   }
-  // };
-};
+export const stickyY = (dataValue?) => speedY(-1, dataValue);
+
+// export const stickyY = (dataValue?) => itemId => {
+// let justCreated = false;
+// let dtop = dataValue;
+// if (typeof dataValue === "undefined") {
+//   const [created, dstore] = getDataFromStore(itemId, "top", 0);
+//   justCreated = created;
+//   dtop = dstore;
+// }
+// let initialTop = defaultTop;
+// return {
+//   $$$scroll: range => props => ({
+//     onMove({ y }) {
+//       if (!justCreated && typeof initialTop === "undefined")
+//         initialTop = dtop.get();
+//       dtop.set(range[0] - y + initialTop);
+//     }
+//   }),
+//   $$$layer: range => props => {
+//     if (justCreated) initialTop = props.top;
+//     dtop.set(initialTop);
+//     return {
+//       top: dtop
+//     };
+//   }
+// };
+// };
 
 export const snapY = () => itemId => {
   const [_, contentOffsetY] = getDataFromStore(
