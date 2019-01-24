@@ -260,7 +260,9 @@ export const speedY = (ratio: number, dataValue?) => itemId => {
       onMove({ y }) {
         if (!justCreated && typeof initialTop === "undefined")
           initialTop = dtop.get();
-        dtop.set(y * ratio + initialTop);
+        }
+
+        dtop.set((y - range[0]) * ratio + initialTop);
       }
     }),
     $$$layer: range => props => {
