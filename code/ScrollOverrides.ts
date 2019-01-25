@@ -125,27 +125,38 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
   const opType = getOpType(op);
   result.scroll = props => {
     let opOnMove,
+      opOnMoveOut,
       restOverrides = {};
     if (opType === "onMoveOnly") opOnMove = op(id);
     else {
-      const { onMove, ...rest } = op(id).$$$scroll(scrollRange)(props);
+      const { onMove, onMoveOut, ...rest } = op(id).$$$scroll(scrollRange)(
+        props
+      );
       opOnMove = onMove;
+      opOnMoveOut = onMoveOut;
       restOverrides = rest;
     }
-    let lastY, lastTimeStamp;
+    let lastY,
+      lastTimeStamp,
+      enterPosition = null,
+      onMoveOutCalled = false;
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
         onMove(scrollProps) {
-          const { y } = scrollProps;
+          const { x, y } = scrollProps;
           let vy = 0;
           if (typeof lastY !== "undefined")
             vy = -(y - lastY) / (Date.now() - lastTimeStamp);
           if (vy === 0) vy = 1; //TODO is this correct?
           lastTimeStamp = Date.now();
           lastY = y;
-          inRange = isInRange(y, scrollRange);
+          inRange = isInRange(y, scrollRange) || isInRange(x, scrollRange);
           if (inRange) {
+            onMoveOutCalled = false;
+            if (enterPosition === null) {
+              enterPosition = { x, y };
+            }
             const vyInMap = ONMOVE_CALLED_MAP.get(opOnMove);
             const didntRunInThisDirection =
               typeof vyInMap === "undefined" ||
@@ -165,9 +176,14 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
               opOnMove &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
             ) {
-              opOnMove({ ...scrollProps, vy });
+              opOnMove({ ...scrollProps, vy, enterPosition });
               ONMOVE_CALLED_MAP.set(opOnMove, vy);
             }
+          } else {
+            enterPosition = null;
+
+            !onMoveOutCalled && opOnMoveOut && opOnMoveOut({ x, y });
+            onMoveOutCalled = true;
           }
         }
       },
@@ -245,35 +261,69 @@ export const modulate = (propName, outputRange, dataValue?) => itemId => {
   };
 };
 
-export const speedY = (ratio: number, dataValue?) => itemId => {
-  let justCreated = false;
-  let dtop = dataValue;
-  if (typeof dataValue === "undefined") {
-    const [created, dstore] = getDataFromStore(itemId, "top", 0);
-    justCreated = created;
-    dtop = dstore;
+function getTopLeft(props) {
+  // TODO handle special cases according to the pins
+  const { left, top } = props;
+  return { left, top };
+}
+
+export const speed = (
+  ratio: number,
+  data = { left: null, top: null },
+  direction = "xy"
+) => itemId => {
+  const d = { ...data };
+  const justCreated = { left: null, top: null };
+  if (d.left === null) {
+    const [created, left] = getDataFromStore(itemId, "left", 0);
+    justCreated.left = created;
+    d.left = left;
+  }
+  if (d.top === null) {
+    const [created, top] = getDataFromStore(itemId, "top", 0);
+    justCreated.top = created;
+    d.top = top;
   }
 
-  let initialTop = undefined;
+  let initialPos = { left: null, top: null };
   return {
     $$$scroll: range => props => ({
-      onMove({ y }) {
-        if (!justCreated && typeof initialTop === "undefined") {
-          initialTop = dtop.get();
+      onMove({ x, y, enterPosition }) {
+        if (!justCreated.left && initialPos.left === null) {
+          initialPos.left = d.left.get();
         }
-        dtop.set((y - range[0]) * ratio + initialTop);
+        if (!justCreated.top && initialPos.top === null) {
+          initialPos.top = d.top.get();
+        }
+
+        direction.includes("x") &&
+          d.left.set((x - enterPosition.x) * ratio + initialPos.left);
+        direction.includes("y") &&
+          d.top.set((y - enterPosition.y) * ratio + initialPos.top);
+      },
+      onMoveOut({ x, y }) {
+        initialPos.left = d.left.get();
+        initialPos.top = d.top.get();
       }
     }),
     $$$layer: range => props => {
       // console.log("initialTop", initialTop);
-      if (justCreated) initialTop = props.top;
-      dtop.set(initialTop);
+      const pos = getTopLeft(props);
+      if (justCreated.left) initialPos.left = pos.left;
+      if (justCreated.top) initialPos.top = pos.top;
+      d.left.set(initialPos.left);
+      d.top.set(initialPos.top);
       return {
-        top: dtop
+        top: d.top,
+        bottom: null,
+        left: d.left,
+        right: null
       };
     }
   };
 };
+
+export const speedY = (ratio, dataValue?) => speed(ratio, dataValue, "y");
 
 export const stickyY = (dataValue?) => speedY(-1, dataValue);
 
