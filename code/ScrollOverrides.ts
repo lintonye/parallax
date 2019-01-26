@@ -176,7 +176,12 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
               opOnMove &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
             ) {
-              opOnMove({ ...scrollProps, vy, enterPosition });
+              opOnMove({
+                ...scrollProps,
+                vy,
+                enterX: enterPosition.x,
+                enterY: enterPosition.y
+              });
               ONMOVE_CALLED_MAP.set(opOnMove, vy);
             }
           } else {
@@ -288,7 +293,7 @@ export const speed = (
   let initialPos = { left: null, top: null };
   return {
     $$$scroll: range => props => ({
-      onMove({ x, y, enterPosition }) {
+      onMove({ x, y, enterX, enterY }) {
         if (!justCreated.left && initialPos.left === null) {
           initialPos.left = d.left.get();
         }
@@ -297,9 +302,9 @@ export const speed = (
         }
 
         direction.includes("x") &&
-          d.left.set((x - enterPosition.x) * ratio + initialPos.left);
+          d.left.set((x - enterX) * ratio + initialPos.left);
         direction.includes("y") &&
-          d.top.set((y - enterPosition.y) * ratio + initialPos.top);
+          d.top.set((y - enterY) * ratio + initialPos.top);
       },
       onMoveOut({ x, y }) {
         initialPos.left = d.left.get();
