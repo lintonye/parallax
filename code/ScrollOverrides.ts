@@ -321,6 +321,12 @@ export const speed = (
         if (!justCreated.top && initialPos.top === null) {
           initialPos.top = d.top.get();
         }
+        console.log(
+          `initialTop:${initialPos.top} oldTop:${d.top.get()} newTop:${(y -
+            enterY) *
+            ratio +
+            initialPos.top} y=${y} enterY=${enterY}`
+        );
 
         direction.includes("x") &&
           d.left.set((x - enterX) * ratio + initialPos.left);
@@ -330,6 +336,7 @@ export const speed = (
       onMoveOut({ x, y }) {
         initialPos.left = d.left.get();
         initialPos.top = d.top.get();
+        console.log("moveOut", initialPos);
       }
     }),
     $$$layer: range => props => {
