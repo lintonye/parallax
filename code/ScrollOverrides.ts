@@ -146,35 +146,35 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
       opOnMove = onMove;
       restOverrides = rest;
     }
-    let lastY,
+    let lastXorY,
       lastTimeStamp,
-      lastVy = -1;
+      lastVxOrY = -1;
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
         onMove(scrollProps) {
           const { x, y } = scrollProps;
-          let vy = 1;
-          if (typeof lastY !== "undefined")
-            vy = -(y - lastY) / (Date.now() - lastTimeStamp);
+          const xOrY = scrollDirection === "horizontal" ? x : y;
+          let v = 1;
+          if (typeof lastXorY !== "undefined")
+            v = -(xOrY - lastXorY) / (Date.now() - lastTimeStamp);
           lastTimeStamp = Date.now();
-          lastY = y;
-          inRange = isInRange(
-            scrollDirection === "horizontal" ? x : y,
-            scrollRange
-          );
+          lastXorY = xOrY;
+          inRange = isInRange(xOrY, scrollRange);
           if (inRange) {
-            const didntRunInThisDirection = Math.sign(lastVy) !== Math.sign(vy);
+            const didntRunInThisDirection =
+              Math.sign(lastVxOrY) !== Math.sign(v);
             if (
               opOnMove &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
             ) {
               opOnMove({
                 ...scrollProps,
-                vy,
+                vx: scrollDirection === "horizontal" ? v : 0,
+                vy: scrollDirection === "vertical" ? v : 0,
                 scrollDirection
               });
-              lastVy = vy;
+              lastVxOrY = v;
             }
           }
         }
