@@ -105,6 +105,17 @@ function getDataFromStore(itemId: string, propName: string, defaultValue?) {
 const getOpType = op =>
   typeof op("$$$dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
 
+function getScrollDirection(props) {
+  if (typeof props.children === "undefined") {
+    return "vertical"; //this is called from test code
+  }
+  const scrollElement = props.children[0];
+  const { direction } = scrollElement.props;
+  if (["vertical", "horizontal"].indexOf(direction) >= 0) return direction;
+  else
+    throw `Invalid direction ${direction}, only "horizontal" and "vertical" is supported!`;
+}
+
 function processOneOperation(id: string, op, scrollRange: Range, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
@@ -124,21 +135,19 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
   const opType = getOpType(op);
   result.scroll = props => {
     let opOnMove,
-      opOnMoveOut,
       restOverrides = {};
+    const scrollDirection = getScrollDirection(props);
     if (opType === "onMoveOnly") opOnMove = op(id);
     else {
-      const { onMove, onMoveOut, ...rest } = op(id).$$$scroll(scrollRange)(
-        props
-      );
+      const { onMove, onMoveOut, ...rest } = op(id).$$$scroll(
+        scrollRange,
+        scrollDirection
+      )(props);
       opOnMove = onMove;
-      opOnMoveOut = onMoveOut;
       restOverrides = rest;
     }
     let lastY,
       lastTimeStamp,
-      enterPosition = null,
-      onMoveOutCalled = false,
       lastVy = -1;
     return mergeOverrides(
       {
@@ -150,24 +159,12 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
             vy = -(y - lastY) / (Date.now() - lastTimeStamp);
           lastTimeStamp = Date.now();
           lastY = y;
-          inRange = isInRange(y, scrollRange) || isInRange(x, scrollRange);
+          inRange = isInRange(
+            scrollDirection === "horizontal" ? x : y,
+            scrollRange
+          );
           if (inRange) {
-            onMoveOutCalled = false;
-            if (enterPosition === null) {
-              enterPosition = { x, y };
-            }
             const didntRunInThisDirection = Math.sign(lastVy) !== Math.sign(vy);
-
-            // opType === "onMoveOnly" &&
-            //   console.log(
-            //     "vyInMap",
-            //     vyInMap,
-            //     "opOnMove",
-            //     opOnMove,
-            //     "didntRunInThisDirection",
-            //     didntRunInThisDirection
-            //   );
-
             if (
               opOnMove &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
@@ -175,16 +172,10 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
               opOnMove({
                 ...scrollProps,
                 vy,
-                enterX: enterPosition.x,
-                enterY: enterPosition.y
+                scrollDirection
               });
               lastVy = vy;
             }
-          } else {
-            enterPosition = null;
-
-            !onMoveOutCalled && opOnMoveOut && opOnMoveOut({ x, y });
-            onMoveOutCalled = true;
           }
         }
       },
@@ -296,7 +287,7 @@ function getTopLeft(props) {
 export const speed = (
   ratio: number,
   data = { left: null, top: null },
-  direction = "xy"
+  direction = "auto"
 ) => itemId => {
   const d = { ...data };
   const justCreated = { left: null, top: null };
@@ -314,29 +305,18 @@ export const speed = (
   let initialPos = { left: null, top: null };
   return {
     $$$scroll: range => props => ({
-      onMove({ x, y, enterX, enterY }) {
+      onMove({ x, y, scrollDirection }) {
         if (!justCreated.left && initialPos.left === null) {
           initialPos.left = d.left.get();
         }
         if (!justCreated.top && initialPos.top === null) {
           initialPos.top = d.top.get();
         }
-        console.log(
-          `initialTop:${initialPos.top} oldTop:${d.top.get()} newTop:${(y -
-            enterY) *
-            ratio +
-            initialPos.top} y=${y} enterY=${enterY}`
-        );
 
-        direction.includes("x") &&
-          d.left.set((x - enterX) * ratio + initialPos.left);
-        direction.includes("y") &&
-          d.top.set((y - enterY) * ratio + initialPos.top);
-      },
-      onMoveOut({ x, y }) {
-        initialPos.left = d.left.get();
-        initialPos.top = d.top.get();
-        console.log("moveOut", initialPos);
+        scrollDirection === "horizontal" &&
+          d.left.set((x - range[0]) * ratio + initialPos.left);
+        scrollDirection === "vertical" &&
+          d.top.set((y - range[0]) * ratio + initialPos.top);
       }
     }),
     $$$layer: range => props => {
@@ -356,9 +336,9 @@ export const speed = (
   };
 };
 
-export const speedY = (ratio, dataValue?) => speed(ratio, dataValue, "y");
+export const speedY = (ratio, data?) => speed(ratio, data, "y");
 
-export const stickyY = (dataValue?) => speedY(-1, dataValue);
+export const stickyY = (data?) => speedY(-1, data);
 
 // export const stickyY = (dataValue?) => itemId => {
 // let justCreated = false;
