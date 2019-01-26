@@ -113,7 +113,7 @@ function getScrollDirection(props) {
   const { direction } = scrollElement.props;
   if (["vertical", "horizontal"].indexOf(direction) >= 0) return direction;
   else
-    throw `Invalid direction ${direction}, only "horizontal" and "vertical" is supported!`;
+    throw `Invalid direction "${direction}", only "horizontal" and "vertical" is supported!`;
 }
 
 function processOneOperation(id: string, op, scrollRange: Range, result) {
