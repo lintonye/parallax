@@ -263,9 +263,34 @@ export const modulate = (propName, outputRange, dataValue?) => itemId => {
 };
 
 function getTopLeft(props) {
-  // TODO handle special cases according to the pins
-  const { left, top } = props;
-  return { left, top };
+  const {
+    left,
+    right,
+    top,
+    bottom,
+    width,
+    height,
+    parentSize,
+    centerX,
+    centerY
+  } = props;
+  const getValue = (v: number | Animatable<number>) =>
+    typeof v === "number" ? v : v.get();
+  const percentToNumber = (percent: string) =>
+    Number.parseFloat(percent.slice(0, percent.length - 1)) / 100;
+  const actualLeft =
+    left !== null
+      ? left
+      : right !== null
+      ? getValue(parentSize.width) - width - right
+      : getValue(parentSize.width) * percentToNumber(centerX) - width / 2;
+  const actualTop =
+    top !== null
+      ? top
+      : bottom !== null
+      ? getValue(parentSize.height) - height - bottom
+      : getValue(parentSize.height) * percentToNumber(centerY) - height / 2;
+  return { left: actualLeft, top: actualTop };
 }
 
 export const speed = (
