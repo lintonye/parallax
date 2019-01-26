@@ -1,6 +1,6 @@
 import { Data, animate, Animatable, transform } from "framer";
 
-type OnMove = (params: { y: number; vy: number }) => any;
+type OnMove = (params: { y: number; vy?: number }) => any;
 
 type ScrollOverrides = {
   scroll: (props: object) => { onMove: OnMove; [key: string]: any };
@@ -105,7 +105,6 @@ function getDataFromStore(itemId: string, propName: string, defaultValue?) {
 const getOpType = op =>
   typeof op("$$$dummyId") === "function" ? "onMoveOnly" : "scrollAndLayer";
 
-const ONMOVE_CALLED_MAP = new Map();
 function processOneOperation(id: string, op, scrollRange: Range, result) {
   const { scroll: oldScroll } = result;
   let inRange = false;
@@ -139,16 +138,16 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
     let lastY,
       lastTimeStamp,
       enterPosition = null,
-      onMoveOutCalled = false;
+      onMoveOutCalled = false,
+      lastVy = -1;
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
         onMove(scrollProps) {
           const { x, y } = scrollProps;
-          let vy = 0;
+          let vy = 1;
           if (typeof lastY !== "undefined")
             vy = -(y - lastY) / (Date.now() - lastTimeStamp);
-          if (vy === 0) vy = 1; //TODO is this correct?
           lastTimeStamp = Date.now();
           lastY = y;
           inRange = isInRange(y, scrollRange) || isInRange(x, scrollRange);
@@ -157,10 +156,7 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
             if (enterPosition === null) {
               enterPosition = { x, y };
             }
-            const vyInMap = ONMOVE_CALLED_MAP.get(opOnMove);
-            const didntRunInThisDirection =
-              typeof vyInMap === "undefined" ||
-              Math.sign(vyInMap) !== Math.sign(vy);
+            const didntRunInThisDirection = Math.sign(lastVy) !== Math.sign(vy);
 
             // opType === "onMoveOnly" &&
             //   console.log(
@@ -182,7 +178,7 @@ function processOneOperation(id: string, op, scrollRange: Range, result) {
                 enterX: enterPosition.x,
                 enterY: enterPosition.y
               });
-              ONMOVE_CALLED_MAP.set(opOnMove, vy);
+              lastVy = vy;
             }
           } else {
             enterPosition = null;
