@@ -145,7 +145,7 @@ Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 # Change Log
 - 01/26/2019
   - Add support for horizontal scroll. Note: you'll get an error when the scroll direction is "both".
-  - `speed`, `sticky` and `snap` functions can be used, which work on both horizontal and vertical directions.
+  - Add `speed`, `sticky` and `snap` functions, which work on both horizontal and vertical directions.
 - 01/23/2019
   - Fix issue in `speed` and `sticky` that causes layer to jump locations when crossing ranges
 - 01/17/2019
