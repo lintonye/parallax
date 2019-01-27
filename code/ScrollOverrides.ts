@@ -370,38 +370,51 @@ export const sticky = (data?) => speed(-1, data);
 // };
 // };
 
-export const snapY = () => itemId => {
+export const snap = () => itemId => {
   const [_, contentOffsetY] = getDataFromStore(
     "$$$scroll",
     "contentOffsetY",
     0
   );
-  let currentY = 0;
-  const snapIt = range => {
+  const [__, contentOffsetX] = getDataFromStore(
+    "$$$scroll",
+    "contentOffsetX",
+    0
+  );
+  let currentXorY = 0;
+  const snapIt = (range, scrollDirection) => {
+    const contentOffsetXorY =
+      scrollDirection === "horizontal" ? contentOffsetX : contentOffsetY;
     const mid = Math.abs((range[1] - range[0]) / 2);
-    // console.log("currentY", currentY, "mid", mid, "range", range);
-
-    if (Math.abs(currentY - range[0]) < mid) {
-      animate.ease(contentOffsetY, range[0], { duration: 0.2 });
+    if (Math.abs(currentXorY - range[0]) < mid) {
+      animate.ease(contentOffsetXorY, range[0], { duration: 0.2 });
     } else {
-      animate.ease(contentOffsetY, range[1], { duration: 0.2 });
+      animate.ease(contentOffsetXorY, range[1], { duration: 0.2 });
     }
   };
   return {
-    $$$scroll: range => props => ({
-      onMove({ y }) {
-        currentY = y;
-      },
-      onMouseWheelEnd() {
-        snapIt(range);
-      },
-      onMouseUp() {
-        snapIt(range);
-      },
-      contentOffsetY
-    })
+    $$$scroll: (range, scrollDirection) => props => {
+      const contentOffsetOverride =
+        scrollDirection === "horizontal"
+          ? { contentOffsetX }
+          : { contentOffsetY };
+      return {
+        onMove({ x, y }) {
+          currentXorY = scrollDirection === "horizontal" ? x : y;
+        },
+        onMouseWheelEnd() {
+          snapIt(range, scrollDirection);
+        },
+        onMouseUp() {
+          snapIt(range, scrollDirection);
+        },
+        ...contentOffsetOverride
+      };
+    }
   };
 };
+
+export const snapY = snap;
 
 // export function stickyScrollY(...stickyTopRanges) {
 //   const data = Data({ top: Animatable(0) });
