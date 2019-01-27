@@ -225,12 +225,13 @@ export const modulate = (propName, outputRange, dataValue?) => itemId => {
     getDataFromStore(itemId, propName, Animatable(outputRange[0]))[1];
   return {
     $$$scroll: ([first, second]) => props => ({
-      onMove({ y }) {
+      onMove({ x, y, scrollDirection }) {
+        const xOrY = scrollDirection === "horizontal" ? x : y;
         const output = transform(
-          [{ y: first }, { y: second }],
+          [{ xOrY: first }, { xOrY: second }],
           [{ [propName]: outputRange[0] }, { [propName]: outputRange[1] }],
           { limit: true }
-        )({ y });
+        )({ xOrY });
         // console.log(
         //   "onMove in modulate",
         //   "outputRange",
