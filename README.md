@@ -64,14 +64,14 @@ Demo file:
 import {
   scrollOverrides,
   modulate,
-  speedY,
-  stickyY
+  speed,
+  sticky
 } from "@framer/lintonye.parallax/code/Parallax";
 
 // Define custom scrolling behavior
 const overrides = scrollOverrides(
   [100, 200],  // scrolling range
-  [{ id: "sticky100200", op: stickyY() }] // custom behavior
+  [{ id: "sticky100200", op: sticky() }] // custom behavior
 )
 
 // Define code overrides
@@ -89,7 +89,7 @@ export const Sticky100200 : Override = props => overrides.sticky100200(props);
 ```js
 const overrides = scrollOverrides(
   [100, 200], 
-  [{ id: "sticky100200", op: stickyY() }],
+  [{ id: "sticky100200", op: sticky() }],
   [200, 500], 
   [{ id: "sticky100200", op: modulate('opacity', [1, 0]) }]
 )
@@ -103,11 +103,11 @@ const overrides = scrollOverrides(
 const overrides = scrollOverrides(
   [0, 1000], 
   [
-    { id: "speed0", op: speedY(0) },
-    { id: "speed05", op: speedY(0.5) },
-    { id: "speedminus1", op: speedY(-1) },
-    { id: "speedminus2", op: speedY(-2) },
-    { id: "speed1", op: speedY(1) }
+    { id: "speed0", op: speed(0) },
+    { id: "speed05", op: speed(0.5) },
+    { id: "speedminus1", op: speed(-1) },
+    { id: "speedminus2", op: speed(-2) },
+    { id: "speed1", op: speed(1) }
   ]
 )
 ```
@@ -143,8 +143,11 @@ const overrides = scrollOverrides(
 Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 01/26/2019
+  - Add support for horizontal scroll. Note: you'll get an error when the scroll direction is "both".
+  - `speed`, `sticky` and `snap` functions can be used, which work on both horizontal and vertical directions.
 - 01/23/2019
-  - Fix issue in `speedY` and `stickyY` that causes layer to jump locations when crossing ranges
+  - Fix issue in `speed` and `sticky` that causes layer to jump locations when crossing ranges
 - 01/17/2019
   - Add `snapY` function
 - 01/16/2019
