@@ -341,6 +341,8 @@ export const speedY = (ratio, data?) => speed(ratio, data, "y");
 
 export const stickyY = (data?) => speedY(-1, data);
 
+export const sticky = (data?) => speed(-1, data);
+
 // export const stickyY = (dataValue?) => itemId => {
 // let justCreated = false;
 // let dtop = dataValue;

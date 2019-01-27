@@ -1,6 +1,6 @@
 import { Data, animate, Override, Animatable } from "framer";
 
-import { scrollOverrides, modulate, speed, stickyY } from "./Parallax";
+import { scrollOverrides, modulate, speed, sticky } from "./Parallax";
 
 const data = Data({ rotation: Animatable(0) });
 
@@ -10,7 +10,7 @@ const data = Data({ rotation: Animatable(0) });
 
 const overrides = scrollOverrides(
   [100, 400],
-  [{ id: "sticky100200", op: stickyY() }],
+  [{ id: "sticky100400", op: sticky() }],
   [0, 1000],
   [
     { id: "opacity", op: modulate("opacity", [1, 0]) },
@@ -42,7 +42,7 @@ const overrides = scrollOverrides(
 );
 
 export const Scroll: Override = props => overrides.scroll(props);
-export const Sticky100200: Override = props => overrides.sticky100200(props);
+export const Sticky100400: Override = props => overrides.sticky100400(props);
 export const Opacity: Override = props => overrides.opacity(props);
 export const Bg: Override = props => overrides.bg(props);
 export const Speed0: Override = props => overrides.speed0(props);
