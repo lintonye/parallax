@@ -10,16 +10,16 @@ const data = Data({ rotation: Animatable(0) });
 
 const overrides = scrollOverrides(
   [100, 400],
-  [{ id: "sticky100400", op: sticky() }],
+  [{ id: "sticky100400H", op: sticky() }],
   [0, 1000],
   [
-    { id: "opacity", op: modulate("opacity", [1, 0]) },
-    { id: "bg", op: modulate("background", ["red", "black"]) },
-    { id: "speed0", op: speed(0) },
-    { id: "speed05", op: speed(0.5) },
-    { id: "speedminus1", op: speed(-1) },
-    { id: "speedminus2", op: speed(-2) },
-    { id: "speed1", op: speed(1) }
+    { id: "opacityH", op: modulate("opacity", [1, 0]) },
+    { id: "bgH", op: modulate("background", ["red", "black"]) },
+    { id: "speed0H", op: speed(0) },
+    { id: "speed05H", op: speed(0.5) },
+    { id: "speedminus1H", op: speed(-1) },
+    { id: "speedminus2H", op: speed(-2) },
+    { id: "speed1H", op: speed(1) }
   ],
   [600, 650],
   [
@@ -42,14 +42,14 @@ const overrides = scrollOverrides(
 );
 
 export const Scroll: Override = props => overrides.scroll(props);
-export const Sticky100400: Override = props => overrides.sticky100400(props);
-export const Opacity: Override = props => overrides.opacity(props);
-export const Bg: Override = props => overrides.bg(props);
-export const Speed0: Override = props => overrides.speed0(props);
-export const Speed05: Override = props => overrides.speed05(props);
-export const Speedminus1: Override = props => overrides.speedminus1(props);
-export const Speedminus2: Override = props => overrides.speedminus2(props);
-export const Speed1: Override = props => overrides.speed1(props);
+export const Sticky100400H: Override = props => overrides.sticky100400H(props);
+export const OpacityH: Override = props => overrides.opacityH(props);
+export const BgH: Override = props => overrides.bgH(props);
+export const Speed0H: Override = props => overrides.speed0H(props);
+export const Speed05H: Override = props => overrides.speed05H(props);
+export const Speedminus1H: Override = props => overrides.speedminus1H(props);
+export const Speedminus2H: Override = props => overrides.speedminus2H(props);
+export const Speed1H: Override = props => overrides.speed1H(props);
 export const TriggerAnimation: Override = props => ({
   rotation: data.rotation
 });
