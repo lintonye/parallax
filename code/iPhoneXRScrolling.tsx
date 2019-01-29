@@ -35,7 +35,7 @@ const overrides = scrollOverrides(
   [750, 800],
   [
     {
-      op: itemId => ({ vy }) => {
+      op: getData => ({ vy }) => {
         animate.ease(data.phoneNameSizeOpacity, vy > 0 ? 1 : 0, {
           duration: 0.2
         });

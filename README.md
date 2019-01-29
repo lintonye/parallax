@@ -127,8 +127,8 @@ const overrides = scrollOverrides(
       // it won't be called anymore. But if scrolling up at this point,
       // it'll be called again.
       //
-      // Don't forget the "getDataFromStore =>" in the front!
-      op: getDataFromStore => ({ vy }) => {
+      // Don't forget the "getData =>" in the front!
+      op: getData => ({ vy }) => {
         // vy: the velocity of scrolling in y direction
         //   vy > 0: scrolling down
         //   vy < 0: scrolling up
