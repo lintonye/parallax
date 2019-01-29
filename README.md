@@ -127,8 +127,8 @@ const overrides = scrollOverrides(
       // it won't be called anymore. But if scrolling up at this point,
       // it'll be called again.
       //
-      // Don't forget the "itemId =>" in the front!
-      op: itemId => ({ vy }) => {
+      // Don't forget the "getDataFromStore =>" in the front!
+      op: getDataFromStore => ({ vy }) => {
         // vy: the velocity of scrolling in y direction
         //   vy > 0: scrolling down
         //   vy < 0: scrolling up
@@ -143,6 +143,8 @@ const overrides = scrollOverrides(
 Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 01/29/2019
+  - Fix id conflict issue. Now, as long as the ids are unique within a single `scrollOverrides` call, things should be fine.
 - 01/26/2019
   - Add support for horizontal scroll. Note: you'll get an error when the scroll direction is "both".
   - Add `speed`, `sticky` and `snap` functions, which work on both horizontal and vertical directions.
