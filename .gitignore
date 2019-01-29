@@ -1,7 +1,13 @@
-node_modules
-.backups
+# General
+.DS_Store
+Icon\r
+
+# Framer
 .cache
+.backups
+.config.json
+yarn-error.log
 build
-design
-*.log
+node_modules
 .npmrc
+*.framerxproj
