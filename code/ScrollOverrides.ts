@@ -141,6 +141,13 @@ function processOneOperation(
   };
 
   const opType = getOpType(op);
+  // These three variables must be declared here, otherwise an op
+  // function would be called more than once when it's setting data
+  // in its function body. When a data item is changed, the
+  // "result.scroll" function will be called again.
+  let lastXorY,
+    lastTimeStamp,
+    lastVxOrY = -1;
   result.scroll = props => {
     let opOnMove,
       restOverrides = {};
@@ -154,9 +161,6 @@ function processOneOperation(
       opOnMove = onMove;
       restOverrides = rest;
     }
-    let lastXorY,
-      lastTimeStamp,
-      lastVxOrY = -1;
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
