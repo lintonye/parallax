@@ -18,11 +18,18 @@ type Operation = {
 
 const isArray = a => a instanceof Array;
 
+const isOpObject = operation => typeof operation.op !== "undefined";
+
 function validateSOParams(params) {
   const throwError = e => {
     throw `${e}
 
       Usage examples:
+
+        const overrides = scrollOverrides(
+          [0, 20],
+          { id: 'title', op: modulate('opacity', [0, 1]) }
+        );
 
         const overrides = scrollOverrides(
           [0, 20],
@@ -64,15 +71,21 @@ function validateSOParams(params) {
       throwError(`Parameter ${JSON.stringify(range)} is not a range.`);
     }
     const operations = params[i + 1];
-    if (!isArray(operations) || operations.length <= 0) {
+    if (
+      !(isArray(operations) && operations.length > 0) &&
+      !isOpObject(operations)
+    ) {
       throwError(
-        `Parameter ${JSON.stringify(operations)} is not a non-empty array.`
+        `Parameter ${JSON.stringify(
+          operations
+        )} is not a non-empty array or object.`
       );
     }
-    for (let j = 0; j < operations.length; j++) {
-      const { id, op } = operations[j];
+    const ops = isOpObject(operations) ? [operations] : operations;
+    for (let j = 0; j < ops.length; j++) {
+      const { id, op } = ops[j];
       if (typeof op !== "function" && !isArray(op)) {
-        throwError(`No valid op found in ${JSON.stringify(operations[j])}`);
+        throwError(`No valid op found in ${JSON.stringify(ops[j])}`);
       }
     }
   }
@@ -230,7 +243,8 @@ export function scrollOverrides(...params): ScrollOverrides {
   };
   for (let i = 0; i < params.length; i += 2) {
     const scrollRange = toNegativeRange(params[i]);
-    const operations: [Operation] = params[i + 1];
+    const paramsI1 = params[i + 1];
+    const operations: [Operation] = isArray(paramsI1) ? paramsI1 : [paramsI1];
     operations.forEach(operation => {
       const { id, op } = operation;
       const ids = (isArray(id) ? id : [id]) as [string];

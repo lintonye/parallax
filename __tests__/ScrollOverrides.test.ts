@@ -10,6 +10,16 @@ test("Single range, single operation", () => {
   expect(typeof name).toBe("function");
 });
 
+test("should accept single operation object, not in array", () => {
+  const overrides = scrollOverrides([0, 20], {
+    id: "name",
+    op: modulate("opacity", [0, 1])
+  });
+  const { scroll, name } = overrides;
+  expect(typeof scroll).toBe("function");
+  expect(typeof name).toBe("function");
+});
+
 test("should not call onMove when out of range", () => {
   const overrides = scrollOverrides(
     [0, 20],
