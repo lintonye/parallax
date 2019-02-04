@@ -180,13 +180,14 @@ function processOneOperation(
               opOnMove &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
             ) {
-              opOnMove({
+              const runAtNextRound = opOnMove({
                 ...scrollProps,
                 vx: scrollDirection === "horizontal" ? v : 0,
                 vy: scrollDirection === "vertical" ? v : 0,
                 scrollDirection
               });
               lastVxOrY = v;
+              if (runAtNextRound) lastVxOrY = 0;
             }
           }
         }
