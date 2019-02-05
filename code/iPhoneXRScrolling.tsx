@@ -7,7 +7,7 @@ const data = Data({
 
 const overrides = scrollOverrides(
   [0, 200],
-  [{ id: "blocker", op: modulate("opacity", [0, 1]) }],
+  { id: "blocker", op: modulate("opacity", [0, 1]) },
   [100, 350],
   [
     {

@@ -71,7 +71,7 @@ import {
 // Define custom scrolling behavior
 const overrides = scrollOverrides(
   [100, 200],  // scrolling range
-  [{ id: "sticky100200", op: sticky() }] // custom behavior
+  { id: "sticky100200", op: sticky() } // custom behavior
 )
 
 // Define code overrides
@@ -89,9 +89,9 @@ export const Sticky100200 : Override = props => overrides.sticky100200(props);
 ```js
 const overrides = scrollOverrides(
   [100, 200], 
-  [{ id: "sticky100200", op: sticky() }],
+  { id: "sticky100200", op: sticky() },
   [200, 500], 
-  [{ id: "sticky100200", op: modulate('opacity', [1, 0]) }]
+  { id: "sticky100200", op: modulate('opacity', [1, 0]) }
 )
 ```
 
@@ -119,23 +119,21 @@ const overrides = scrollOverrides(
 ```js
 const overrides = scrollOverrides(
   [600, 650],
-  [
-    {
-      // This function will only be executed once per direction when
-      // the scrolling position falls into the range specified above.
-      // i.e. scrolling down, it'll be called, but if keep scrolling down,
-      // it won't be called anymore. But if scrolling up at this point,
-      // it'll be called again.
-      //
-      // Don't forget the "getData =>" in the front!
-      op: getData => ({ vy }) => {
-        // vy: the velocity of scrolling in y direction
-        //   vy > 0: scrolling down
-        //   vy < 0: scrolling up
-        animate.spring(data.rotation, vy > 0 ? 180 : 0);
-      }
+  {
+    // This function will only be executed once per direction when
+    // the scrolling position falls into the range specified above.
+    // i.e. scrolling down, it'll be called, but if keep scrolling down,
+    // it won't be called anymore. But if scrolling up at this point,
+    // it'll be called again.
+    //
+    // Don't forget the "getData =>" in the front!
+    op: getData => ({ vy }) => {
+      // vy: the velocity of scrolling in y direction
+      //   vy > 0: scrolling down
+      //   vy < 0: scrolling up
+      animate.spring(data.rotation, vy > 0 ? 180 : 0);
     }
-  ]
+  }
 )
 ```
 
@@ -143,6 +141,10 @@ const overrides = scrollOverrides(
 Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 02/03/2019
+  - Add support for using object as op, instead of just an array
+  - Fixed: onMove op function is always called when a data item is updated inside the function body
+  - Now we can return `true` to ask the next onMove op function to run. If the return value is falsy (e.g. no return value is specified), the function will be only called once per scroll direction.
 - 01/29/2019
   - Fix id conflict issue. Now, as long as the ids are unique within a single `scrollOverrides` call, things should be fine.
 - 01/26/2019
