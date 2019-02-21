@@ -18,7 +18,7 @@ interface Props {
   progress: number;
 }
 
-export class IPadSvg extends React.Component<Props> {
+class IPadSvgComp extends React.Component<Props> {
   state = {
     outerEdgeLen: 0,
     innerEdgeLen: 0,
@@ -117,3 +117,5 @@ export class IPadSvg extends React.Component<Props> {
     );
   }
 }
+
+export const IPadSvg = IPadSvgComp;

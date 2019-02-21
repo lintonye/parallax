@@ -141,6 +141,8 @@ const overrides = scrollOverrides(
 Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 02/21/2019
+  - Hide internal components
 - 02/03/2019
   - Add support for using object as op, instead of just an array
   - Fixed: onMove op function is always called when a data item is updated inside the function body

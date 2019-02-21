@@ -5,7 +5,7 @@ interface Props {
   description: string;
 }
 
-export class EmptyConnector extends React.Component<Props> {
+class EC extends React.Component<Props> {
   render() {
     const containerStyle: React.CSSProperties = {
       color: "#8855FF",
@@ -31,3 +31,5 @@ export class EmptyConnector extends React.Component<Props> {
     );
   }
 }
+
+export const EmptyConnector = EC;
