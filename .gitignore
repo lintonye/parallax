@@ -11,3 +11,6 @@ build
 node_modules
 .npmrc
 *.framerxproj
+.yarnrc
+.framer-lock
+.project.log

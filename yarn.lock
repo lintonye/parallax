@@ -958,6 +958,11 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+"framer@^0.10.5 || ^1":
+  version "0.10.10"
+  resolved "https://registry.yarnpkg.com/framer/-/framer-0.10.10.tgz#36bb2ae82d620944cf43adea295d6ec7000f7942"
+  integrity sha512-9w0Y7p/2HsYQqtiaPgLqwiEFDBTwGwPbufJP8XRek5j/nojcFdm6995l/uBzbpddSgR3oFB1SKcGO2W64KHlzQ==
+
 fs-minipass@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"

@@ -12,7 +12,7 @@
 		"typescript": "^3.2.2"
 	},
 	"peerDependencies": {
-		"framer": "^0.10.5",
+		"framer": "^0.10.5 || ^1",
 		"react": "^16.3.0",
 		"react-dom": "^16.3.0"
 	},
