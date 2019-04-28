@@ -18,14 +18,14 @@
 	},
 	"framer": {
 		"id": "a34493cf-104a-47b0-8e80-586424e0929e",
-		"displayName": "Parallax"
+		"displayName": "Parallax: Scroll Effects"
 	},
 	"author": "Linton Ye",
 	"dependencies": {
 		"mathjs": "^5.2.0"
 	},
 	"name": "@framer/lintonye.parallax",
-	"version": "1.37.0",
+	"version": "1.39.0",
 	"scripts": {
 		"test": "jest"
 	}
