@@ -1,9 +1,9 @@
-import { Data, animate, Animatable, transform } from "framer";
+import { Data, animate, MotionValue, transform } from "framer";
 
-type OnMove = (params: { y: number; vy?: number }) => any;
+type onScroll = (params: { y: number; vy?: number }) => any;
 
 type ScrollOverrides = {
-  scroll: (props: object) => { onMove: OnMove; [key: string]: any };
+  scroll: (props: object) => { onScroll: onScroll; [key: string]: any };
   [key: string]: (props: object) => { [key: string]: any };
 };
 
@@ -103,8 +103,8 @@ function isInRange(v: number, range: Range) {
 }
 
 const getOpType = op =>
-  typeof op(() => [true, Animatable(0)]) === "function"
-    ? "onMoveOnly"
+  typeof op(() => [true, new MotionValue(0)]) === "function"
+    ? "onScrollOnly"
     : "scrollAndLayer";
 
 function getScrollDirection(props) {
@@ -149,23 +149,24 @@ function processOneOperation(
     lastTimeStamp,
     lastVxOrY = -1;
   result.scroll = props => {
-    let opOnMove,
+    let opOnScroll,
       restOverrides = {};
     const scrollDirection = getScrollDirection(props);
-    if (opType === "onMoveOnly") opOnMove = op(getDataFromStore);
+    if (opType === "onScrollOnly") opOnScroll = op(getDataFromStore);
     else {
-      const { onMove, onMoveOut, ...rest } = op(getDataFromStore).$$$scroll(
+      const { onScroll, onScrollOut, ...rest } = op(getDataFromStore).$$$scroll(
         scrollRange,
         scrollDirection
       )(props);
-      opOnMove = onMove;
+      opOnScroll = onScroll;
       restOverrides = rest;
     }
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
-        onMove(scrollProps) {
-          const { x, y } = scrollProps;
+        onScroll(scrollProps) {
+          const { x, y } = scrollProps.offset;
+
           const xOrY = scrollDirection === "horizontal" ? x : y;
           let v = 1;
           if (typeof lastXorY !== "undefined")
@@ -177,11 +178,13 @@ function processOneOperation(
             const didntRunInThisDirection =
               Math.sign(lastVxOrY) !== Math.sign(v);
             if (
-              opOnMove &&
+              opOnScroll &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
             ) {
-              const runAtNextRound = opOnMove({
+              const runAtNextRound = opOnScroll({
                 ...scrollProps,
+                x,
+                y,
                 vx: scrollDirection === "horizontal" ? v : 0,
                 vy: scrollDirection === "vertical" ? v : 0,
                 scrollDirection
@@ -217,7 +220,7 @@ type GetDataFromStoreFun = (
   propName: string,
   defaultValue?,
   itemIdOverride?: string
-) => [boolean, Animatable<any>];
+) => [boolean, MotionValue<any>];
 
 function createDataStoreFun(itemId: string): GetDataFromStoreFun {
   const dataStore: Map<string, any> = new Map();
@@ -226,7 +229,7 @@ function createDataStoreFun(itemId: string): GetDataFromStoreFun {
     let justCreated = false;
     let d = dataStore.get(key);
     if (typeof d === "undefined") {
-      d = Animatable(defaultValue);
+      d = new MotionValue(defaultValue);
       dataStore.set(key, d);
       justCreated = true;
     }
@@ -271,18 +274,19 @@ export const modulate = (
 ) => getDataFromStore => {
   // TODO validate outputRange
   const dvalue =
-    dataValue || getDataFromStore(propName, Animatable(outputRange[0]))[1];
+    dataValue || getDataFromStore(propName, new MotionValue(outputRange[0]))[1];
   return {
     $$$scroll: ([first, second]) => props => ({
-      onMove({ x, y, scrollDirection }) {
+      onScroll({ x, y, scrollDirection }) {
         const xOrY = scrollDirection === "horizontal" ? x : y;
-        const output = transform(
-          [{ xOrY: first }, { xOrY: second }],
-          [{ [propName]: outputRange[0] }, { [propName]: outputRange[1] }],
-          { limit: true }
-        )({ xOrY });
+        const output = transform(xOrY, [first, second], outputRange);
+
+        //   [{ xOrY: first }, { xOrY: second }],
+        //   [{ [propName]: outputRange[0] }, { [propName]: outputRange[1] }],
+        //   { limit: true }
+        // )({ xOrY });
         // console.log(
-        //   "onMove in modulate",
+        //   "onScroll in modulate",
         //   "outputRange",
         //   outputRange,
         //   "y",
@@ -294,7 +298,7 @@ export const modulate = (
         //   "output",
         //   output
         // );
-        dvalue.set(output[propName]);
+        dvalue.set(output);
       }
     }),
     $$$layer: range => props => ({
@@ -314,23 +318,28 @@ function getTopLeft(props) {
     parentSize,
     centerX,
     centerY
-  } = props;
-  const getValue = (v: number | Animatable<number>) =>
+  } = props.constraints;
+
+  const getValue = (v: number | MotionValue<number>) =>
     typeof v === "number" ? v : v.get();
   const percentToNumber = (percent: string) =>
     Number.parseFloat(percent.slice(0, percent.length - 1)) / 100;
   const actualLeft =
     left !== null
       ? left
-      : right !== null
-      ? getValue(parentSize.width) - width - right
-      : getValue(parentSize.width) * percentToNumber(centerX) - width / 2;
+      : parentSize != null
+      ? right !== null
+        ? getValue(parentSize.width) - width - right
+        : getValue(parentSize.width) * percentToNumber(centerX) - width / 2
+      : 0;
   const actualTop =
     top !== null
       ? top
-      : bottom !== null
-      ? getValue(parentSize.height) - height - bottom
-      : getValue(parentSize.height) * percentToNumber(centerY) - height / 2;
+      : parentSize != null
+      ? bottom !== null
+        ? getValue(parentSize.height) - height - bottom
+        : getValue(parentSize.height) * percentToNumber(centerY) - height / 2
+      : 0;
   return { left: actualLeft, top: actualTop };
 }
 
@@ -355,7 +364,7 @@ export const speed = (
   let initialPos = { left: null, top: null };
   return {
     $$$scroll: range => props => ({
-      onMove({ x, y, scrollDirection }) {
+      onScroll({ x, y, scrollDirection }) {
         if (!justCreated.left && initialPos.left === null) {
           initialPos.left = d.left.get();
         }
@@ -403,7 +412,7 @@ export const sticky = (data?) => speed(-1, data);
 // let initialTop = defaultTop;
 // return {
 //   $$$scroll: range => props => ({
-//     onMove({ y }) {
+//     onScroll({ y }) {
 //       if (!justCreated && typeof initialTop === "undefined")
 //         initialTop = dtop.get();
 //       dtop.set(range[0] - y + initialTop);
@@ -448,7 +457,7 @@ export const snap = () => getDataFromStore => {
           ? { contentOffsetX }
           : { contentOffsetY };
       return {
-        onMove({ x, y }) {
+        onScroll({ x, y }) {
           currentXorY = scrollDirection === "horizontal" ? x : y;
         },
         onMouseWheelEnd() {
@@ -469,7 +478,7 @@ export const snapY = snap;
 //   const data = Data({ top: Animatable(0) });
 //   let initialTop = 0;
 //   const scrollOverrides = props => ({
-//     onMove({ y }) {
+//     onScroll({ y }) {
 //       const inRange = ([min, max], v) => min <= v && v <= max;
 //       stickyTopRanges.forEach(range => {
 //         if (inRange(range, Math.abs(y))) {
@@ -509,7 +518,7 @@ export const snapY = snap;
 //     const scrollMax =
 //       props.children[0].props.children[0].props.height - props.height;
 //     return {
-//       onMove({ y }) {
+//       onScroll({ y }) {
 //         if (typeof lastY !== "undefined") {
 //           vy = (y - lastY) / (Date.now() - lastTimestamp);
 //         }
@@ -536,7 +545,7 @@ export const snapY = snap;
 // }
 
 export function scrollAwayHeader(headerHeight: number, scrollMax: number) {
-  const data = Data({ headerTop: Animatable(0) });
+  const data = Data({ headerTop: new MotionValue(0) });
   let isAnimating = false;
 
   async function setHeaderTop(top) {
