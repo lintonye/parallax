@@ -1,24 +1,24 @@
-import { Data, animate, MotionValue, transform } from "framer";
+import { Data, animate, MotionValue, transform } from "framer"
 
-type onScroll = (params: { y: number; vy?: number }) => any;
+type onScroll = (params: { y: number; vy?: number }) => any
 
 type ScrollOverrides = {
-  scroll: (props: object) => { onScroll: onScroll; [key: string]: any };
-  [key: string]: (props: object) => { [key: string]: any };
-};
+  scroll: (props: object) => { onScroll: onScroll; [key: string]: any }
+  [key: string]: (props: object) => { [key: string]: any }
+}
 
-type Override = { [key: string]: any };
+type Override = { [key: string]: any }
 
-type Range = [number, number];
+type Range = [number, number]
 
 type Operation = {
-  id: string | [string];
-  op: Override | [Override] | (() => any);
-};
+  id: string | [string]
+  op: Override | [Override] | (() => any)
+}
 
-const isArray = a => a instanceof Array;
+const isArray = a => a instanceof Array
 
-const isOpObject = operation => typeof operation.op !== "undefined";
+const isOpObject = operation => typeof operation.op !== "undefined"
 
 function validateSOParams(params) {
   const throwError = e => {
@@ -60,17 +60,17 @@ function validateSOParams(params) {
             { id: 'contact', op: [ stickyY(), modulate('opacity', [0, 1]) ] }
           ],
         );
-  `;
-  };
+  `
+  }
   if (params.length === 0 || params.length % 2 !== 0) {
-    throwError(`The number of parameters must be even and greater than 0.`);
+    throwError(`The number of parameters must be even and greater than 0.`)
   }
   for (let i = 0; i < params.length; i += 2) {
-    const range = params[i];
+    const range = params[i]
     if (!isFinite(range[0]) || !isFinite(range[1]) || range[0] > range[1]) {
-      throwError(`Parameter ${JSON.stringify(range)} is not a range.`);
+      throwError(`Parameter ${JSON.stringify(range)} is not a range.`)
     }
-    const operations = params[i + 1];
+    const operations = params[i + 1]
     if (
       !(isArray(operations) && operations.length > 0) &&
       !isOpObject(operations)
@@ -79,13 +79,13 @@ function validateSOParams(params) {
         `Parameter ${JSON.stringify(
           operations
         )} is not a non-empty array or object.`
-      );
+      )
     }
-    const ops = isOpObject(operations) ? [operations] : operations;
+    const ops = isOpObject(operations) ? [operations] : operations
     for (let j = 0; j < ops.length; j++) {
-      const { id, op } = ops[j];
+      const { id, op } = ops[j]
       if (typeof op !== "function" && !isArray(op)) {
-        throwError(`No valid op found in ${JSON.stringify(ops[j])}`);
+        throwError(`No valid op found in ${JSON.stringify(ops[j])}`)
       }
     }
   }
@@ -93,29 +93,29 @@ function validateSOParams(params) {
 
 function toNegativeRange(positiveRange) {
   // return [-positiveRange[1], -positiveRange[0]];
-  return positiveRange.map(n => -n);
+  return positiveRange.map(n => -n)
 }
 
 function isInRange(v: number, range: Range) {
-  const min = Math.min(range[0], range[1]);
-  const max = Math.max(range[0], range[1]);
-  return min <= v && v <= max;
+  const min = Math.min(range[0], range[1])
+  const max = Math.max(range[0], range[1])
+  return min <= v && v <= max
 }
 
 const getOpType = op =>
   typeof op(() => [true, new MotionValue(0)]) === "function"
     ? "onScrollOnly"
-    : "scrollAndLayer";
+    : "scrollAndLayer"
 
 function getScrollDirection(props) {
   if (typeof props.children === "undefined") {
-    return "vertical"; //this is called from test code
+    return "vertical" //this is called from test code
   }
-  const scrollElement = props.children[0];
-  const { direction } = scrollElement.props;
-  if (["vertical", "horizontal"].indexOf(direction) >= 0) return direction;
+  const scrollElement = props.children[0]
+  const { direction } = scrollElement.props
+  if (["vertical", "horizontal"].indexOf(direction) >= 0) return direction
   else
-    throw `Invalid direction "${direction}", only "horizontal" and "vertical" is supported!`;
+    throw `Invalid direction "${direction}", only "horizontal" and "vertical" is supported!`
 }
 
 function processOneOperation(
@@ -125,58 +125,58 @@ function processOneOperation(
   scrollRange: Range,
   result
 ) {
-  const { scroll: oldScroll } = result;
-  let inRange = false;
+  const { scroll: oldScroll } = result
+  let inRange = false
   const wrapFuncsWithRangeCheck = overrides => {
-    const os = {};
+    const os = {}
     for (let key in overrides) {
-      const value = overrides[key];
-      let newValue = value;
+      const value = overrides[key]
+      let newValue = value
       if (typeof value === "function") {
-        newValue = args => (inRange ? value(args) : undefined);
+        newValue = args => (inRange ? value(args) : undefined)
       }
-      os[key] = newValue;
+      os[key] = newValue
     }
-    return os;
-  };
+    return os
+  }
 
-  const opType = getOpType(op);
+  const opType = getOpType(op)
   // These three variables must be declared here, otherwise an op
   // function would be called more than once when it's setting data
   // in its function body. When a data item is changed, the
   // "result.scroll" function will be called again.
   let lastXorY,
     lastTimeStamp,
-    lastVxOrY = -1;
+    lastVxOrY = -1
   result.scroll = props => {
     let opOnScroll,
-      restOverrides = {};
-    const scrollDirection = getScrollDirection(props);
-    if (opType === "onScrollOnly") opOnScroll = op(getDataFromStore);
+      restOverrides = {}
+    const scrollDirection = getScrollDirection(props)
+    if (opType === "onScrollOnly") opOnScroll = op(getDataFromStore)
     else {
       const { onScroll, onScrollOut, ...rest } = op(getDataFromStore).$$$scroll(
         scrollRange,
         scrollDirection
-      )(props);
-      opOnScroll = onScroll;
-      restOverrides = rest;
+      )(props)
+      opOnScroll = onScroll
+      restOverrides = rest
     }
     return mergeOverrides(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
         onScroll(scrollProps) {
-          const { x, y } = scrollProps.offset;
+          const { x, y } = scrollProps.offset
 
-          const xOrY = scrollDirection === "horizontal" ? x : y;
-          let v = 1;
+          const xOrY = scrollDirection === "horizontal" ? x : y
+          let v = 1
           if (typeof lastXorY !== "undefined")
-            v = -(xOrY - lastXorY) / (Date.now() - lastTimeStamp);
-          lastTimeStamp = Date.now();
-          lastXorY = xOrY;
-          inRange = isInRange(xOrY, scrollRange);
+            v = -(xOrY - lastXorY) / (Date.now() - lastTimeStamp)
+          lastTimeStamp = Date.now()
+          lastXorY = xOrY
+          inRange = isInRange(xOrY, scrollRange)
           if (inRange) {
             const didntRunInThisDirection =
-              Math.sign(lastVxOrY) !== Math.sign(v);
+              Math.sign(lastVxOrY) !== Math.sign(v)
             if (
               opOnScroll &&
               (didntRunInThisDirection || opType === "scrollAndLayer")
@@ -188,30 +188,30 @@ function processOneOperation(
                 vx: scrollDirection === "horizontal" ? v : 0,
                 vy: scrollDirection === "vertical" ? v : 0,
                 scrollDirection
-              });
-              lastVxOrY = v;
-              if (runAtNextRound) lastVxOrY = 0;
+              })
+              lastVxOrY = v
+              if (runAtNextRound) lastVxOrY = 0
             }
           }
         }
       },
       oldScroll && oldScroll(props)
-    );
-  };
+    )
+  }
 
-  const opWithId = op(getDataFromStore); // THIS IS A MUST!
+  const opWithId = op(getDataFromStore) // THIS IS A MUST!
   if (opType === "scrollAndLayer" && typeof opWithId.$$$layer === "function") {
-    const layerOp = opWithId.$$$layer(scrollRange);
+    const layerOp = opWithId.$$$layer(scrollRange)
     if (typeof layerOp === "function") {
-      const oldIdValue = result[id];
+      const oldIdValue = result[id]
       result[id] = props => {
         return mergeOverrides(
           wrapFuncsWithRangeCheck(layerOp(props)),
           oldIdValue && oldIdValue(props)
-        );
-      };
+        )
+      }
     } else {
-      throw `layerOp isn't a function! ${layerOp}`;
+      throw `layerOp isn't a function! ${layerOp}`
     }
   }
 }
@@ -220,51 +220,51 @@ type GetDataFromStoreFun = (
   propName: string,
   defaultValue?,
   itemIdOverride?: string
-) => [boolean, MotionValue<any>];
+) => [boolean, MotionValue<any>]
 
 function createDataStoreFun(itemId: string): GetDataFromStoreFun {
-  const dataStore: Map<string, any> = new Map();
+  const dataStore: Map<string, any> = new Map()
   return function(propName: string, defaultValue?, itemIdOverride?: string) {
-    const key = itemIdOverride || itemId + "." + propName;
-    let justCreated = false;
-    let d = dataStore.get(key);
+    const key = itemIdOverride || itemId + "." + propName
+    let justCreated = false
+    let d = dataStore.get(key)
     if (typeof d === "undefined") {
-      d = new MotionValue(defaultValue);
-      dataStore.set(key, d);
-      justCreated = true;
+      d = new MotionValue(defaultValue)
+      dataStore.set(key, d)
+      justCreated = true
     }
-    return [justCreated, d];
-  };
+    return [justCreated, d]
+  }
 }
 
 export function scrollOverrides(...params): ScrollOverrides {
-  validateSOParams(params);
-  const result = { scroll: undefined };
-  const dataStoreFuns: Map<String, GetDataFromStoreFun> = new Map();
+  validateSOParams(params)
+  const result = { scroll: undefined }
+  const dataStoreFuns: Map<String, GetDataFromStoreFun> = new Map()
   const getDataStoreFun = id => {
-    let fun = dataStoreFuns.get(id);
+    let fun = dataStoreFuns.get(id)
     if (typeof fun === "undefined") {
-      fun = createDataStoreFun(id);
-      dataStoreFuns.set(id, fun);
+      fun = createDataStoreFun(id)
+      dataStoreFuns.set(id, fun)
     }
-    return fun;
-  };
+    return fun
+  }
   for (let i = 0; i < params.length; i += 2) {
-    const scrollRange = toNegativeRange(params[i]);
-    const paramsI1 = params[i + 1];
-    const operations: [Operation] = isArray(paramsI1) ? paramsI1 : [paramsI1];
+    const scrollRange = toNegativeRange(params[i])
+    const paramsI1 = params[i + 1]
+    const operations: [Operation] = isArray(paramsI1) ? paramsI1 : [paramsI1]
     operations.forEach(operation => {
-      const { id, op } = operation;
-      const ids = (isArray(id) ? id : [id]) as [string];
-      const ops = isArray(op) ? op : [op];
+      const { id, op } = operation
+      const ids = (isArray(id) ? id : [id]) as [string]
+      const ops = isArray(op) ? op : [op]
       ids.forEach(i =>
         ops.forEach(o =>
           processOneOperation(i, getDataStoreFun(i), o, scrollRange, result)
         )
-      );
-    });
+      )
+    })
   }
-  return result;
+  return result
 }
 
 export const modulate = (
@@ -274,12 +274,14 @@ export const modulate = (
 ) => getDataFromStore => {
   // TODO validate outputRange
   const dvalue =
-    dataValue || getDataFromStore(propName, new MotionValue(outputRange[0]))[1];
+    dataValue || getDataFromStore(propName, new MotionValue(outputRange[0]))[1]
   return {
     $$$scroll: ([first, second]) => props => ({
       onScroll({ x, y, scrollDirection }) {
-        const xOrY = scrollDirection === "horizontal" ? x : y;
-        const output = transform(xOrY, [first, second], outputRange);
+        const xOrY = scrollDirection === "horizontal" ? x : y
+        const output = transform(xOrY, [first, second], outputRange, {
+          clamp: true
+        })
 
         //   [{ xOrY: first }, { xOrY: second }],
         //   [{ [propName]: outputRange[0] }, { [propName]: outputRange[1] }],
@@ -298,14 +300,14 @@ export const modulate = (
         //   "output",
         //   output
         // );
-        dvalue.set(output);
+        dvalue.set(output)
       }
     }),
     $$$layer: range => props => ({
       [propName]: dvalue
     })
-  };
-};
+  }
+}
 
 function getTopLeft(props) {
   const {
@@ -318,12 +320,12 @@ function getTopLeft(props) {
     parentSize,
     centerX,
     centerY
-  } = props.constraints;
+  } = props
 
   const getValue = (v: number | MotionValue<number>) =>
-    typeof v === "number" ? v : v.get();
+    typeof v === "number" ? v : v.get()
   const percentToNumber = (percent: string) =>
-    Number.parseFloat(percent.slice(0, percent.length - 1)) / 100;
+    Number.parseFloat(percent.slice(0, percent.length - 1)) / 100
   const actualLeft =
     left !== null
       ? left
@@ -331,7 +333,7 @@ function getTopLeft(props) {
       ? right !== null
         ? getValue(parentSize.width) - width - right
         : getValue(parentSize.width) * percentToNumber(centerX) - width / 2
-      : 0;
+      : 0
   const actualTop =
     top !== null
       ? top
@@ -339,8 +341,8 @@ function getTopLeft(props) {
       ? bottom !== null
         ? getValue(parentSize.height) - height - bottom
         : getValue(parentSize.height) * percentToNumber(centerY) - height / 2
-      : 0;
-  return { left: actualLeft, top: actualTop };
+      : 0
+  return { left: actualLeft, top: actualTop }
 }
 
 export const speed = (
@@ -348,58 +350,58 @@ export const speed = (
   data = { left: null, top: null },
   direction = "auto"
 ) => getDataFromStore => {
-  const d = { ...data };
-  const justCreated = { left: null, top: null };
+  const d = { ...data }
+  const justCreated = { left: null, top: null }
   if (d.left === null) {
-    const [created, left] = getDataFromStore("left", 0);
-    justCreated.left = created;
-    d.left = left;
+    const [created, left] = getDataFromStore("left", 0)
+    justCreated.left = created
+    d.left = left
   }
   if (d.top === null) {
-    const [created, top] = getDataFromStore("top", 0);
-    justCreated.top = created;
-    d.top = top;
+    const [created, top] = getDataFromStore("top", 0)
+    justCreated.top = created
+    d.top = top
   }
 
-  let initialPos = { left: null, top: null };
+  let initialPos = { left: null, top: null }
   return {
     $$$scroll: range => props => ({
       onScroll({ x, y, scrollDirection }) {
         if (!justCreated.left && initialPos.left === null) {
-          initialPos.left = d.left.get();
+          initialPos.left = d.left.get()
         }
         if (!justCreated.top && initialPos.top === null) {
-          initialPos.top = d.top.get();
+          initialPos.top = d.top.get()
         }
 
         scrollDirection === "horizontal" &&
-          d.left.set((x - range[0]) * ratio + initialPos.left);
+          d.left.set((x - range[0]) * ratio + initialPos.left)
         scrollDirection === "vertical" &&
-          d.top.set((y - range[0]) * ratio + initialPos.top);
+          d.top.set((y - range[0]) * ratio + initialPos.top)
       }
     }),
     $$$layer: range => props => {
       // console.log("initialTop", initialTop);
-      const pos = getTopLeft(props);
-      if (justCreated.left) initialPos.left = pos.left;
-      if (justCreated.top) initialPos.top = pos.top;
-      d.left.set(initialPos.left);
-      d.top.set(initialPos.top);
+      const pos = getTopLeft(props)
+      if (justCreated.left) initialPos.left = pos.left
+      if (justCreated.top) initialPos.top = pos.top
+      d.left.set(initialPos.left)
+      d.top.set(initialPos.top)
       return {
         top: d.top,
         bottom: null,
         left: d.left,
         right: null
-      };
+      }
     }
-  };
-};
+  }
+}
 
-export const speedY = (ratio, data?) => speed(ratio, data, "y");
+export const speedY = (ratio, data?) => speed(ratio, data, "y")
 
-export const stickyY = (data?) => speedY(-1, data);
+export const stickyY = (data?) => speedY(-1, data)
 
-export const sticky = (data?) => speed(-1, data);
+export const sticky = (data?) => speed(-1, data)
 
 // export const stickyY = (dataValue?) => itemId => {
 // let justCreated = false;
@@ -429,50 +431,46 @@ export const sticky = (data?) => speed(-1, data);
 // };
 
 export const snap = () => getDataFromStore => {
-  const [_, contentOffsetY] = getDataFromStore(
-    "contentOffsetY",
-    0,
-    "$$$scroll"
-  );
+  const [_, contentOffsetY] = getDataFromStore("contentOffsetY", 0, "$$$scroll")
   const [__, contentOffsetX] = getDataFromStore(
     "contentOffsetX",
     0,
     "$$$scroll"
-  );
-  let currentXorY = 0;
+  )
+  let currentXorY = 0
   const snapIt = (range, scrollDirection) => {
     const contentOffsetXorY =
-      scrollDirection === "horizontal" ? contentOffsetX : contentOffsetY;
-    const mid = Math.abs((range[1] - range[0]) / 2);
+      scrollDirection === "horizontal" ? contentOffsetX : contentOffsetY
+    const mid = Math.abs((range[1] - range[0]) / 2)
     if (Math.abs(currentXorY - range[0]) < mid) {
-      animate.ease(contentOffsetXorY, range[0], { duration: 0.2 });
+      animate.ease(contentOffsetXorY, range[0], { duration: 0.2 })
     } else {
-      animate.ease(contentOffsetXorY, range[1], { duration: 0.2 });
+      animate.ease(contentOffsetXorY, range[1], { duration: 0.2 })
     }
-  };
+  }
   return {
     $$$scroll: (range, scrollDirection) => props => {
       const contentOffsetOverride =
         scrollDirection === "horizontal"
           ? { contentOffsetX }
-          : { contentOffsetY };
+          : { contentOffsetY }
       return {
         onScroll({ x, y }) {
-          currentXorY = scrollDirection === "horizontal" ? x : y;
+          currentXorY = scrollDirection === "horizontal" ? x : y
         },
         onMouseWheelEnd() {
-          snapIt(range, scrollDirection);
+          snapIt(range, scrollDirection)
         },
         onMouseUp() {
-          snapIt(range, scrollDirection);
+          snapIt(range, scrollDirection)
         },
         ...contentOffsetOverride
-      };
+      }
     }
-  };
-};
+  }
+}
 
-export const snapY = snap;
+export const snapY = snap
 
 // export function stickyScrollY(...stickyTopRanges) {
 //   const data = Data({ top: Animatable(0) });
@@ -545,14 +543,14 @@ export const snapY = snap;
 // }
 
 export function scrollAwayHeader(headerHeight: number, scrollMax: number) {
-  const data = Data({ headerTop: new MotionValue(0) });
-  let isAnimating = false;
+  const data = Data({ headerTop: new MotionValue(0) })
+  let isAnimating = false
 
   async function setHeaderTop(top) {
     if (!isAnimating) {
-      isAnimating = true;
-      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished;
-      isAnimating = false;
+      isAnimating = true
+      await animate.ease(data.headerTop, top, { duration: 0.1 }).finished
+      isAnimating = false
     }
   }
 
@@ -562,40 +560,40 @@ export function scrollAwayHeader(headerHeight: number, scrollMax: number) {
       {
         op: getDataFromStore => ({ vy, y }) => {
           if (vy < 0 && y > -scrollMax) {
-            setHeaderTop(0);
+            setHeaderTop(0)
           } else if (vy > 0 && y <= -headerHeight) {
-            setHeaderTop(-headerHeight);
+            setHeaderTop(-headerHeight)
           }
         }
       }
     ]
-  );
+  )
   const headerOverride = props => {
-    return { top: data.headerTop };
-  };
-  return [overrides.scroll, headerOverride];
+    return { top: data.headerTop }
+  }
+  return [overrides.scroll, headerOverride]
 }
 
 export function mergeOverrides(...overrides) {
   return overrides.reduce((merged, o) => {
     if (typeof o === "object") {
       for (let key in o) {
-        const valueInMerged = merged[key];
+        const valueInMerged = merged[key]
         if (typeof valueInMerged === "undefined") {
-          merged[key] = o[key];
+          merged[key] = o[key]
         } else if (typeof valueInMerged === "function") {
           if (typeof o[key] === "function") {
             merged[key] = args => {
-              valueInMerged(args);
-              o[key](args);
-            };
+              valueInMerged(args)
+              o[key](args)
+            }
           } else {
             console.error(
               `Incompatible types (key=${key})`,
               valueInMerged,
               o[key]
-            );
-            throw `Incompatible types (key=${key})`;
+            )
+            throw `Incompatible types (key=${key})`
           }
         } else {
           console.log(
@@ -603,10 +601,10 @@ export function mergeOverrides(...overrides) {
             valueInMerged,
             "New value dropped",
             o[key]
-          );
+          )
         }
       }
     }
-    return merged;
-  }, {});
+    return merged
+  }, {})
 }
