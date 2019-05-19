@@ -347,56 +347,46 @@ function getTopLeft(props) {
 
 export const speed = (
   ratio: number,
-  data = { left: null, top: null },
+  data = { x: null, y: null },
   direction = "auto"
 ) => getDataFromStore => {
   const d = { ...data }
-  const justCreated = { left: null, top: null }
-  if (d.left === null) {
-    const [created, left] = getDataFromStore("left", 0)
-    justCreated.left = created
-    d.left = left
+  const justCreated = { x: null, y: null }
+  if (d.x === null) {
+    const [created, x] = getDataFromStore("x", 0)
+    justCreated.x = created
+    d.x = x
   }
-  if (d.top === null) {
-    const [created, top] = getDataFromStore("top", 0)
-    justCreated.top = created
-    d.top = top
+  if (d.y === null) {
+    const [created, y] = getDataFromStore("y", 0)
+    justCreated.y = created
+    d.y = y
   }
 
-  let initialPos = { left: null, top: null }
+  let initialPos = { x: null, y: null }
   return {
     $$$scroll: range => props => ({
       onScroll({ x, y, scrollDirection }) {
-        if (!justCreated.left && initialPos.left === null) {
-          initialPos.left = d.left.get()
+        if (!justCreated.x && initialPos.x === null) {
+          initialPos.x = d.x.get()
         }
-        if (!justCreated.top && initialPos.top === null) {
-          initialPos.top = d.top.get()
+        if (!justCreated.y && initialPos.y === null) {
+          initialPos.y = d.y.get()
         }
 
         if (scrollDirection === "horizontal") {
-          d.left.set((x - range[0]) * ratio + initialPos.left || 0)
-          d.top.set(0)
+          d.x.set((x - range[0]) * ratio + initialPos.x || 0)
+          d.y.set(0)
         } else {
-          d.left.set(0)
-          d.top.set((y - range[0]) * ratio + initialPos.top || 0)
+          d.x.set(0)
+          d.y.set((y - range[0]) * ratio + initialPos.y || 0)
         }
       }
     }),
     $$$layer: range => props => {
-      // console.log("initialTop", initialTop);
-      // const pos = getTopLeft(props)
-      // if (justCreated.left) initialPos.left = pos.left
-      // if (justCreated.top) initialPos.top = pos.top
-      // d.left.set(initialPos.left)
-      // d.top.set(initialPos.top)
       return {
-        x: d.left,
-        y: d.top
-        // top: d.top
-        // bottom: null,
-        // left: d.left,
-        // right: null
+        x: d.x,
+        y: d.y
       }
     }
   }
