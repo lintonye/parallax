@@ -165,7 +165,7 @@ function processOneOperation(
       {
         ...wrapFuncsWithRangeCheck(restOverrides),
         onScroll(scrollProps) {
-          const { x, y } = scrollProps.offset
+          const { x, y } = scrollProps.point
 
           const xOrY = scrollDirection === "horizontal" ? x : y
           let v = 1
@@ -351,15 +351,15 @@ export const speed = (
   direction = "auto"
 ) => getDataFromStore => {
   const d = { ...data }
-  const justCreated = { left: null, top: null }
+  // const justCreated = { left: null, top: null }
   if (d.left === null) {
     const [created, left] = getDataFromStore("left", 0)
-    justCreated.left = created
+    // justCreated.left = created
     d.left = left
   }
   if (d.top === null) {
     const [created, top] = getDataFromStore("top", 0)
-    justCreated.top = created
+    // justCreated.top = created
     d.top = top
   }
 
@@ -367,31 +367,36 @@ export const speed = (
   return {
     $$$scroll: range => props => ({
       onScroll({ x, y, scrollDirection }) {
-        if (!justCreated.left && initialPos.left === null) {
-          initialPos.left = d.left.get()
-        }
-        if (!justCreated.top && initialPos.top === null) {
-          initialPos.top = d.top.get()
-        }
+        // if (!justCreated.left && initialPos.left === null) {
+        //   initialPos.left = d.left.get()
+        // }
+        // if (!justCreated.top && initialPos.top === null) {
+        //   initialPos.top = d.top.get()
+        // }
 
-        scrollDirection === "horizontal" &&
-          d.left.set((x - range[0]) * ratio + initialPos.left)
-        scrollDirection === "vertical" &&
-          d.top.set((y - range[0]) * ratio + initialPos.top)
+        if (scrollDirection === "horizontal") {
+          d.left.set((x - range[0]) * ratio) // + initialPos.left)
+          d.top.set(0)
+        } else {
+          d.left.set(0)
+          d.top.set((y - range[0]) * ratio) // + initialPos.top)
+        }
       }
     }),
     $$$layer: range => props => {
       // console.log("initialTop", initialTop);
-      const pos = getTopLeft(props)
-      if (justCreated.left) initialPos.left = pos.left
-      if (justCreated.top) initialPos.top = pos.top
-      d.left.set(initialPos.left)
-      d.top.set(initialPos.top)
+      // const pos = getTopLeft(props)
+      // if (justCreated.left) initialPos.left = pos.left
+      // if (justCreated.top) initialPos.top = pos.top
+      // d.left.set(initialPos.left)
+      // d.top.set(initialPos.top)
       return {
-        top: d.top,
-        bottom: null,
-        left: d.left,
-        right: null
+        x: d.left,
+        y: d.top
+        // top: d.top
+        // bottom: null,
+        // left: d.left,
+        // right: null
       }
     }
   }
