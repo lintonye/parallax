@@ -1,5 +1,5 @@
-import { Override } from "framer";
-import { scrollOverrides, stickyY } from "./Parallax";
+import { Override } from "framer"
+import { scrollOverrides, sticky } from "./Parallax"
 // import { stickyScrollY, mergeOverrides } from "./Parallax";
 
 // const titleHeight = 71 + 10;
@@ -28,20 +28,20 @@ import { scrollOverrides, stickyY } from "./Parallax";
 
 // export const Contact: Override = props => contactOverrides(props);
 
-const titleHeight = 71 + 10;
+const titleHeight = 71 + 10
 const overrides = scrollOverrides(
   [422, 696 - titleHeight],
-  [{ id: "about", op: stickyY() }],
+  [{ id: "about", op: sticky() }],
   [696, 1136 - titleHeight],
-  [{ id: "portfolio", op: stickyY() }],
+  [{ id: "portfolio", op: sticky() }],
   [1136, 1500 - titleHeight],
-  [{ id: "contact", op: stickyY() }]
-);
+  [{ id: "contact", op: sticky() }]
+)
 
-export const Scroll: Override = props => overrides.scroll(props);
+export const Scroll: Override = props => overrides.scroll(props)
 
-export const About: Override = props => overrides.about(props);
+export const About: Override = props => overrides.about(props)
 
-export const Portfolio: Override = props => overrides.portfolio(props);
+export const Portfolio: Override = props => overrides.portfolio(props)
 
-export const Contact: Override = props => overrides.contact(props);
+export const Contact: Override = props => overrides.contact(props)
