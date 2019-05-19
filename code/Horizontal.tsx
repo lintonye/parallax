@@ -1,8 +1,8 @@
-import { Data, animate, Override, Animatable } from "framer";
+import { Data, animate, Override, Animatable } from "framer"
 
-import { scrollOverrides, modulate, speed, sticky } from "./Parallax";
+import { scrollOverrides, modulate, speed, sticky } from "./Parallax"
 
-const data = Data({ rotation: Animatable(0) });
+const data = Data({ rotation: 0 })
 
 // [number, number]: x or y?
 // {x: [number, number]}: x
@@ -35,21 +35,21 @@ const overrides = scrollOverrides(
         // vx: the velocity of scrolling in x direction
         //   vx > 0: scrolling right
         //   vx < 0: scrolling left
-        animate.spring(data.rotation, vx > 0 ? 180 : 0);
+        data.rotation = vx > 0 ? 180 : 0
       }
     }
   ]
-);
+)
 
-export const Scroll: Override = props => overrides.scroll(props);
-export const Sticky100400: Override = props => overrides.sticky100400(props);
-export const Opacity: Override = props => overrides.opacity(props);
-export const Bg: Override = props => overrides.bg(props);
-export const Speed0: Override = props => overrides.speed0(props);
-export const Speed05: Override = props => overrides.speed05(props);
-export const Speedminus1: Override = props => overrides.speedminus1(props);
-export const Speedminus2: Override = props => overrides.speedminus2(props);
-export const Speed1: Override = props => overrides.speed1(props);
+export const Scroll: Override = props => overrides.scroll(props)
+export const Sticky100400: Override = props => overrides.sticky100400(props)
+export const Opacity: Override = props => overrides.opacity(props)
+export const Bg: Override = props => overrides.bg(props)
+export const Speed0: Override = props => overrides.speed0(props)
+export const Speed05: Override = props => overrides.speed05(props)
+export const Speedminus1: Override = props => overrides.speedminus1(props)
+export const Speedminus2: Override = props => overrides.speedminus2(props)
+export const Speed1: Override = props => overrides.speed1(props)
 export const TriggerAnimation: Override = props => ({
-  rotation: data.rotation
-});
+  animate: { rotate: data.rotation }
+})
