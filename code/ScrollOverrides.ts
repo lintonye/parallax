@@ -174,24 +174,22 @@ function processOneOperation(
           lastTimeStamp = Date.now()
           lastXorY = xOrY
           inRange = isInRange(xOrY, scrollRange)
-          if (inRange) {
-            const didntRunInThisDirection =
-              Math.sign(lastVxOrY) !== Math.sign(v)
-            if (
-              opOnScroll &&
-              (didntRunInThisDirection || opType === "scrollAndLayer")
-            ) {
-              const runAtNextRound = opOnScroll({
-                ...scrollProps,
-                x,
-                y,
-                vx: scrollDirection === "horizontal" ? v : 0,
-                vy: scrollDirection === "vertical" ? v : 0,
-                scrollDirection
-              })
-              lastVxOrY = v
-              if (runAtNextRound) lastVxOrY = 0
-            }
+          const didntRunInThisDirection = Math.sign(lastVxOrY) !== Math.sign(v)
+          if (
+            opOnScroll &&
+            (didntRunInThisDirection || opType === "scrollAndLayer")
+          ) {
+            const runAtNextRound = opOnScroll({
+              ...scrollProps,
+              x,
+              y,
+              vx: scrollDirection === "horizontal" ? v : 0,
+              vy: scrollDirection === "vertical" ? v : 0,
+              scrollDirection,
+              inRange
+            })
+            lastVxOrY = v
+            if (runAtNextRound) lastVxOrY = 0
           }
         }
       },
@@ -366,7 +364,8 @@ export const speed = (
   let initialPos = { x: null, y: null }
   return {
     $$$scroll: range => props => ({
-      onScroll({ x, y, scrollDirection }) {
+      onScroll({ x, y, scrollDirection, inRange }) {
+        if (!inRange) return
         if (!justCreated.x && initialPos.x === null) {
           initialPos.x = d.x.get()
         }
