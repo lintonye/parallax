@@ -61,9 +61,6 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-ReactDOM@./ReactDOM:
-  version "0.0.0"
-
 abab@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.0.tgz#aba0ab4c5eee2d4c79d3487d85450fb2376ebb0f"
@@ -3186,9 +3183,9 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
-use-parallax@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/use-parallax/-/use-parallax-0.0.5.tgz#5dccd1d5cc55580dc49613a1785d4b12d126f5af"
+use-parallax@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/use-parallax/-/use-parallax-0.0.6.tgz#53e4c0f72c751558fe54f1866bca52eab6a69938"
   dependencies:
     "@types/react" "^16.9.2"
     framer-motion "^1.6.2"

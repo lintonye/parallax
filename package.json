@@ -4,7 +4,6 @@
 	"devDependencies": {
 		"@types/jest": "^23.3.12",
 		"@types/react": "^16.8",
-		"ReactDOM": "./ReactDOM",
 		"jest": "^23.6.0",
 		"react": "^16.8",
 		"react-dom": "^16.8",
@@ -23,10 +22,10 @@
 	"author": "Linton Ye",
 	"dependencies": {
 		"mathjs": "^5.2.0",
-		"use-parallax": "^0.0.5"
+		"use-parallax": "^0.0.6"
 	},
 	"name": "@framer/lintonye.parallax",
-	"version": "1.45.0",
+	"version": "1.46.0",
 	"scripts": {
 		"test": "jest"
 	}
