@@ -8124,6 +8124,13 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
+              "children" : [
+                {
+                  "enabled" : true,
+                  "type" : "componentinstance",
+                  "value" : "rW6dJuLCa"
+                }
+              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -8298,6 +8305,13 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
+              "children" : [
+                {
+                  "enabled" : true,
+                  "type" : "componentinstance",
+                  "value" : "vifFXzSw8"
+                }
+              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -24416,6 +24430,13 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
+              "children" : [
+                {
+                  "enabled" : true,
+                  "type" : "componentinstance",
+                  "value" : "X19YWFxke"
+                }
+              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -24551,74 +24572,6 @@
         "top" : 917,
         "visible" : true,
         "width" : 1366,
-        "widthType" : 0
-      },
-      {
-        "__class" : "CodeComponentNode",
-        "aspectRatio" : null,
-        "bottom" : null,
-        "centerAnchorX" : 0,
-        "centerAnchorY" : 0,
-        "children" : [
-
-        ],
-        "clip" : true,
-        "codeComponentIdentifier" : ".\/ParallaxLayer.tsx_ParallaxLayer",
-        "codeComponentProps" : {
-          "backgroundColor_outputMax" : "#09F",
-          "backgroundColor_outputMin" : "#09F",
-          "dependsOn" : "y",
-          "inputMax" : 0,
-          "inputMin" : 0,
-          "opacity_outputMax" : 0,
-          "opacity_outputMin" : 0,
-          "property" : "rotate",
-          "rotate_outputMax" : 0,
-          "rotate_outputMin" : 0,
-          "scale_outputMax" : 0,
-          "scale_outputMin" : 0,
-          "x_outputMax" : 0,
-          "x_outputMin" : 0,
-          "y_outputMax" : 0,
-          "y_outputMin" : 0
-        },
-        "codeOverrideEnabled" : false,
-        "constraintsLocked" : false,
-        "deviceType" : null,
-        "exportOptions" : [
-
-        ],
-        "fillColor" : "rgba(255,255,255,1)",
-        "fillEnabled" : false,
-        "fillImage" : null,
-        "fillImagePixelHeight" : null,
-        "fillImagePixelWidth" : null,
-        "fillImageResize" : "fill",
-        "fillType" : "color",
-        "height" : 762,
-        "heightType" : 0,
-        "id" : "xm6jW944o",
-        "intrinsicHeight" : null,
-        "intrinsicWidth" : null,
-        "left" : 13155,
-        "locked" : false,
-        "name" : null,
-        "opacity" : 1,
-        "originalid" : null,
-        "parentid" : "NRVpR_avb",
-        "previewSettings" : null,
-        "radius" : 0,
-        "radiusBottomLeft" : 0,
-        "radiusBottomRight" : 0,
-        "radiusIsRelative" : false,
-        "radiusPerCorner" : false,
-        "radiusTopLeft" : 0,
-        "radiusTopRight" : 0,
-        "right" : null,
-        "rotation" : 0,
-        "top" : -834,
-        "visible" : true,
-        "width" : 879,
         "widthType" : 0
       }
     ],
