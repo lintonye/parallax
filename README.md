@@ -14,7 +14,6 @@ This module makes it easy to create advanced scroll interactions. There are two 
 Check out some quick demos: 
 
 - https://twitter.com/lintonye/status/1084845396164112385
-- https://twitter.com/lintonye/status/1049727463343812608
 - https://twitter.com/lintonye/status/1042262028339933184
 
 Demo file:

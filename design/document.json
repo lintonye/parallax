@@ -40,13 +40,6 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
-              "children" : [
-                {
-                  "enabled" : true,
-                  "type" : "componentinstance",
-                  "value" : "R5qV3Q6jf"
-                }
-              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -8124,13 +8117,6 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
-              "children" : [
-                {
-                  "enabled" : true,
-                  "type" : "componentinstance",
-                  "value" : "rW6dJuLCa"
-                }
-              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -8305,13 +8291,6 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
-              "children" : [
-                {
-                  "enabled" : true,
-                  "type" : "componentinstance",
-                  "value" : "vifFXzSw8"
-                }
-              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -9514,10 +9493,10 @@
                         "html" : "<div data-offset-key=\"d7nd1-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"d7nd1-0-0\" style=\"font-weight:bold;tab-size:4;font-family:&quot;SF Pro Display&quot;, &quot;SF Pro Icons&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:24px;letter-spacing:0.2px;line-height:1.2\"><span data-text=\"true\">The largest LCD ever on an iPhone<\/span><\/span><\/div>",
                         "os" : "macos 10_14 framerx",
                         "size" : {
-                          "height" : 168,
-                          "width" : 101
+                          "height" : 56,
+                          "width" : 257
                         },
-                        "width" : 100
+                        "width" : 256
                       },
                       "entityMap" : {
 
@@ -9733,10 +9712,10 @@
                         "html" : "<div data-offset-key=\"24r50-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"24r50-0-0\" style=\"font-weight:bold;tab-size:4;font-family:&quot;SF Pro Display&quot;, &quot;SF Pro Icons&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:24px;letter-spacing:0.2px;line-height:1.2\"><span data-text=\"true\">Industry-leading colour accuracy<\/span><\/span><\/div>",
                         "os" : "macos 10_14 framerx",
                         "size" : {
-                          "height" : 140,
-                          "width" : 101
+                          "height" : 56,
+                          "width" : 229
                         },
-                        "width" : 100
+                        "width" : 228
                       },
                       "entityMap" : {
 
@@ -10881,14 +10860,7 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
-              "children" : [
-                {
-                  "enabled" : true,
-                  "type" : "componentinstance",
-                  "value" : "SezgfGqwu"
-                }
-              ],
-              "direction" : "horizontal",
+              "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
               "wheelEnabled" : true
@@ -24430,13 +24402,6 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
-              "children" : [
-                {
-                  "enabled" : true,
-                  "type" : "componentinstance",
-                  "value" : "X19YWFxke"
-                }
-              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -24595,13 +24560,6 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ParallaxScroll.tsx_ParallaxScroll",
             "codeComponentProps" : {
-              "children" : [
-                {
-                  "enabled" : true,
-                  "type" : "componentinstance",
-                  "value" : "G5bpgTR4u"
-                }
-              ],
               "direction" : "vertical",
               "directionLock" : true,
               "dragEnabled" : true,
@@ -25107,9 +25065,7 @@
                 "top" : null,
                 "visible" : true,
                 "width" : 469,
-                "widthType" : 0,
-                "x" : 89,
-                "y" : 1676
+                "widthType" : 0
               }
             ],
             "clip" : false,
@@ -25321,9 +25277,7 @@
             "top" : 43,
             "visible" : true,
             "width" : 296,
-            "widthType" : 0,
-            "x" : 152,
-            "y" : 270
+            "widthType" : 0
           }
         ],
         "clip" : true,
@@ -25378,6 +25332,74 @@
         "top" : -4686,
         "visible" : true,
         "width" : 534,
+        "widthType" : 0
+      },
+      {
+        "__class" : "CodeComponentNode",
+        "aspectRatio" : null,
+        "bottom" : null,
+        "centerAnchorX" : 0,
+        "centerAnchorY" : 0,
+        "children" : [
+
+        ],
+        "clip" : true,
+        "codeComponentIdentifier" : ".\/ParallaxLayer.tsx_ParallaxLayer",
+        "codeComponentProps" : {
+          "backgroundColor_outputMax" : "#09F",
+          "backgroundColor_outputMin" : "#09F",
+          "dependsOn" : "y",
+          "inputMax" : 0,
+          "inputMin" : 0,
+          "opacity_outputMax" : 0,
+          "opacity_outputMin" : 0,
+          "property" : "rotate",
+          "rotate_outputMax" : 0,
+          "rotate_outputMin" : 0,
+          "scale_outputMax" : 0,
+          "scale_outputMin" : 0,
+          "x_outputMax" : 0,
+          "x_outputMin" : 0,
+          "y_outputMax" : 0,
+          "y_outputMin" : 0
+        },
+        "codeOverrideEnabled" : false,
+        "constraintsLocked" : false,
+        "deviceType" : null,
+        "exportOptions" : [
+
+        ],
+        "fillColor" : "rgba(255,255,255,1)",
+        "fillEnabled" : false,
+        "fillImage" : null,
+        "fillImagePixelHeight" : null,
+        "fillImagePixelWidth" : null,
+        "fillImageResize" : "fill",
+        "fillType" : "color",
+        "height" : 762,
+        "heightType" : 0,
+        "id" : "xm6jW944o",
+        "intrinsicHeight" : null,
+        "intrinsicWidth" : null,
+        "left" : 13155,
+        "locked" : false,
+        "name" : null,
+        "opacity" : 1,
+        "originalid" : null,
+        "parentid" : "NRVpR_avb",
+        "previewSettings" : null,
+        "radius" : 0,
+        "radiusBottomLeft" : 0,
+        "radiusBottomRight" : 0,
+        "radiusIsRelative" : false,
+        "radiusPerCorner" : false,
+        "radiusTopLeft" : 0,
+        "radiusTopRight" : 0,
+        "right" : null,
+        "rotation" : 0,
+        "top" : -834,
+        "visible" : true,
+        "width" : 879,
         "widthType" : 0
       }
     ],
