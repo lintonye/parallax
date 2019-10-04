@@ -9403,10 +9403,10 @@
                         "html" : "<div data-offset-key=\"d7nd1-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"d7nd1-0-0\" style=\"font-weight:bold;tab-size:4;font-family:&quot;SF Pro Display&quot;, &quot;SF Pro Icons&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:24px;letter-spacing:0.2px;line-height:1.2\"><span data-text=\"true\">The largest LCD ever on an iPhone<\/span><\/span><\/div>",
                         "os" : "macos 10_14 framerx",
                         "size" : {
-                          "height" : 168,
-                          "width" : 101
+                          "height" : 56,
+                          "width" : 257
                         },
-                        "width" : 100
+                        "width" : 256
                       },
                       "entityMap" : {
 
@@ -9622,10 +9622,10 @@
                         "html" : "<div data-offset-key=\"24r50-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"24r50-0-0\" style=\"font-weight:bold;tab-size:4;font-family:&quot;SF Pro Display&quot;, &quot;SF Pro Icons&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;-webkit-text-fill-color:rgb(255, 255, 255);font-size:24px;letter-spacing:0.2px;line-height:1.2\"><span data-text=\"true\">Industry-leading colour accuracy<\/span><\/span><\/div>",
                         "os" : "macos 10_14 framerx",
                         "size" : {
-                          "height" : 140,
-                          "width" : 101
+                          "height" : 56,
+                          "width" : 229
                         },
-                        "width" : 100
+                        "width" : 228
                       },
                       "entityMap" : {
 
@@ -25483,9 +25483,7 @@
         "top" : -4466,
         "visible" : true,
         "width" : 2352,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "TextNode",
@@ -25575,9 +25573,7 @@
         "top" : -4514,
         "visible" : true,
         "width" : 2337,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "TextNode",
@@ -25667,9 +25663,7 @@
         "top" : -4514,
         "visible" : true,
         "width" : 1734,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "TextNode",
@@ -25759,9 +25753,7 @@
         "top" : 2,
         "visible" : true,
         "width" : 2418,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "TextNode",
@@ -25851,9 +25843,7 @@
         "top" : -540,
         "visible" : true,
         "width" : 3199,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "TextNode",
@@ -25943,9 +25933,7 @@
         "top" : -540,
         "visible" : true,
         "width" : 2342,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "FrameNode",
@@ -26146,9 +26134,7 @@
         "top" : 4737,
         "visible" : true,
         "width" : 1646,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       },
       {
         "__class" : "TextNode",
@@ -26238,9 +26224,7 @@
         "top" : -4466,
         "visible" : true,
         "width" : 2592,
-        "widthType" : 0,
-        "x" : 338,
-        "y" : 770
+        "widthType" : 0
       }
     ],
     "guidesX" : [
