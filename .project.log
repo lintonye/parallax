@@ -1,6 +1,6 @@
 [2019-02-21 04:41:04.9570] - INFO - Reading from /Users/lintonye/git-repos/parallax.framerfx (origin); preserving existing contents of project folder: true
 [2019-02-21 04:41:05.5340] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x60000305d910 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
-[2019-02-21 04:41:05.5350] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyiaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x60000305d910 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-02-21 04:41:05.5350] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyiSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyiaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x60000305d910 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
 [2019-02-21 04:41:05.5350] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyifile with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x60400345a370 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
 [2019-02-21 04:41:05.5360] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x60000345aaf0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
 [2019-02-21 04:41:05.5360] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x60000345ac40 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
@@ -305,3 +305,1028 @@
 [2019-10-03 15:10:11.9040] - DEBUG - [Save session: 0] Started, operation: autosaveInPlaceOperation
 [2019-10-03 15:10:11.9040] - DEBUG - [Save session: 0] Before container.writeChanges
 [2019-10-03 15:10:11.9040] - DEBUG - [Save session: 0] Before waitUsingRecursiveRunLoop
+
+[2019-10-03 15:31:48.3870] - INFO - Reading from /Users/lintonye/git-repos/parallax.framerfx (origin); preserving existing contents of project folder: true
+[2019-10-03 15:31:48.7870] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “T5pmb1ABENbRwVuT1BkEBfQc.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png, NSUnderlyingError=0x600002f12c70 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7870] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “T5pmb1ABENbRwVuT1BkEBfQc.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/T5pmb1ABENbRwVuT1BkEBfQc.png, NSUnderlyingError=0x600002f12e20 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7880] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “T5pmb1ABENbRwVuT1BkEBfQc.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/T5pmb1ABENbRwVuT1BkEBfQc.png, NSUnderlyingError=0x600002f12fa0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7880] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “T5pmb1ABENbRwVuT1BkEBfQc.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/T5pmb1ABENbRwVuT1BkEBfQc.png, NSUnderlyingError=0x600002f13030 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7880] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rF0fjNDvCtzC5VMDzwFa3tPCls.jpg” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg, NSUnderlyingError=0x600002f13360 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7890] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rF0fjNDvCtzC5VMDzwFa3tPCls.jpg” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg, NSUnderlyingError=0x600002f13510 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7890] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rF0fjNDvCtzC5VMDzwFa3tPCls.jpg” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg, NSUnderlyingError=0x600002f13690 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7890] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rF0fjNDvCtzC5VMDzwFa3tPCls.jpg” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg, NSUnderlyingError=0x600002f136c0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7900] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rhPN954ni6wSHMllNgVRF3ToHms.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/rhPN954ni6wSHMllNgVRF3ToHms.png, NSUnderlyingError=0x600002f13960 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7900] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rhPN954ni6wSHMllNgVRF3ToHms.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/rhPN954ni6wSHMllNgVRF3ToHms.png, NSUnderlyingError=0x600002f13ab0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7900] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rhPN954ni6wSHMllNgVRF3ToHms.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/rhPN954ni6wSHMllNgVRF3ToHms.png, NSUnderlyingError=0x600002f13a80 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7910] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “rhPN954ni6wSHMllNgVRF3ToHms.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/rhPN954ni6wSHMllNgVRF3ToHms.png, NSUnderlyingError=0x600002f13c60 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7910] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “DzVLTgfm127YVsEhDaV3pxBmlYQ.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/DzVLTgfm127YVsEhDaV3pxBmlYQ.png, NSUnderlyingError=0x600002f13ed0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7910] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “DzVLTgfm127YVsEhDaV3pxBmlYQ.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/DzVLTgfm127YVsEhDaV3pxBmlYQ.png, NSUnderlyingError=0x600002f6f960 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7920] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “DzVLTgfm127YVsEhDaV3pxBmlYQ.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/DzVLTgfm127YVsEhDaV3pxBmlYQ.png, NSUnderlyingError=0x600002f24ed0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7920] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “DzVLTgfm127YVsEhDaV3pxBmlYQ.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/DzVLTgfm127YVsEhDaV3pxBmlYQ.png, NSUnderlyingError=0x600002f255c0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7920] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “s3DskIyE9O5ST8ePfd0cmSXCI.jpg” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg, NSUnderlyingError=0x600002f242d0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7930] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “s3DskIyE9O5ST8ePfd0cmSXCI.jpg” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/s3DskIyE9O5ST8ePfd0cmSXCI.jpg, NSUnderlyingError=0x600002f24d20 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7930] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “s3DskIyE9O5ST8ePfd0cmSXCI.jpg” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/s3DskIyE9O5ST8ePfd0cmSXCI.jpg, NSUnderlyingError=0x600002f38030 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7940] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “s3DskIyE9O5ST8ePfd0cmSXCI.jpg” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/s3DskIyE9O5ST8ePfd0cmSXCI.jpg, NSUnderlyingError=0x600002f38d20 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7940] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “ev9yV5HVh8jwqTO8lVK21VFII.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/ev9yV5HVh8jwqTO8lVK21VFII.png, NSUnderlyingError=0x600002f39290 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7950] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “ev9yV5HVh8jwqTO8lVK21VFII.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/ev9yV5HVh8jwqTO8lVK21VFII.png, NSUnderlyingError=0x600002f38300 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7950] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “ev9yV5HVh8jwqTO8lVK21VFII.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/ev9yV5HVh8jwqTO8lVK21VFII.png, NSUnderlyingError=0x600002f38b10 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7960] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “ev9yV5HVh8jwqTO8lVK21VFII.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/ev9yV5HVh8jwqTO8lVK21VFII.png, NSUnderlyingError=0x600002f3adf0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7960] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x600002f3bf60 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7960] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x600002f3bdb0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7970] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x600002f3bc30 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7970] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “6cl2aeMzNXVootTgD4PFJuZgpI.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/6cl2aeMzNXVootTgD4PFJuZgpI.png, NSUnderlyingError=0x600002f3ba80 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7980] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “4FdOdWjXgA0il69477uzcFZdUY.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/4FdOdWjXgA0il69477uzcFZdUY.png, NSUnderlyingError=0x600002f3b660 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7980] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “4FdOdWjXgA0il69477uzcFZdUY.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/4FdOdWjXgA0il69477uzcFZdUY.png, NSUnderlyingError=0x600002f3b330 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7990] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “4FdOdWjXgA0il69477uzcFZdUY.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/4FdOdWjXgA0il69477uzcFZdUY.png, NSUnderlyingError=0x600002f3ae20 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.7990] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “4FdOdWjXgA0il69477uzcFZdUY.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/4FdOdWjXgA0il69477uzcFZdUY.png, NSUnderlyingError=0x600002f3b030 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8000] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “WFJePahiFKjFMmdNZ2XJZsv4tg.jpg” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg, NSUnderlyingError=0x600002f3a670 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8000] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “WFJePahiFKjFMmdNZ2XJZsv4tg.jpg” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg, NSUnderlyingError=0x600002f3a580 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8010] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “WFJePahiFKjFMmdNZ2XJZsv4tg.jpg” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg, NSUnderlyingError=0x600002f388a0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8010] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “WFJePahiFKjFMmdNZ2XJZsv4tg.jpg” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg, NSUnderlyingError=0x600002f38450 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8010] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJRoNL00SThgksEJrm9ZNKA.jpg” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg, NSUnderlyingError=0x600002f001e0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8020] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJRoNL00SThgksEJrm9ZNKA.jpg” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/kJRoNL00SThgksEJrm9ZNKA.jpg, NSUnderlyingError=0x600002f00390 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8020] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJRoNL00SThgksEJrm9ZNKA.jpg” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/kJRoNL00SThgksEJrm9ZNKA.jpg, NSUnderlyingError=0x600002f00510 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8030] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJRoNL00SThgksEJrm9ZNKA.jpg” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/kJRoNL00SThgksEJrm9ZNKA.jpg, NSUnderlyingError=0x600002f005a0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8030] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg, NSUnderlyingError=0x600002f3ce70 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8040] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg, NSUnderlyingError=0x600002f3e790 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8040] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg, NSUnderlyingError=0x600002f3d950 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8050] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg, NSUnderlyingError=0x600002f3cb10 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8050] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “MCDgF5iVVVqFEFek8dOxaVVgUrw.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/MCDgF5iVVVqFEFek8dOxaVVgUrw.png, NSUnderlyingError=0x600002f3d860 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8050] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “MCDgF5iVVVqFEFek8dOxaVVgUrw.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png, NSUnderlyingError=0x600002f3c9f0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8060] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “MCDgF5iVVVqFEFek8dOxaVVgUrw.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/MCDgF5iVVVqFEFek8dOxaVVgUrw.png, NSUnderlyingError=0x600002f3c630 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8060] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “MCDgF5iVVVqFEFek8dOxaVVgUrw.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/MCDgF5iVVVqFEFek8dOxaVVgUrw.png, NSUnderlyingError=0x600002f3d6e0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8070] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “9oqaUJtARQFTLrWweDi0mJJLX4.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/9oqaUJtARQFTLrWweDi0mJJLX4.png, NSUnderlyingError=0x600002f3c7b0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8070] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “9oqaUJtARQFTLrWweDi0mJJLX4.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/9oqaUJtARQFTLrWweDi0mJJLX4.png, NSUnderlyingError=0x600002f3c990 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8080] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “9oqaUJtARQFTLrWweDi0mJJLX4.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/9oqaUJtARQFTLrWweDi0mJJLX4.png, NSUnderlyingError=0x600002f3c690 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8080] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “9oqaUJtARQFTLrWweDi0mJJLX4.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/9oqaUJtARQFTLrWweDi0mJJLX4.png, NSUnderlyingError=0x600002f3c6c0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8090] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png, NSUnderlyingError=0x600002f3de00 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8090] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png, NSUnderlyingError=0x600002f3df20 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8090] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png, NSUnderlyingError=0x600002f3e4c0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8100] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png, NSUnderlyingError=0x600002f3eb80 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8100] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “XTSIjp60Nex9hQArH4OygHWJE.png” couldn’t be saved in the folder “512” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png, NSUnderlyingError=0x600002f3f780 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8110] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “XTSIjp60Nex9hQArH4OygHWJE.png” couldn’t be saved in the folder “1024” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/1024/XTSIjp60Nex9hQArH4OygHWJE.png, NSUnderlyingError=0x600002f3fde0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8110] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “XTSIjp60Nex9hQArH4OygHWJE.png” couldn’t be saved in the folder “2048” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png, NSUnderlyingError=0x600002f340f0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8120] - INFO - Couldn’t create temporary image cache symlink: Error Domain=NSCocoaErrorDomain Code=516 "The file “XTSIjp60Nex9hQArH4OygHWJE.png” couldn’t be saved in the folder “4096” because a file with the same name already exists." UserInfo={NSFilePath=/Users/lintonye/git-repos/parallax.framerfx/.cache/images/4096/XTSIjp60Nex9hQArH4OygHWJE.png, NSUnderlyingError=0x600002f341b0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+[2019-10-03 15:31:48.8120] - INFO - Done reading
+[2019-10-03 15:31:48.8140] - INFO - Marking changed: false
+[2019-10-03 15:31:49.0350] - INFO - Proxy Config: exceptions: *.local, 169.254/16
+[2019-10-03 15:31:49.4600] - INFO - Project server PID: 31112
+[2019-10-03 15:31:50.1320] - INFO - Installing dependencies...
+[2019-10-03 15:31:50.5220] - INFO - GET 200 /node_modules/framer/build/framer.debug.js 0 B (4ms)
+[2019-10-03 15:31:51.3210] - INFO - GET 200 /design/document.json 0 B (1ms)
+[2019-10-03 15:31:52.3020] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (4ms)
+[2019-10-03 15:31:52.3120] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 15:31:52.3200] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 15:31:52.3270] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 15:31:52.3310] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 15:31:52.3410] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 15:31:52.5770] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 15:31:52.5770] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 15:31:52.5990] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (3ms)
+[2019-10-03 15:31:52.6020] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 15:31:53.4300] - ERROR - Thu, 03 Oct 2019 22:31:53 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at Applications/Framer X.app/Contents/Resources/Server/lib/server.js:119:17
+[2019-10-03 15:32:03.4080] - INFO - Installing dependencies - DONE. Took 13264ms
+[2019-10-03 15:32:08.7150] - INFO - Marking changed: false
+[2019-10-03 15:32:12.7610] - INFO - _handleWatch: build took 4078ms
+[2019-10-03 15:32:12.7870] - INFO - _handleWatch: updated scripts - index.js,vendors.js
+[2019-10-03 15:32:13.7640] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (3ms)
+[2019-10-03 15:32:13.7660] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 15:32:13.7700] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 15:32:13.7730] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 15:32:13.7770] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 15:32:13.7810] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 15:32:13.9210] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (4ms)
+[2019-10-03 15:32:13.9220] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (3ms)
+[2019-10-03 15:32:13.9240] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 15:32:13.9250] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 15:32:13.9260] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 15:32:13.9270] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (4ms)
+[2019-10-03 15:32:49.9800] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 15.32.49.zip
+[2019-10-03 15:55:41.9810] - INFO - GET 200 /.cache/images/2048/9oqaUJtARQFTLrWweDi0mJJLX4.png 174 kB (3ms)
+[2019-10-03 15:55:41.9900] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 15:55:41.9940] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 15:55:41.9980] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 15:55:42.0000] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (3ms)
+[2019-10-03 15:55:42.0010] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (4ms)
+[2019-10-03 15:55:42.0010] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (4ms)
+[2019-10-03 15:55:42.0100] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 15:55:42.0120] - INFO - GET 404 /.cache/images/2048/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (2ms)
+[2019-10-03 15:55:42.0130] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (3ms)
+[2019-10-03 15:55:42.0140] - INFO - GET 200 /design/images/XTSIjp60Nex9hQArH4OygHWJE.png 720 B (4ms)
+[2019-10-03 15:56:28.4870] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 15.56.28.zip
+[2019-10-03 15:56:38.8810] - DEBUG - [Save session: 0] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 15:56:38.8810] - DEBUG - [Save session: 0] Before container.writeChanges
+[2019-10-03 15:56:38.8810] - DEBUG - [Save session: 0] Not autosaving to archive, implicitly cancellable
+[2019-10-03 15:56:40.8670] - DEBUG - [Save session: 0] Completed container.writeChanges
+[2019-10-03 15:57:09.6050] - DEBUG - [Save session: 1] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 15:57:09.6050] - DEBUG - [Save session: 1] Before container.writeChanges
+[2019-10-03 15:57:09.6050] - DEBUG - [Save session: 1] Not autosaving to archive, implicitly cancellable
+[2019-10-03 15:57:11.3580] - DEBUG - [Save session: 1] Completed container.writeChanges
+[2019-10-03 15:57:26.9450] - INFO - _handleWatch: build took 130ms
+[2019-10-03 15:57:26.9650] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 15:57:30.2630] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 15.57.30.zip
+[2019-10-03 15:57:34.0390] - ERROR - File that does not exist: /Users/lintonye/git-repos/parallax.framerfx/code/RegisterContext copy.tsx
+[2019-10-03 15:57:34.0980] - INFO - _handleWatch: build took 192ms
+[2019-10-03 15:57:34.1150] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 15:58:32.4170] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 15.58.32.zip
+[2019-10-03 15:58:34.3350] - INFO - _handleWatch: build took 109ms
+[2019-10-03 15:58:34.3520] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 15:59:36.7430] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 15.59.36.zip
+[2019-10-03 15:59:40.4000] - INFO - _handleWatch: build took 123ms
+[2019-10-03 15:59:40.4180] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:00:39.8700] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.00.39.zip
+[2019-10-03 16:01:17.9020] - INFO - _handleWatch: build took 569ms
+[2019-10-03 16:01:17.9210] - INFO - _handleWatch: updated scripts - index.js,vendors.js
+[2019-10-03 16:01:32.2910] - INFO - _handleWatch: build took 94ms
+[2019-10-03 16:01:32.3100] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:01:46.4440] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.01.46.zip
+[2019-10-03 16:02:14.1860] - INFO - _handleWatch: build took 177ms
+[2019-10-03 16:02:14.2130] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:02:25.5950] - INFO - _handleWatch: build took 123ms
+[2019-10-03 16:02:25.6140] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:02:49.3290] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.02.49.zip
+[2019-10-03 16:03:32.7050] - INFO - _handleWatch: build took 89ms
+[2019-10-03 16:03:32.7240] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:03:52.1710] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.03.52.zip
+[2019-10-03 16:04:44.9150] - INFO - _handleWatch: build took 114ms
+[2019-10-03 16:04:44.9340] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:04:51.8480] - INFO - _handleWatch: build took 111ms
+[2019-10-03 16:04:51.8660] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:04:52.9800] - INFO - _handleWatch: build took 76ms
+[2019-10-03 16:04:52.9990] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:04:55.7180] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.04.55.zip
+[2019-10-03 16:08:33.8160] - INFO - _handleWatch: build took 100ms
+[2019-10-03 16:08:33.8370] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:09:22.4810] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.09.22.zip
+[2019-10-03 16:10:58.5210] - INFO - _handleWatch: build took 107ms
+[2019-10-03 16:10:58.5400] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:11:03.6690] - DEBUG - [Save session: 2] Started, operation: autosaveInPlaceOperation
+[2019-10-03 16:11:03.6700] - DEBUG - [Save session: 2] Before container.writeChanges
+[2019-10-03 16:11:03.6700] - DEBUG - [Save session: 2] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:11:05.2370] - DEBUG - [Save session: 2] Completed container.writeChanges
+[2019-10-03 16:11:05.2390] - DEBUG - [Save session: 2] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:11:05.2440] - DEBUG - [Save session: 2] Completed super.save
+[2019-10-03 16:11:32.2840] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.11.32.zip
+[2019-10-03 16:11:58.5920] - DEBUG - [Save session: 3] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:11:58.5920] - DEBUG - [Save session: 3] Before container.writeChanges
+[2019-10-03 16:11:58.5920] - DEBUG - [Save session: 3] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:12:00.4890] - DEBUG - [Save session: 3] Completed container.writeChanges
+[2019-10-03 16:12:34.2680] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.12.34.zip
+[2019-10-03 16:15:49.5760] - INFO - _handleWatch: build took 116ms
+[2019-10-03 16:15:49.5990] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:16:03.8930] - INFO - _handleWatch: build took 93ms
+[2019-10-03 16:16:03.9120] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:16:07.6530] - INFO - _handleWatch: build took 82ms
+[2019-10-03 16:16:07.6780] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:16:38.8160] - INFO - _handleWatch: build took 123ms
+[2019-10-03 16:16:38.8360] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:16:51.2260] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.16.51.zip
+[2019-10-03 16:17:54.9420] - INFO - _handleWatch: build took 122ms
+[2019-10-03 16:17:54.9640] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:18:58.5820] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.18.58.zip
+[2019-10-03 16:20:52.3940] - INFO - _handleWatch: build took 151ms
+[2019-10-03 16:20:52.4210] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:21:05.2780] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.21.05.zip
+[2019-10-03 16:23:30.5530] - INFO - _handleWatch: build took 97ms
+[2019-10-03 16:23:30.5730] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:23:36.5270] - DEBUG - [Save session: 4] Started, operation: autosaveInPlaceOperation
+[2019-10-03 16:23:36.5270] - DEBUG - [Save session: 4] Before container.writeChanges
+[2019-10-03 16:23:36.5270] - DEBUG - [Save session: 4] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:23:38.0420] - DEBUG - [Save session: 4] Completed container.writeChanges
+[2019-10-03 16:23:38.0430] - DEBUG - [Save session: 4] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:23:38.0500] - DEBUG - [Save session: 4] Completed super.save
+[2019-10-03 16:23:40.5620] - DEBUG - [Save session: 5] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:23:40.5620] - DEBUG - [Save session: 5] Before container.writeChanges
+[2019-10-03 16:23:40.5620] - DEBUG - [Save session: 5] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:23:42.2940] - DEBUG - [Save session: 5] Completed container.writeChanges
+[2019-10-03 16:23:52.3230] - DEBUG - [Save session: 6] Started, operation: autosaveInPlaceOperation
+[2019-10-03 16:23:52.3230] - DEBUG - [Save session: 6] Before container.writeChanges
+[2019-10-03 16:23:52.3230] - DEBUG - [Save session: 6] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:23:53.8290] - DEBUG - [Save session: 6] Completed container.writeChanges
+[2019-10-03 16:23:53.8290] - DEBUG - [Save session: 6] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:23:53.8340] - DEBUG - [Save session: 6] Completed super.save
+[2019-10-03 16:24:00.7640] - DEBUG - [Save session: 7] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:24:00.7640] - DEBUG - [Save session: 7] Before container.writeChanges
+[2019-10-03 16:24:00.7640] - DEBUG - [Save session: 7] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:24:02.3470] - DEBUG - [Save session: 7] Completed container.writeChanges
+[2019-10-03 16:24:14.1280] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.24.14.zip
+[2019-10-03 16:24:23.8510] - INFO - _handleWatch: build took 143ms
+[2019-10-03 16:24:23.8720] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:24:24.0540] - INFO - _handleWatch: build took 67ms
+[2019-10-03 16:24:56.8270] - INFO - _handleWatch: build took 110ms
+[2019-10-03 16:24:56.8470] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:25:16.2660] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.25.16.zip
+[2019-10-03 16:26:13.6640] - DEBUG - [Save session: 8] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:26:13.6640] - DEBUG - [Save session: 8] Before container.writeChanges
+[2019-10-03 16:26:13.6640] - DEBUG - [Save session: 8] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:26:15.2200] - DEBUG - [Save session: 8] Completed container.writeChanges
+[2019-10-03 16:26:18.4610] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.26.18.zip
+[2019-10-03 16:26:33.8790] - INFO - _handleWatch: build took 112ms
+[2019-10-03 16:26:33.8990] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:26:50.1040] - INFO - _handleWatch: build took 125ms
+[2019-10-03 16:26:50.1360] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:27:20.9940] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.27.20.zip
+[2019-10-03 16:28:06.9090] - DEBUG - [Save session: 9] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:28:06.9090] - DEBUG - [Save session: 9] Before container.writeChanges
+[2019-10-03 16:28:06.9100] - DEBUG - [Save session: 9] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:28:08.3380] - DEBUG - [Save session: 9] Completed container.writeChanges
+[2019-10-03 16:28:23.0400] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.28.23.zip
+[2019-10-03 16:28:55.9970] - DEBUG - [Save session: 10] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:28:55.9970] - DEBUG - [Save session: 10] Before container.writeChanges
+[2019-10-03 16:28:55.9970] - DEBUG - [Save session: 10] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:28:57.4490] - DEBUG - [Save session: 10] Completed container.writeChanges
+[2019-10-03 16:29:25.2440] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.29.25.zip
+[2019-10-03 16:29:59.9580] - DEBUG - [Save session: 11] Started, operation: autosaveInPlaceOperation
+[2019-10-03 16:29:59.9580] - DEBUG - [Save session: 11] Before container.writeChanges
+[2019-10-03 16:29:59.9580] - DEBUG - [Save session: 11] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:30:01.4260] - DEBUG - [Save session: 11] Completed container.writeChanges
+[2019-10-03 16:30:01.4260] - DEBUG - [Save session: 11] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:30:01.4300] - DEBUG - [Save session: 11] Completed super.save
+[2019-10-03 16:30:20.7620] - DEBUG - [Save session: 12] Started, operation: autosaveInPlaceOperation
+[2019-10-03 16:30:20.7620] - DEBUG - [Save session: 12] Before container.writeChanges
+[2019-10-03 16:30:20.7620] - DEBUG - [Save session: 12] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:30:22.2300] - DEBUG - [Save session: 12] Completed container.writeChanges
+[2019-10-03 16:30:22.2300] - DEBUG - [Save session: 12] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:30:22.2360] - DEBUG - [Save session: 12] Completed super.save
+[2019-10-03 16:30:27.2470] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.30.27.zip
+[2019-10-03 16:31:30.2970] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.31.30.zip
+[2019-10-03 16:31:47.1540] - DEBUG - [Save session: 13] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:31:47.1540] - DEBUG - [Save session: 13] Before container.writeChanges
+[2019-10-03 16:31:47.1540] - DEBUG - [Save session: 13] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:31:48.9720] - DEBUG - [Save session: 13] Completed container.writeChanges
+[2019-10-03 16:32:33.2850] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.32.33.zip
+[2019-10-03 16:33:36.3200] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.33.36.zip
+[2019-10-03 16:33:43.2830] - DEBUG - [Save session: 14] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:33:43.2830] - DEBUG - [Save session: 14] Before container.writeChanges
+[2019-10-03 16:33:43.2830] - DEBUG - [Save session: 14] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:33:45.0760] - DEBUG - [Save session: 14] Completed container.writeChanges
+[2019-10-03 16:34:25.4430] - INFO - _handleWatch: build took 143ms
+[2019-10-03 16:34:25.4640] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:34:39.3770] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.34.39.zip
+[2019-10-03 16:35:26.8630] - INFO - _handleWatch: build took 92ms
+[2019-10-03 16:36:41.5910] - INFO - _handleWatch: build took 127ms
+[2019-10-03 16:36:41.6110] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:36:44.8050] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.36.44.zip
+[2019-10-03 16:37:48.1830] - INFO - _handleWatch: build took 137ms
+[2019-10-03 16:37:48.2040] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:37:48.4100] - ERROR -    614 modules
+[2019-10-03 16:37:48.4100] - ERROR - ERROR in /Users/lintonye/git-repos/parallax.framerfx/code/ParallaxLayer.tsx
+[2019-10-03 16:37:48.4100] - ERROR - ./code/ParallaxLayer.tsx
+[2019-10-03 16:37:48.4100] - ERROR - [tsl] ERROR in /Users/lintonye/git-repos/parallax.framerfx/code/ParallaxLayer.tsx(55,3)
+[2019-10-03 16:37:48.4100] - ERROR -       TS1005: ',' expected.
+[2019-10-03 16:37:48.4100] - INFO - _handleWatch: build took 86ms
+[2019-10-03 16:37:52.8870] - INFO - _handleWatch: build took 87ms
+[2019-10-03 16:37:52.9130] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:38:19.6210] - INFO - _handleWatch: build took 120ms
+[2019-10-03 16:38:19.6430] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:38:29.8250] - INFO - _handleWatch: build took 99ms
+[2019-10-03 16:38:29.8440] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:38:40.6200] - DEBUG - [Save session: 15] Started, operation: autosaveInPlaceOperation
+[2019-10-03 16:38:40.6200] - DEBUG - [Save session: 15] Before container.writeChanges
+[2019-10-03 16:38:40.6200] - DEBUG - [Save session: 15] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:38:42.1110] - DEBUG - [Save session: 15] Completed container.writeChanges
+[2019-10-03 16:38:42.1110] - DEBUG - [Save session: 15] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:38:42.1160] - DEBUG - [Save session: 15] Completed super.save
+[2019-10-03 16:38:49.2640] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.38.49.zip
+[2019-10-03 16:39:20.6460] - DEBUG - [Save session: 16] Started, operation: saveOperation
+[2019-10-03 16:39:20.6460] - DEBUG - [Save session: 16] Before container.writeChanges
+[2019-10-03 16:39:20.6460] - DEBUG - [Save session: 16] Before waitUsingRecursiveRunLoop
+[2019-10-03 16:39:22.0870] - DEBUG - [Save session: 16] Completed container.writeChanges
+[2019-10-03 16:39:22.0870] - DEBUG - [Save session: 16] Completed waitUsingRecursiveRunLoop
+[2019-10-03 16:39:22.0900] - INFO - Marking changed: false
+[2019-10-03 16:39:22.0930] - DEBUG - [Save session: 16] Completed super.save
+[2019-10-03 16:39:52.3070] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.39.52.zip
+[2019-10-03 16:40:39.7990] - DEBUG - [Save session: 17] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:40:39.7990] - DEBUG - [Save session: 17] Before container.writeChanges
+[2019-10-03 16:40:39.7990] - DEBUG - [Save session: 17] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:40:41.5910] - DEBUG - [Save session: 17] Completed container.writeChanges
+[2019-10-03 16:40:54.2540] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.40.54.zip
+[2019-10-03 16:41:07.9050] - INFO - _handleWatch: build took 112ms
+[2019-10-03 16:41:07.9260] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:41:29.1230] - DEBUG - [Save session: 18] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 16:41:29.1230] - DEBUG - [Save session: 18] Before container.writeChanges
+[2019-10-03 16:41:29.1230] - DEBUG - [Save session: 18] Not autosaving to archive, implicitly cancellable
+[2019-10-03 16:41:30.8140] - DEBUG - [Save session: 18] Completed container.writeChanges
+[2019-10-03 16:41:56.4510] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.41.56.zip
+[2019-10-03 16:45:59.9720] - INFO - _handleWatch: build took 101ms
+[2019-10-03 16:45:59.9910] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:46:07.2520] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.46.07.zip
+[2019-10-03 16:46:52.6110] - INFO - _handleWatch: build took 152ms
+[2019-10-03 16:46:52.6350] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:47:04.4650] - INFO - _handleWatch: build took 98ms
+[2019-10-03 16:47:04.4840] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:47:14.2080] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.47.14.zip
+[2019-10-03 16:47:47.6330] - INFO - _handleWatch: build took 118ms
+[2019-10-03 16:47:47.6540] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:47:50.6680] - INFO - _handleWatch: build took 91ms
+[2019-10-03 16:47:50.6690] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:47:59.6510] - INFO - _handleWatch: build took 112ms
+[2019-10-03 16:47:59.6720] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:48:18.2480] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.48.18.zip
+[2019-10-03 16:48:19.1760] - INFO - _handleWatch: build took 158ms
+[2019-10-03 16:48:19.1930] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:48:41.4520] - INFO - _handleWatch: build took 108ms
+[2019-10-03 16:48:41.4720] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:48:42.2260] - INFO - _handleWatch: build took 104ms
+[2019-10-03 16:48:42.2460] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:48:42.4200] - INFO - _handleWatch: build took 62ms
+[2019-10-03 16:49:21.1550] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.49.21.zip
+[2019-10-03 16:50:09.9710] - INFO - _handleWatch: build took 151ms
+[2019-10-03 16:50:09.9910] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:50:24.2870] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.50.24.zip
+[2019-10-03 16:50:53.5980] - INFO - _handleWatch: build took 135ms
+[2019-10-03 16:50:53.6190] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 16:51:26.9450] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 16.51.26.zip
+[2019-10-03 17:02:01.6380] - INFO - _handleWatch: build took 120ms
+[2019-10-03 17:02:01.6600] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:02:46.5880] - INFO - _handleWatch: build took 155ms
+[2019-10-03 17:02:46.6080] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:02:59.2420] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.02.59.zip
+[2019-10-03 17:03:03.2990] - DEBUG - [Save session: 19] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:03:03.2990] - DEBUG - [Save session: 19] Before container.writeChanges
+[2019-10-03 17:03:03.2990] - DEBUG - [Save session: 19] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:03:04.8550] - DEBUG - [Save session: 19] Completed container.writeChanges
+[2019-10-03 17:03:06.5210] - DEBUG - [Save session: 19] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:03:06.5270] - DEBUG - [Save session: 19] Completed super.save
+[2019-10-03 17:03:23.2870] - DEBUG - [Save session: 20] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:03:23.2870] - DEBUG - [Save session: 20] Before container.writeChanges
+[2019-10-03 17:03:23.2870] - DEBUG - [Save session: 20] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:03:24.9010] - DEBUG - [Save session: 20] Completed container.writeChanges
+[2019-10-03 17:04:01.1060] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.04.01.zip
+[2019-10-03 17:04:02.0910] - INFO - _handleWatch: build took 135ms
+[2019-10-03 17:04:02.1140] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:04:22.6530] - DEBUG - [Save session: 21] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:04:22.6530] - DEBUG - [Save session: 21] Before container.writeChanges
+[2019-10-03 17:04:22.6530] - DEBUG - [Save session: 21] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:04:24.3680] - DEBUG - [Save session: 21] Completed container.writeChanges
+[2019-10-03 17:05:03.2620] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.05.03.zip
+[2019-10-03 17:05:04.0790] - INFO - _handleWatch: build took 126ms
+[2019-10-03 17:05:04.1000] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:05:17.1780] - INFO - _handleWatch: build took 128ms
+[2019-10-03 17:05:17.1970] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:06:05.6280] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.06.05.zip
+[2019-10-03 17:06:06.8440] - INFO - _handleWatch: build took 180ms
+[2019-10-03 17:06:06.8450] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:06:52.9910] - DEBUG - [Save session: 22] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:06:52.9910] - DEBUG - [Save session: 22] Before container.writeChanges
+[2019-10-03 17:06:52.9910] - DEBUG - [Save session: 22] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:06:54.6420] - DEBUG - [Save session: 22] Completed container.writeChanges
+[2019-10-03 17:07:08.4750] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.07.08.zip
+[2019-10-03 17:07:32.6670] - DEBUG - [Save session: 23] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:07:32.6680] - DEBUG - [Save session: 23] Before container.writeChanges
+[2019-10-03 17:07:32.6680] - DEBUG - [Save session: 23] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:07:34.1310] - DEBUG - [Save session: 23] Completed container.writeChanges
+[2019-10-03 17:07:45.2540] - DEBUG - [Save session: 24] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:07:45.2550] - DEBUG - [Save session: 24] Before container.writeChanges
+[2019-10-03 17:07:45.2550] - DEBUG - [Save session: 24] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:07:46.8580] - DEBUG - [Save session: 24] Completed container.writeChanges
+[2019-10-03 17:08:06.6900] - INFO - _handleWatch: build took 130ms
+[2019-10-03 17:08:06.7140] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:08:09.9760] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.08.09.zip
+[2019-10-03 17:08:55.9910] - INFO - _handleWatch: build took 155ms
+[2019-10-03 17:08:56.0100] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:09:09.6700] - INFO - _handleWatch: build took 118ms
+[2019-10-03 17:09:09.6890] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:09:31.0840] - INFO - _handleWatch: build took 114ms
+[2019-10-03 17:09:31.1030] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:09:43.5840] - DEBUG - [Save session: 25] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:09:43.5840] - DEBUG - [Save session: 25] Before container.writeChanges
+[2019-10-03 17:09:43.5840] - DEBUG - [Save session: 25] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:09:45.0900] - DEBUG - [Save session: 25] Completed container.writeChanges
+[2019-10-03 17:09:45.0900] - DEBUG - [Save session: 25] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:09:45.0940] - DEBUG - [Save session: 25] Completed super.save
+[2019-10-03 17:09:45.7680] - DEBUG - [Save session: 26] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:09:45.7680] - DEBUG - [Save session: 26] Before container.writeChanges
+[2019-10-03 17:09:45.7680] - DEBUG - [Save session: 26] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:09:47.2430] - DEBUG - [Save session: 26] Completed container.writeChanges
+[2019-10-03 17:09:47.2430] - DEBUG - [Save session: 26] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:09:47.2470] - DEBUG - [Save session: 26] Completed super.save
+[2019-10-03 17:09:49.5210] - DEBUG - [Save session: 27] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:09:49.5210] - DEBUG - [Save session: 27] Before container.writeChanges
+[2019-10-03 17:09:49.5210] - DEBUG - [Save session: 27] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:09:51.0180] - DEBUG - [Save session: 27] Completed container.writeChanges
+[2019-10-03 17:09:52.3190] - DEBUG - [Save session: 27] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:09:52.3240] - DEBUG - [Save session: 27] Completed super.save
+[2019-10-03 17:10:14.1050] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.10.14.zip
+[2019-10-03 17:10:38.5040] - DEBUG - [Save session: 28] Started, operation: saveOperation
+[2019-10-03 17:10:38.5040] - DEBUG - [Save session: 28] Before container.writeChanges
+[2019-10-03 17:10:38.5040] - DEBUG - [Save session: 28] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:10:39.9640] - DEBUG - [Save session: 28] Completed container.writeChanges
+[2019-10-03 17:10:39.9640] - DEBUG - [Save session: 28] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:10:39.9670] - INFO - Marking changed: false
+[2019-10-03 17:10:39.9700] - DEBUG - [Save session: 28] Completed super.save
+[2019-10-03 17:11:16.4020] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.11.16.zip
+[2019-10-03 17:11:44.0770] - DEBUG - [Save session: 29] Started, operation: saveOperation
+[2019-10-03 17:11:44.0770] - DEBUG - [Save session: 29] Before container.writeChanges
+[2019-10-03 17:11:44.0770] - DEBUG - [Save session: 29] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:11:45.5350] - DEBUG - [Save session: 29] Completed container.writeChanges
+[2019-10-03 17:11:45.5350] - DEBUG - [Save session: 29] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:11:45.5390] - INFO - Marking changed: false
+[2019-10-03 17:11:45.5430] - DEBUG - [Save session: 29] Completed super.save
+[2019-10-03 17:12:07.3980] - DEBUG - [Save session: 30] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:12:07.3980] - DEBUG - [Save session: 30] Before container.writeChanges
+[2019-10-03 17:12:07.3980] - DEBUG - [Save session: 30] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:12:08.9500] - DEBUG - [Save session: 30] Completed container.writeChanges
+[2019-10-03 17:13:35.1940] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (6ms)
+[2019-10-03 17:13:35.2160] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (11ms)
+[2019-10-03 17:13:35.2200] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (9ms)
+[2019-10-03 17:13:35.2200] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (8ms)
+[2019-10-03 17:13:35.2370] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (7ms)
+[2019-10-03 17:13:35.2380] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (7ms)
+[2019-10-03 17:14:53.2850] - DEBUG - [Save session: 31] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:14:53.2860] - DEBUG - [Save session: 31] Before container.writeChanges
+[2019-10-03 17:14:53.2860] - DEBUG - [Save session: 31] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:14:53.2900] - DEBUG - [Save session: 32] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:14:53.2900] - DEBUG - [Save session: 32] Before container.writeChanges
+[2019-10-03 17:14:53.2910] - DEBUG - [Save session: 32] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:14:54.8100] - DEBUG - [Save session: 32] Completed container.writeChanges
+[2019-10-03 17:14:54.8110] - DEBUG - [Save session: 32] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:14:55.7480] - DEBUG - [Save session: 32] Completed super.save
+[2019-10-03 17:15:36.1230] - DEBUG - [Save session: 33] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:15:36.1240] - DEBUG - [Save session: 33] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:16:08.7360] - INFO - _handleWatch: build took 131ms
+[2019-10-03 17:16:08.7560] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:16:28.8220] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.16.28.zip
+[2019-10-03 17:17:04.5870] - INFO - _handleWatch: build took 151ms
+[2019-10-03 17:17:04.6090] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:17:35.1690] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.17.35.zip
+[2019-10-03 17:17:57.6900] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 17:17:57.6930] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 17:17:57.6970] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (0ms)
+[2019-10-03 17:17:57.7010] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 17:17:57.7050] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (0ms)
+[2019-10-03 17:17:57.7090] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 17:17:57.7860] - INFO - GET 404 /.cache/images/2048/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (0ms)
+[2019-10-03 17:17:57.7880] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 17:17:57.7900] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 17:17:58.8420] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 17:18:52.0590] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 17:18:52.8600] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 17:18:53.5080] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 17:19:20.4040] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 17:19:20.7310] - INFO - GET 200 /design/images/XTSIjp60Nex9hQArH4OygHWJE.png 720 B (3ms)
+[2019-10-03 17:19:24.7380] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 17:19:24.7460] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 17:19:26.9130] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (3ms)
+[2019-10-03 17:19:26.9140] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 17:19:26.9160] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 17:19:26.9190] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 17:19:26.9200] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 17:19:26.9200] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 17:19:26.9250] - INFO - GET 404 /.cache/images/2048/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 17:19:26.9260] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 17:19:26.9270] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 17:19:28.0280] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 17:19:28.0290] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 17:19:28.0340] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (3ms)
+[2019-10-03 17:19:28.0350] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (3ms)
+[2019-10-03 17:19:28.0350] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (3ms)
+[2019-10-03 17:19:28.0360] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (4ms)
+[2019-10-03 17:19:28.0380] - INFO - GET 404 /.cache/images/2048/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (2ms)
+[2019-10-03 17:19:28.0390] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (2ms)
+[2019-10-03 17:19:28.0390] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 17:19:28.8880] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (5ms)
+[2019-10-03 17:19:28.8900] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (4ms)
+[2019-10-03 17:19:28.8910] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (3ms)
+[2019-10-03 17:19:28.8930] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (3ms)
+[2019-10-03 17:19:28.8930] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (3ms)
+[2019-10-03 17:19:28.8940] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (3ms)
+[2019-10-03 17:19:28.8990] - INFO - GET 404 /.cache/images/2048/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 17:19:28.9000] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 17:19:28.9020] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 17:20:48.2010] - DEBUG - [Save session: 34] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:20:48.2010] - DEBUG - [Save session: 34] Before container.writeChanges
+[2019-10-03 17:20:48.2010] - DEBUG - [Save session: 34] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:20:49.6850] - DEBUG - [Save session: 34] Completed container.writeChanges
+[2019-10-03 17:20:49.6850] - DEBUG - [Save session: 34] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:20:49.6900] - DEBUG - [Save session: 34] Completed super.save
+[2019-10-03 17:21:16.1680] - DEBUG - [Save session: 35] Started, operation: saveOperation
+[2019-10-03 17:21:16.1680] - DEBUG - [Save session: 35] Before container.writeChanges
+[2019-10-03 17:21:16.1680] - DEBUG - [Save session: 35] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:21:17.6150] - DEBUG - [Save session: 35] Completed container.writeChanges
+[2019-10-03 17:21:17.6150] - DEBUG - [Save session: 35] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:21:17.6190] - INFO - Marking changed: false
+[2019-10-03 17:21:17.6210] - DEBUG - [Save session: 35] Completed super.save
+[2019-10-03 17:36:15.0890] - DEBUG - [Save session: 36] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:36:15.0890] - DEBUG - [Save session: 36] Before container.writeChanges
+[2019-10-03 17:36:15.0890] - DEBUG - [Save session: 36] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:36:16.6100] - DEBUG - [Save session: 36] Completed container.writeChanges
+[2019-10-03 17:36:16.6110] - DEBUG - [Save session: 36] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:36:16.6210] - DEBUG - [Save session: 36] Completed super.save
+[2019-10-03 17:37:14.7630] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.37.14.zip
+[2019-10-03 17:38:18.1700] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.38.18.zip
+[2019-10-03 17:38:22.6130] - INFO - _handleWatch: build took 85ms
+[2019-10-03 17:38:22.6330] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:38:34.9350] - DEBUG - [Save session: 37] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:38:34.9350] - DEBUG - [Save session: 37] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:38:35.2260] - INFO - _handleWatch: build took 154ms
+[2019-10-03 17:39:21.7480] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.39.21.zip
+[2019-10-03 17:40:22.4700] - INFO - _handleWatch: build took 103ms
+[2019-10-03 17:40:23.7160] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.40.23.zip
+[2019-10-03 17:40:24.2410] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 17:41:19.6150] - DEBUG - [Save session: 38] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 17:41:19.6150] - DEBUG - [Save session: 38] Not autosaving to archive, implicitly cancellable
+[2019-10-03 17:41:26.1220] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 17.41.26.zip
+[2019-10-03 17:59:54.5300] - DEBUG - [Save session: 39] Started, operation: autosaveInPlaceOperation
+[2019-10-03 17:59:54.5310] - DEBUG - [Save session: 39] Before container.writeChanges
+[2019-10-03 17:59:54.5310] - DEBUG - [Save session: 39] Before waitUsingRecursiveRunLoop
+[2019-10-03 17:59:55.9850] - DEBUG - [Save session: 39] Completed container.writeChanges
+[2019-10-03 17:59:55.9850] - DEBUG - [Save session: 39] Completed waitUsingRecursiveRunLoop
+[2019-10-03 17:59:55.9890] - DEBUG - [Save session: 39] Completed super.save
+[2019-10-03 17:59:59.1420] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 17:59:59.1450] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (0ms)
+[2019-10-03 17:59:59.1490] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 17:59:59.1530] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 17:59:59.1600] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 17:59:59.1630] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 18:00:01.7110] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:00:01.7130] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (0ms)
+[2019-10-03 18:00:01.7160] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 18:00:01.7170] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:00:01.7180] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 18:00:01.7190] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:00:02.0240] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (2ms)
+[2019-10-03 18:00:02.0240] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 18:00:02.0250] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (2ms)
+[2019-10-03 18:00:02.0270] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 18:00:02.0270] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 18:00:02.0280] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 18:00:03.7820] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (8ms)
+[2019-10-03 18:00:03.7820] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (8ms)
+[2019-10-03 18:00:03.7830] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (8ms)
+[2019-10-03 18:00:03.7840] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (8ms)
+[2019-10-03 18:00:03.7860] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (4ms)
+[2019-10-03 18:00:03.7870] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (3ms)
+[2019-10-03 18:00:03.8290] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:00:03.8290] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (2ms)
+[2019-10-03 18:00:03.8310] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:00:03.8310] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:00:05.5680] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:00:05.5680] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 18:00:07.0810] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:00:07.1920] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:00:07.4160] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:00:13.6340] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:00:13.6360] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:00:13.6370] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:00:13.6400] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 18:00:13.6400] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 18:00:13.6410] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 18:00:13.6440] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:00:13.6450] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:00:13.6460] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 18:00:14.6660] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (2ms)
+[2019-10-03 18:00:14.6670] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 18:00:14.6690] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (4ms)
+[2019-10-03 18:00:14.6710] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (4ms)
+[2019-10-03 18:00:14.6730] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:00:14.6740] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (3ms)
+[2019-10-03 18:00:14.6740] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (3ms)
+[2019-10-03 18:00:14.6740] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (4ms)
+[2019-10-03 18:00:14.6750] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (3ms)
+[2019-10-03 18:00:15.3680] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (3ms)
+[2019-10-03 18:00:15.3700] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (3ms)
+[2019-10-03 18:00:15.3700] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (4ms)
+[2019-10-03 18:00:15.3710] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (4ms)
+[2019-10-03 18:00:15.3730] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 18:00:15.3750] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 18:00:15.3760] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (3ms)
+[2019-10-03 18:00:15.3770] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (4ms)
+[2019-10-03 18:00:15.9000] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (2ms)
+[2019-10-03 18:00:15.9010] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 18:00:15.9020] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (3ms)
+[2019-10-03 18:00:15.9040] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (3ms)
+[2019-10-03 18:00:15.9050] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:00:15.9060] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 18:00:15.9070] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (2ms)
+[2019-10-03 18:00:15.9070] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (2ms)
+[2019-10-03 18:00:33.0520] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:00:40.7930] - DEBUG - [Save session: 40] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:00:40.7940] - DEBUG - [Save session: 40] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:00:48.4590] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.00.48.zip
+[2019-10-03 18:01:18.1370] - INFO - _handleWatch: build took 104ms
+[2019-10-03 18:01:18.1600] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:19.5660] - INFO - _handleWatch: build took 112ms
+[2019-10-03 18:01:19.5870] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:20.9440] - INFO - _handleWatch: build took 76ms
+[2019-10-03 18:01:20.9630] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:22.2290] - INFO - _handleWatch: build took 67ms
+[2019-10-03 18:01:22.2480] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:24.8290] - INFO - _handleWatch: build took 100ms
+[2019-10-03 18:01:24.8480] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:26.4810] - INFO - _handleWatch: build took 73ms
+[2019-10-03 18:01:26.5030] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:29.4820] - INFO - _handleWatch: build took 67ms
+[2019-10-03 18:01:29.5010] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:34.6460] - INFO - _handleWatch: build took 62ms
+[2019-10-03 18:01:34.6650] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:35.3470] - INFO - _handleWatch: build took 74ms
+[2019-10-03 18:01:35.3700] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:44.9530] - DEBUG - [Save session: 41] Started, operation: saveOperation
+[2019-10-03 18:01:44.9530] - DEBUG - [Save session: 41] Before container.writeChanges
+[2019-10-03 18:01:44.9730] - DEBUG - [Save session: 41] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:01:45.5360] - DEBUG - [Save session: 41] Completed container.writeChanges
+[2019-10-03 18:01:45.5370] - DEBUG - [Save session: 41] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:01:45.5620] - INFO - Marking changed: false
+[2019-10-03 18:01:45.5670] - DEBUG - [Save session: 41] Completed super.save
+[2019-10-03 18:01:45.5770] - INFO - _handleWatch: build took 94ms
+[2019-10-03 18:01:45.5780] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:01:50.2740] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.01.50.zip
+[2019-10-03 18:02:40.6480] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:02:40.6510] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:02:40.6540] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (0ms)
+[2019-10-03 18:02:40.6580] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:02:40.6620] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (0ms)
+[2019-10-03 18:02:40.6660] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 18:02:40.6850] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (0ms)
+[2019-10-03 18:02:40.6870] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:02:40.6890] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:02:46.0680] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:02:46.0740] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (3ms)
+[2019-10-03 18:02:46.0740] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (2ms)
+[2019-10-03 18:02:46.0760] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:02:46.0770] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:02:46.0780] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 18:02:46.7570] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:02:46.7610] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (0ms)
+[2019-10-03 18:02:46.7640] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (0ms)
+[2019-10-03 18:02:46.7680] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:02:46.7730] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 18:02:46.7780] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 18:02:53.3060] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.02.53.zip
+[2019-10-03 18:03:19.9630] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:03:20.7980] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (4ms)
+[2019-10-03 18:03:20.8010] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (5ms)
+[2019-10-03 18:03:20.8020] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (4ms)
+[2019-10-03 18:03:20.8030] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (4ms)
+[2019-10-03 18:03:20.8040] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (4ms)
+[2019-10-03 18:03:20.8050] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (4ms)
+[2019-10-03 18:03:22.4230] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 18:03:23.1230] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:03:23.1240] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:03:23.3420] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:03:26.4970] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:03:26.5090] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:03:40.2500] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:03:40.2510] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 18:03:40.2530] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:03:40.2550] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (2ms)
+[2019-10-03 18:03:40.2550] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:03:40.2560] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (3ms)
+[2019-10-03 18:03:40.2580] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:03:40.2600] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (2ms)
+[2019-10-03 18:03:40.2610] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:03:40.2620] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:03:41.2410] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:03:43.8360] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:03:56.2880] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.03.56.zip
+[2019-10-03 18:04:24.0790] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:04:24.1270] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:04:41.0210] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:04:41.0230] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:04:48.4980] - DEBUG - [Save session: 42] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:04:48.4980] - DEBUG - [Save session: 42] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:04:54.4920] - DEBUG - [Save session: 43] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:04:54.4920] - DEBUG - [Save session: 43] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:04:54.8440] - INFO - _handleWatch: build took 141ms
+[2019-10-03 18:04:56.0130] - DEBUG - [Save session: 44] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:04:56.0130] - DEBUG - [Save session: 44] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:04:59.0930] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.04.59.zip
+[2019-10-03 18:05:23.1280] - INFO - _handleWatch: build took 141ms
+[2019-10-03 18:05:23.1500] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:05:23.3550] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:05:30.7310] - INFO - _handleWatch: build took 101ms
+[2019-10-03 18:06:01.0400] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.06.01.zip
+[2019-10-03 18:07:27.6590] - INFO - _handleWatch: build took 99ms
+[2019-10-03 18:07:27.6800] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:07:27.8420] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:07:36.0460] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:07:37.2630] - DEBUG - [Save session: 45] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:07:37.2630] - DEBUG - [Save session: 45] Before container.writeChanges
+[2019-10-03 18:07:37.2630] - DEBUG - [Save session: 45] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:07:38.7570] - DEBUG - [Save session: 45] Completed container.writeChanges
+[2019-10-03 18:07:38.7570] - DEBUG - [Save session: 45] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:07:38.7610] - DEBUG - [Save session: 45] Completed super.save
+[2019-10-03 18:07:38.7640] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:07:38.7650] - DEBUG - [Save session: 46] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:07:38.7650] - DEBUG - [Save session: 46] Before container.writeChanges
+[2019-10-03 18:07:38.7650] - DEBUG - [Save session: 46] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:07:40.2470] - DEBUG - [Save session: 46] Completed container.writeChanges
+[2019-10-03 18:07:40.2470] - DEBUG - [Save session: 46] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:07:40.2580] - DEBUG - [Save session: 46] Completed super.save
+[2019-10-03 18:08:09.6220] - INFO - _handleWatch: build took 97ms
+[2019-10-03 18:08:09.6430] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:08:09.8220] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:08:11.4300] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.08.11.zip
+[2019-10-03 18:08:22.5830] - INFO - _handleWatch: build took 100ms
+[2019-10-03 18:08:22.6030] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:08:22.7630] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:08:25.9150] - INFO - _handleWatch: build took 78ms
+[2019-10-03 18:08:25.9350] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:08:26.0350] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:08:32.8720] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:08:32.8730] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:08:37.6030] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:08:37.6050] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:08:47.4480] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:08:47.4500] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:08:51.0440] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:08:51.0460] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:09:07.8920] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:09:07.8930] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:09:14.2910] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.09.14.zip
+[2019-10-03 18:09:19.2650] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 18:09:34.6150] - DEBUG - [Save session: 47] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:09:34.6150] - DEBUG - [Save session: 47] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:10:17.7510] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.10.17.zip
+[2019-10-03 18:10:18.2880] - INFO - _handleWatch: build took 117ms
+[2019-10-03 18:10:18.2880] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:10:18.2890] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:10:18.2890] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:15:05.1190] - INFO - _handleWatch: build took 156ms
+[2019-10-03 18:15:05.1410] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:15:05.4630] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:15:37.2270] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.15.37.zip
+[2019-10-03 18:15:38.2060] - INFO - _handleWatch: build took 199ms
+[2019-10-03 18:15:38.2060] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:15:38.2400] - INFO - _handleWatch: build took 185ms
+[2019-10-03 18:15:38.2560] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:15:43.8620] - INFO - _handleWatch: build took 139ms
+[2019-10-03 18:15:43.8830] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:15:44.0790] - INFO - _handleWatch: build took 85ms
+[2019-10-03 18:15:44.0940] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:15:49.6610] - DEBUG - [Save session: 48] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:15:49.6610] - DEBUG - [Save session: 48] Before container.writeChanges
+[2019-10-03 18:15:49.6610] - DEBUG - [Save session: 48] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:15:49.6650] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:15:49.6660] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:15:51.3650] - DEBUG - [Save session: 48] Completed container.writeChanges
+[2019-10-03 18:15:51.3650] - DEBUG - [Save session: 48] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:15:51.3710] - DEBUG - [Save session: 48] Completed super.save
+[2019-10-03 18:15:51.4810] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (3ms)
+[2019-10-03 18:16:04.3520] - DEBUG - [Save session: 49] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:16:04.3520] - DEBUG - [Save session: 49] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:16:22.1500] - INFO - _handleWatch: build took 159ms
+[2019-10-03 18:16:22.1690] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:16:22.2860] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:16:40.4840] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.16.40.zip
+[2019-10-03 18:16:49.5500] - INFO - _handleWatch: build took 111ms
+[2019-10-03 18:16:49.5710] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:16:49.7620] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:17:02.0990] - INFO - _handleWatch: build took 90ms
+[2019-10-03 18:17:02.1180] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:17:02.2220] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:17:17.6650] - INFO - _handleWatch: build took 120ms
+[2019-10-03 18:17:17.6910] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:17:17.8430] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:17:41.8950] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.17.41.zip
+[2019-10-03 18:18:15.6120] - INFO - _handleWatch: build took 127ms
+[2019-10-03 18:18:15.6320] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:18:15.7520] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:18:27.5440] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:18:29.4380] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:18:34.4970] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:18:41.3990] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:18:44.3940] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.18.44.zip
+[2019-10-03 18:19:15.3340] - DEBUG - [Save session: 50] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:19:15.3340] - DEBUG - [Save session: 50] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:19:25.8310] - INFO - _handleWatch: build took 124ms
+[2019-10-03 18:19:25.8520] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:19:43.6950] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:19:43.7000] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:19:46.9550] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.19.46.zip
+[2019-10-03 18:19:47.5190] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:19:51.6870] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:19:51.7000] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:20:08.5360] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:20:08.5860] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:20:13.5310] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:20:15.3710] - DEBUG - [Save session: 51] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:20:15.3710] - DEBUG - [Save session: 51] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:20:15.7280] - INFO - _handleWatch: build took 135ms
+[2019-10-03 18:20:22.6970] - DEBUG - [Save session: 52] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:20:22.6970] - DEBUG - [Save session: 52] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:20:49.2780] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.20.49.zip
+[2019-10-03 18:21:27.5730] - INFO - _handleWatch: build took 139ms
+[2019-10-03 18:21:27.5940] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:21:27.7660] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:21:35.1120] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:21:37.3130] - DEBUG - [Save session: 53] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:21:37.3130] - DEBUG - [Save session: 53] Before container.writeChanges
+[2019-10-03 18:21:37.3130] - DEBUG - [Save session: 53] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:21:38.8110] - DEBUG - [Save session: 53] Completed container.writeChanges
+[2019-10-03 18:21:38.8110] - DEBUG - [Save session: 53] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:21:38.8180] - DEBUG - [Save session: 53] Completed super.save
+[2019-10-03 18:21:51.2750] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.21.51.zip
+[2019-10-03 18:22:27.4250] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:22:27.4260] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (2ms)
+[2019-10-03 18:22:27.4800] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:22:28.3290] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:22:28.3340] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (0ms)
+[2019-10-03 18:22:28.3380] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (0ms)
+[2019-10-03 18:22:28.3440] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:22:28.3470] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (0ms)
+[2019-10-03 18:22:28.3510] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 18:22:28.8930] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:22:28.8950] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:22:28.8990] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (2ms)
+[2019-10-03 18:22:28.9000] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:22:28.9030] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 18:22:28.9030] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:22:54.2530] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.22.54.zip
+[2019-10-03 18:23:10.9700] - DEBUG - [Save session: 54] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:23:10.9700] - DEBUG - [Save session: 54] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:23:11.3910] - INFO - _handleWatch: build took 109ms
+[2019-10-03 18:23:57.1500] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.23.57.zip
+[2019-10-03 18:25:48.6440] - INFO - _handleWatch: build took 98ms
+[2019-10-03 18:25:48.6640] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:25:48.8790] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:25:48.8830] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:25:48.8880] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:25:48.8920] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:25:48.8960] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (0ms)
+[2019-10-03 18:25:48.9000] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (0ms)
+[2019-10-03 18:25:48.9270] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:25:59.1910] - INFO - _handleWatch: build took 101ms
+[2019-10-03 18:25:59.2120] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:25:59.3430] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:25:59.3470] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:25:59.3520] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:25:59.3560] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:25:59.3600] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (1ms)
+[2019-10-03 18:25:59.3640] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 18:25:59.3870] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (0ms)
+[2019-10-03 18:26:05.1750] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.26.05.zip
+[2019-10-03 18:26:52.4670] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:26:52.4720] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (4ms)
+[2019-10-03 18:26:52.4730] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (4ms)
+[2019-10-03 18:26:52.4740] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (4ms)
+[2019-10-03 18:26:52.4750] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (3ms)
+[2019-10-03 18:26:52.4760] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (4ms)
+[2019-10-03 18:27:07.4990] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.27.07.zip
+[2019-10-03 18:27:12.2990] - DEBUG - [Save session: 55] Started, operation: saveOperation
+[2019-10-03 18:27:12.2990] - DEBUG - [Save session: 55] Before container.writeChanges
+[2019-10-03 18:27:12.2990] - DEBUG - [Save session: 55] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:27:13.7500] - DEBUG - [Save session: 55] Completed container.writeChanges
+[2019-10-03 18:27:13.7500] - DEBUG - [Save session: 55] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:27:13.7540] - INFO - Marking changed: false
+[2019-10-03 18:27:13.7570] - DEBUG - [Save session: 55] Completed super.save
+[2019-10-03 18:27:14.7280] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:27:14.7310] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (0ms)
+[2019-10-03 18:27:14.7360] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:27:14.7390] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (1ms)
+[2019-10-03 18:27:14.7440] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (0ms)
+[2019-10-03 18:27:14.7480] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 18:27:14.7730] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:27:14.7740] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:27:18.4960] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:27:30.8280] - DEBUG - [Save session: 56] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:27:30.8280] - DEBUG - [Save session: 56] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:27:31.7820] - DEBUG - [Save session: 57] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:27:31.7820] - DEBUG - [Save session: 57] Before container.writeChanges
+[2019-10-03 18:27:31.7830] - DEBUG - [Save session: 57] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:27:33.2400] - DEBUG - [Save session: 57] Completed container.writeChanges
+[2019-10-03 18:27:33.2400] - DEBUG - [Save session: 57] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:27:33.2450] - DEBUG - [Save session: 57] Completed super.save
+[2019-10-03 18:27:41.7650] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:27:41.7660] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (1ms)
+[2019-10-03 18:27:46.9930] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (1ms)
+[2019-10-03 18:27:46.9960] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (1ms)
+[2019-10-03 18:27:46.9970] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (1ms)
+[2019-10-03 18:27:46.9980] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (2ms)
+[2019-10-03 18:27:46.9990] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:27:47.0000] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 18:27:47.8390] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (2ms)
+[2019-10-03 18:27:47.8390] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (2ms)
+[2019-10-03 18:27:47.8400] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (3ms)
+[2019-10-03 18:27:47.8410] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (3ms)
+[2019-10-03 18:27:47.8430] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (2ms)
+[2019-10-03 18:27:47.8440] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (2ms)
+[2019-10-03 18:27:56.6970] - INFO - GET 404 /.cache/images/512/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 187 B (0ms)
+[2019-10-03 18:27:56.6990] - INFO - GET 404 /.cache/images/512/kJRoNL00SThgksEJrm9ZNKA.jpg 184 B (0ms)
+[2019-10-03 18:27:56.7020] - INFO - GET 404 /.cache/images/512/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 187 B (0ms)
+[2019-10-03 18:27:56.7060] - INFO - GET 404 /.cache/images/512/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 186 B (0ms)
+[2019-10-03 18:27:56.7090] - INFO - GET 404 /.cache/images/512/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 185 B (0ms)
+[2019-10-03 18:27:56.7150] - INFO - GET 404 /.cache/images/512/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 187 B (1ms)
+[2019-10-03 18:27:57.3020] - INFO - GET 200 /design/images/7OmBb9tq7CiYvqy5bOQZ3HLWBQ.png 40.3 kB (5ms)
+[2019-10-03 18:27:57.3090] - INFO - GET 200 /design/images/kJRoNL00SThgksEJrm9ZNKA.jpg 6.11 kB (2ms)
+[2019-10-03 18:27:57.3180] - INFO - GET 200 /design/images/rF0fjNDvCtzC5VMDzwFa3tPCls.jpg 11.6 kB (1ms)
+[2019-10-03 18:27:57.3250] - INFO - GET 200 /design/images/s3DskIyE9O5ST8ePfd0cmSXCI.jpg 17.3 kB (1ms)
+[2019-10-03 18:27:57.3310] - INFO - GET 200 /design/images/kJkNQyG4Jr0mIRZXt37ZYGIQ.jpg 11.9 kB (1ms)
+[2019-10-03 18:27:57.3390] - INFO - GET 200 /design/images/WFJePahiFKjFMmdNZ2XJZsv4tg.jpg 34.5 kB (1ms)
+[2019-10-03 18:28:10.0970] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.28.10.zip
+[2019-10-03 18:28:19.0510] - DEBUG - [Save session: 58] Started, operation: saveOperation
+[2019-10-03 18:28:19.0510] - DEBUG - [Save session: 58] Before container.writeChanges
+[2019-10-03 18:28:19.0510] - DEBUG - [Save session: 58] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:28:19.3970] - DEBUG - [Save session: 58] Completed container.writeChanges
+[2019-10-03 18:28:19.3980] - DEBUG - [Save session: 58] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:28:19.4010] - INFO - Marking changed: false
+[2019-10-03 18:28:19.4060] - DEBUG - [Save session: 58] Completed super.save
+[2019-10-03 18:28:22.1830] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:28:22.1840] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (2ms)
+[2019-10-03 18:28:22.1850] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:28:22.1860] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (0ms)
+[2019-10-03 18:28:22.5150] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:28:22.5160] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:28:22.5160] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 18:28:25.3160] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:28:25.3170] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (1ms)
+[2019-10-03 18:28:25.3180] - INFO - GET 404 /.cache/images/2048/XTSIjp60Nex9hQArH4OygHWJE.png 187 B (2ms)
+[2019-10-03 18:29:09.1390] - DEBUG - [Save session: 59] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:29:09.1400] - DEBUG - [Save session: 59] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:29:09.4760] - INFO - _handleWatch: build took 118ms
+[2019-10-03 18:29:12.1670] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.29.12.zip
+[2019-10-03 18:32:34.7070] - INFO - _handleWatch: build took 93ms
+[2019-10-03 18:32:34.7280] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:32:34.8850] - INFO - GET 404 /.cache/images/1024/MCDgF5iVVVqFEFek8dOxaVVgUrw.png 189 B (1ms)
+[2019-10-03 18:32:34.8850] - INFO - GET 404 /.cache/images/512/T5pmb1ABENbRwVuT1BkEBfQc.png 185 B (2ms)
+[2019-10-03 18:32:34.8860] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:33:12.2300] - INFO - _handleWatch: build took 109ms
+[2019-10-03 18:33:12.2500] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:33:12.5910] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:33:12.6130] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:33:25.7270] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.33.25.zip
+[2019-10-03 18:33:40.7580] - INFO - _handleWatch: build took 91ms
+[2019-10-03 18:33:40.7780] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:33:40.9290] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 18:33:46.2560] - INFO - _handleWatch: build took 88ms
+[2019-10-03 18:33:46.2750] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 18:33:46.3490] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (2ms)
+[2019-10-03 18:33:53.9150] - DEBUG - [Save session: 60] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:33:53.9160] - DEBUG - [Save session: 60] Before container.writeChanges
+[2019-10-03 18:33:53.9160] - DEBUG - [Save session: 60] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:33:54.2750] - DEBUG - [Save session: 60] Completed container.writeChanges
+[2019-10-03 18:33:54.2750] - DEBUG - [Save session: 60] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:33:54.2790] - DEBUG - [Save session: 60] Completed super.save
+[2019-10-03 18:33:55.7160] - DEBUG - [Save session: 61] Started, operation: autosaveInPlaceOperation
+[2019-10-03 18:33:55.7160] - DEBUG - [Save session: 61] Before container.writeChanges
+[2019-10-03 18:33:55.7160] - DEBUG - [Save session: 61] Before waitUsingRecursiveRunLoop
+[2019-10-03 18:33:56.0600] - DEBUG - [Save session: 61] Completed container.writeChanges
+[2019-10-03 18:33:56.0600] - DEBUG - [Save session: 61] Completed waitUsingRecursiveRunLoop
+[2019-10-03 18:33:56.0640] - DEBUG - [Save session: 61] Completed super.save
+[2019-10-03 18:34:22.9250] - INFO - GET 200 /.cache/images/512/rhPN954ni6wSHMllNgVRF3ToHms.png 69.9 kB (8ms)
+[2019-10-03 18:34:25.7350] - DEBUG - [Save session: 62] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 18:34:25.7350] - DEBUG - [Save session: 62] Not autosaving to archive, implicitly cancellable
+[2019-10-03 18:34:27.6460] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 18.34.27.zip
+[2019-10-03 19:41:50.1880] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 19.41.50.zip
+[2019-10-03 22:26:48.9340] - INFO - _handleWatch: build took 109ms
+[2019-10-03 22:26:48.9550] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:26:49.2460] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:26:49.2550] - INFO - GET 200 /.cache/images/2048/rhPN954ni6wSHMllNgVRF3ToHms.png 165 kB (1ms)
+[2019-10-03 22:26:49.2750] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:27:21.8760] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.27.21.zip
+[2019-10-03 22:28:33.6520] - INFO - _handleWatch: build took 104ms
+[2019-10-03 22:28:33.6720] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:28:33.9810] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:28:34.0050] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:29:14.1260] - INFO - _handleWatch: build took 122ms
+[2019-10-03 22:29:14.1520] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:29:14.4480] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (2ms)
+[2019-10-03 22:29:14.4720] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (2ms)
+[2019-10-03 22:29:26.5650] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.29.26.zip
+[2019-10-03 22:29:31.3080] - INFO - _handleWatch: build took 103ms
+[2019-10-03 22:29:31.3270] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:29:31.6740] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:29:31.6940] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:29:50.9610] - INFO - _handleWatch: build took 84ms
+[2019-10-03 22:29:50.9800] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:29:51.2760] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:29:51.3090] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:30:01.7710] - INFO - GET 200 /node_modules/framer/build/framer.debug.js 0 B (2ms)
+[2019-10-03 22:30:24.3350] - DEBUG - [Save session: 63] Started, operation: autosaveInPlaceOperation
+[2019-10-03 22:30:24.3350] - DEBUG - [Save session: 63] Before container.writeChanges
+[2019-10-03 22:30:24.3350] - DEBUG - [Save session: 63] Before waitUsingRecursiveRunLoop
+[2019-10-03 22:30:24.6910] - DEBUG - [Save session: 63] Completed container.writeChanges
+[2019-10-03 22:30:24.6910] - DEBUG - [Save session: 63] Completed waitUsingRecursiveRunLoop
+[2019-10-03 22:30:24.6970] - DEBUG - [Save session: 63] Completed super.save
+[2019-10-03 22:30:28.0130] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.30.28.zip
+[2019-10-03 22:31:20.4200] - DEBUG - [Save session: 64] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 22:31:20.4200] - DEBUG - [Save session: 64] Not autosaving to archive, implicitly cancellable
+[2019-10-03 22:32:30.9570] - INFO - _handleWatch: build took 112ms
+[2019-10-03 22:32:30.9790] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:32:31.0840] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:32:46.9380] - DEBUG - [Save session: 65] Started, operation: autosaveInPlaceOperation, implicitly cancellable
+[2019-10-03 22:32:46.9380] - DEBUG - [Save session: 65] Not autosaving to archive, implicitly cancellable
+[2019-10-03 22:33:30.9930] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.33.30.zip
+[2019-10-03 22:33:56.7360] - INFO - _handleWatch: build took 128ms
+[2019-10-03 22:33:56.7580] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:33:57.1200] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:33:57.1830] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:34:10.8160] - INFO - _handleWatch: build took 150ms
+[2019-10-03 22:34:10.8400] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:34:11.0590] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (9ms)
+[2019-10-03 22:34:16.8350] - INFO - _handleWatch: build took 93ms
+[2019-10-03 22:34:16.8560] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:34:16.9450] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:34:32.2940] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.34.32.zip
+[2019-10-03 22:34:37.3390] - INFO - _handleWatch: build took 123ms
+[2019-10-03 22:34:37.3590] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:34:37.4800] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:35:17.4650] - INFO - _handleWatch: build took 106ms
+[2019-10-03 22:35:17.4850] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:35:17.5940] - INFO - GET 404 /.cache/images/512/XTSIjp60Nex9hQArH4OygHWJE.png 186 B (1ms)
+[2019-10-03 22:35:33.6110] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.35.33.zip
+[2019-10-03 22:35:54.1240] - INFO - _handleWatch: build took 119ms
+[2019-10-03 22:36:12.4910] - INFO - _handleWatch: build took 132ms
+[2019-10-03 22:36:12.5130] - INFO - _handleWatch: updated scripts - index.js
+[2019-10-03 22:36:35.1850] - INFO - Backing up to /Users/lintonye/git-repos/parallax.framerfx/.backups/2019-10-03 22.36.35.zip

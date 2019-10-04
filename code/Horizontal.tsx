@@ -1,55 +1,64 @@
-import { Data, animate, Override, Animatable } from "framer";
+import { Override, useAnimation, useTransform } from "framer"
 
-import { scrollOverrides, modulate, speed, sticky } from "./Parallax";
+import { useContext } from "react"
+import { ScrollContext } from "./ScrollContext"
+import { useSticky, useSpeed, useTrigger } from "use-parallax"
 
-const data = Data({ rotation: Animatable(0) });
+export const Sticky100400: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const x = useSticky(scrollX, [100, 400])
+  return { x }
+}
 
-// [number, number]: x or y?
-// {x: [number, number]}: x
-// {x: [number, number], y: [number, number]}: x and y
+export const Opacity: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const opacity = useTransform(scrollX, [0, 1000], [1, 0])
+  return { opacity }
+}
 
-const overrides = scrollOverrides(
-  [100, 400],
-  [{ id: "sticky100400", op: sticky() }],
-  [0, 1000],
-  [
-    { id: "opacity", op: modulate("opacity", [1, 0]) },
-    { id: "bg", op: modulate("background", ["red", "black"]) },
-    { id: "speed0", op: speed(0) },
-    { id: "speed05", op: speed(0.5) },
-    { id: "speedminus1", op: speed(-1) },
-    { id: "speedminus2", op: speed(-2) },
-    { id: "speed1", op: speed(1) }
-  ],
-  [600, 650],
-  [
-    {
-      // This function will only be executed once per direction when
-      // the scrolling position falls into the range specified above.
-      // i.e. scrolling down, it'll be called, but if keep scrolling down,
-      // it won't be called anymore. But if scrolling up at this point,
-      // it'll be called again.
-      //
-      // Don't forget the "itemId =>" in the front!
-      op: itemId => ({ vx }) => {
-        // vx: the velocity of scrolling in x direction
-        //   vx > 0: scrolling right
-        //   vx < 0: scrolling left
-        animate.spring(data.rotation, vx > 0 ? 180 : 0);
-      }
-    }
-  ]
-);
+export const Bg: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const background = useTransform(scrollX, [0, 1000], ["#F00", "#000"])
+  return { background }
+}
 
-export const Scroll: Override = props => overrides.scroll(props);
-export const Sticky100400: Override = props => overrides.sticky100400(props);
-export const Opacity: Override = props => overrides.opacity(props);
-export const Bg: Override = props => overrides.bg(props);
-export const Speed0: Override = props => overrides.speed0(props);
-export const Speed05: Override = props => overrides.speed05(props);
-export const Speedminus1: Override = props => overrides.speedminus1(props);
-export const Speedminus2: Override = props => overrides.speedminus2(props);
-export const Speed1: Override = props => overrides.speed1(props);
-export const TriggerAnimation: Override = props => ({
-  rotation: data.rotation
-});
+export const Speed0: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const x = useSpeed(scrollX, [0, 1000], 0)
+  return { x }
+}
+
+export const Speed05: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const x = useSpeed(scrollX, [0, 1000], 0.5)
+  return { x }
+}
+
+export const Speedminus1: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const x = useSpeed(scrollX, [0, 1000], -1)
+  return { x }
+}
+
+export const Speedminus2: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const x = useSpeed(scrollX, [0, 1000], -2)
+  return { x }
+}
+
+export const Speed1: Override = props => {
+  const { scrollX } = useContext(ScrollContext)
+  const x = useSpeed(scrollX, [0, 1000], 1)
+  return { x }
+}
+
+export const TriggerAnimation: Override = props => {
+  const animate = useAnimation()
+  const { scrollX } = useContext(ScrollContext)
+  useTrigger(scrollX, [600, 650], direction => {
+    animate.start({ rotate: direction > 0 ? 0 : 90 })
+  })
+  return {
+    animate
+  }
+}

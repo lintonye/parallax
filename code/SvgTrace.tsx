@@ -1,27 +1,20 @@
-import { Data, animate, Override, Animatable } from "framer";
-import { scrollOverrides, modulate, speedY, stickyY } from "./Parallax";
+import { Data, animate, Override, useTransform } from "framer"
+import { useContext } from "react"
+import { ScrollContext } from "./ScrollContext"
 
-const data = Data({ traceProgress: 0 });
+export const Svg: Override = props => {
+  const { scrollY } = useContext(ScrollContext)
+  //Math.floor((Math.abs(y) / 200) * 100)
+  const progress = useTransform(scrollY, [0, 200], [0, 100])
+  return {
+    progress
+  }
+}
 
-const overrides = scrollOverrides(
-  // [0, 800],
-  // [{ id: ["svg", "iPadImg"], op: stickyY(200) }],
-  [0, 200],
-  [
-    {
-      op: itemId => ({ y }) => {
-        data.traceProgress = Math.floor((Math.abs(y) / 200) * 100);
-        return true;
-      }
-    }
-  ],
-  [200, 300],
-  [{ id: "iPadImg", op: modulate("opacity", [0, 1]) }]
-);
-
-export const Scroll: Override = props => overrides.scroll(props);
-export const Svg: Override = props => ({
-  // ...overrides.svg(props),
-  progress: data.traceProgress
-});
-export const iPadImg: Override = props => overrides.iPadImg(props);
+export const iPadImg: Override = props => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [200, 300], [0, 1])
+  return {
+    opacity
+  }
+}

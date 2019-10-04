@@ -1,47 +1,25 @@
-import { Override } from "framer";
-import { scrollOverrides, stickyY } from "./Parallax";
-// import { stickyScrollY, mergeOverrides } from "./Parallax";
+import { Override } from "framer"
 
-// const titleHeight = 71 + 10;
-// const [scrollOverridesAbout, aboutOverrides] = stickyScrollY([
-//   422,
-//   696 - titleHeight
-// ]);
-// const [scrollOverridesPort, portOverrides] = stickyScrollY([
-//   696,
-//   1136 - titleHeight
-// ]);
-// const [scrollOverridesContact, contactOverrides] = stickyScrollY([
-//   1136,
-//   1500 - titleHeight
-// ]);
-// export const Scroll: Override = props =>
-//   mergeOverrides(
-//     scrollOverridesAbout(props),
-//     scrollOverridesPort(props),
-//     scrollOverridesContact(props)
-//   );
+import { useContext } from "react"
+import { ScrollContext } from "./ScrollContext"
+import { useSticky } from "use-parallax"
 
-// export const About: Override = props => aboutOverrides(props);
+const titleHeight = 71 + 10
 
-// export const Portfolio: Override = props => portOverrides(props);
+export const About: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const y = useSticky(scrollY, [422, 696 - titleHeight])
+  return { y }
+}
 
-// export const Contact: Override = props => contactOverrides(props);
+export const Portfolio: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const y = useSticky(scrollY, [696, 1136 - titleHeight])
+  return { y }
+}
 
-const titleHeight = 71 + 10;
-const overrides = scrollOverrides(
-  [422, 696 - titleHeight],
-  [{ id: "about", op: stickyY() }],
-  [696, 1136 - titleHeight],
-  [{ id: "portfolio", op: stickyY() }],
-  [1136, 1500 - titleHeight],
-  [{ id: "contact", op: stickyY() }]
-);
-
-export const Scroll: Override = props => overrides.scroll(props);
-
-export const About: Override = props => overrides.about(props);
-
-export const Portfolio: Override = props => overrides.portfolio(props);
-
-export const Contact: Override = props => overrides.contact(props);
+export const Contact: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const y = useSticky(scrollY, [1136, 1500 - titleHeight])
+  return { y }
+}
