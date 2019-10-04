@@ -1,75 +1,63 @@
-import { Data, animate, Override, Animatable, transform } from "framer";
-import { scrollOverrides, modulate, speedY, stickyY } from "./ScrollOverrides";
+import { useAnimation, Override, useTransform } from "framer"
+import { useContext } from "react"
+import { ScrollContext } from "./ScrollContext"
+import { useSticky, useSpeed, useTrigger } from "use-parallax"
 
-const data = Data({
-  phoneNameSizeOpacity: Animatable(0)
-});
+export const Blocker: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [0, 200], [0, 1])
+  return { opacity }
+}
 
-const overrides = scrollOverrides(
-  [0, 200],
-  { id: "blocker", op: modulate("opacity", [0, 1]) },
-  [100, 350],
-  [
-    {
-      id: "iPhoneXR",
-      op: speedY(2)
-    }
-  ],
-  [300, 750],
-  [
-    {
-      id: "iPhoneXR",
-      op: modulate("scale", [1.5, 1])
-    }
-  ],
-  [400, 500],
-  [{ id: "phoneNameSize", op: modulate("top", [850, 850]) }],
-  [500, 1050],
-  [
-    {
-      id: "iPhoneXR",
-      op: stickyY()
-    },
-    { id: "phoneNameSize", op: stickyY() }
-  ],
-  [750, 800],
-  [
-    {
-      op: getData => ({ vy }) => {
-        animate.ease(data.phoneNameSizeOpacity, vy > 0 ? 1 : 0, {
-          duration: 0.2
-        });
-      }
-    }
-  ],
-  [0, 3000],
-  [{ id: "featureContainer", op: modulate("top", [1180, 1180]) }],
-  [800, 850],
-  [{ id: "feature1", op: modulate("opacity", [0, 1]) }],
-  [850, 900],
-  [{ id: "feature2", op: modulate("opacity", [0, 1]) }],
-  [900, 950],
-  [{ id: "feature3", op: modulate("opacity", [0, 1]) }],
-  [950, 1000],
-  [{ id: "feature4", op: modulate("opacity", [0, 1]) }],
-  [1000, 1050],
-  [{ id: "feature5", op: modulate("opacity", [0, 1]) }]
-);
+export const IPhoneXR: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const y = useSpeed(scrollY, [100, 350], 2, [500, 1050], -1)
+  const scale = useTransform(scrollY, [300, 750], [1.5, 1])
+  return { y, scale }
+}
 
-export const Scroll: Override = props => overrides.scroll(props);
-export const Blocker: Override = props => overrides.blocker(props);
-export const IPhoneXR: Override = props => overrides.iPhoneXR(props);
+export const PhoneNameSize: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const y = useSticky(scrollY, [500, 1050])
+  const animate = useAnimation()
+  useTrigger(scrollY, [750, 800], direction => {
+    animate.start({ opacity: direction < 0 ? 1 : 0 })
+  })
+  return { top: 850, animate, y, opacity: 0 }
+}
 
-export const PhoneNameSize: Override = props => ({
-  ...overrides.phoneNameSize(props),
-  opacity: data.phoneNameSizeOpacity
-});
+export const FeatureContainer: Override = () => {
+  return {
+    top: 1180
+  }
+}
 
-export const FeatureContainer: Override = props =>
-  overrides.featureContainer(props);
+export const Feature1: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [800, 850], [0, 1])
+  return { opacity }
+}
 
-export const Feature1: Override = props => overrides.feature1(props);
-export const Feature2: Override = props => overrides.feature2(props);
-export const Feature3: Override = props => overrides.feature3(props);
-export const Feature4: Override = props => overrides.feature4(props);
-export const Feature5: Override = props => overrides.feature5(props);
+export const Feature2: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [850, 900], [0, 1])
+  return { opacity }
+}
+
+export const Feature3: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [900, 950], [0, 1])
+  return { opacity }
+}
+
+export const Feature4: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [950, 1000], [0, 1])
+  return { opacity }
+}
+
+export const Feature5: Override = () => {
+  const { scrollY } = useContext(ScrollContext)
+  const opacity = useTransform(scrollY, [1000, 1050], [0, 1])
+  return { opacity }
+}
