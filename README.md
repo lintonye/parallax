@@ -8,8 +8,8 @@
 
 This module makes it easy to create advanced scroll interactions. There are two ways of using the module:
 
-- Non-coding: just drag and drop components, you'll be able to move layers at different speed when scrolling.
-- Code overrides: a lot more control and flexibility (see below)
+- Non-coding: just drag and drop components, you'll be able to control the speed, opacity, rotation, scale etc. of a layer when scrolling.
+- Code overrides: a lot more control and flexibility (see below)!
 
 Check out some quick demos: 
 
@@ -23,36 +23,15 @@ Demo file:
 # Getting started
 
 - Non-coding:
-  1. Just drop a few "Parallax Layer" and connect them with respective content.
-  2. Drop a "Parallax Scroll" and connect with the entire scroll content.
-  3. Tweak the "Speed X" and "Speed Y" parameters and profit!
-- Code overrides:
-  1. Add a Scroll and connect to its scrolling content. Yes, you can just use the standard Scroll component!
-  2. Create a code override file that uses `scrollOverrides` to define custom scrolling behaviors. See below for examples.
-  3. Add the code override to Scroll and other items.
+  1. Drop a `ParallaxScroll` and connect with the entire scroll content. The usage is exactly the same as the standard `Scroll` component.
+  2. Drop a few `ParallaxLayer` and connect them with respective content
+  3. Tweak the parameters of a `ParallaxLayer` in the properties panel 
   4. Profit!
 
-# Properties for Non-coding usage
-
-## Parallax Layer
-- Input: _Speed_ or _Position_
-  - _Speed_
-    - _Pin in scrolling direction_
-      - if _true_ and the _direction_ of parent _Parallax_ is _vertical_, the Y position of the layer remains the same when scrolling. It works similarly when the parent _direction_ is _horizontal_.
-    - _Speed X_
-      - if 0: the layer scrolls along with the rest of the content
-      - if positive: the layer scrolls in the same direction as the scrolling
-      - if negative: the layer scrolls in the opposite direction of the scrolling
-    - _Speed Y_
-      - Same as _Speed X_ but in Y direction
-  - _Position_
-    - _X:_ an [expression](http://mathjs.org/docs/expressions/syntax.html) that specifies the X position of the layer
-      - Can be a math formula where _s_ is the scroll position
-      - Examples:
-        - _0_: the layer scrolls along with the rest of the content
-        - _-s_: this is equivalent to _Pin in scrolling direction_ when Input is _Speed_
-        - _sin(s/50)*100_: moves the layer left and then right and then left again, repeatedly
-    - _Y:_ Same as _X_ but in Y direction
+- Code overrides:
+  1. Drop a `ParallaxScroll` and connect with the entire scroll content. The usage is exactly the same as the standard `Scroll` component.
+  2. Add an override to any Frames in the scroll content (details below)
+  4. Profit!
 
 # Code overrides
 ## A simple example: make an item sticky
