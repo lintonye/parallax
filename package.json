@@ -23,10 +23,10 @@
 	"author": "Linton Ye",
 	"dependencies": {
 		"mathjs": "^5.2.0",
-		"use-parallax": "^0.0.4"
+		"use-parallax": "^0.0.5"
 	},
 	"name": "@framer/lintonye.parallax",
-	"version": "1.42.0",
+	"version": "1.45.0",
 	"scripts": {
 		"test": "jest"
 	}
