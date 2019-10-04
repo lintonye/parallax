@@ -113,13 +113,11 @@ return /******/ (function(modules) { // webpackBootstrap
 var map = {
 	"./EmptyConnector.tsx": "./code/EmptyConnector.tsx",
 	"./Horizontal.tsx": "./code/Horizontal.tsx",
-	"./IPadSvg.tsx": "./code/IPadSvg.tsx",
 	"./ParallaxLayer.tsx": "./code/ParallaxLayer.tsx",
 	"./ParallaxScroll.tsx": "./code/ParallaxScroll.tsx",
 	"./ScrollContext.tsx": "./code/ScrollContext.tsx",
 	"./SimpleExamples.tsx": "./code/SimpleExamples.tsx",
 	"./StickyScroll.tsx": "./code/StickyScroll.tsx",
-	"./SvgTrace.tsx": "./code/SvgTrace.tsx",
 	"./canvas.tsx": "./code/canvas.tsx",
 	"./iPhoneXRScrolling.tsx": "./code/iPhoneXRScrolling.tsx",
 	"./index.tsx": "./code/index.tsx"
@@ -265,45 +263,6 @@ exports.TriggerAnimation = props => {
     };
 };
 exports.__info__ = [{ "name": "Sticky100400", "type": "override" }, { "name": "Opacity", "type": "override" }, { "name": "Bg", "type": "override" }, { "name": "Speed0", "type": "override" }, { "name": "Speed05", "type": "override" }, { "name": "Speedminus1", "type": "override" }, { "name": "Speedminus2", "type": "override" }, { "name": "Speed1", "type": "override" }, { "name": "TriggerAnimation", "type": "override" }];
-
-
-/***/ }),
-
-/***/ "./code/IPadSvg.tsx":
-/*!**************************!*\
-  !*** ./code/IPadSvg.tsx ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-//# framerSourceMap=eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSVBhZFN2Zy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL2NvZGUvSVBhZFN2Zy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsbUNBTWU7QUFFZixTQUFnQixPQUFPLENBQUMsRUFBRSxRQUFRLEVBQUU7O0lBQ2xDLE1BQU0sZUFBZSxHQUFHLHFCQUFZLENBQUMsUUFBUSxFQUFFLENBQUMsQ0FBQyxFQUFFLEVBQUUsQ0FBQyxFQUFFLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLENBQUE7SUFDL0QsTUFBTSxlQUFlLEdBQUcscUJBQVksQ0FBQyxRQUFRLEVBQUUsQ0FBQyxFQUFFLEVBQUUsRUFBRSxDQUFDLEVBQUUsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQTtJQUNoRSxNQUFNLFlBQVksR0FBRyxxQkFBWSxDQUFDLFFBQVEsRUFBRSxDQUFDLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRSxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxDQUFBO0lBQzdELE1BQU0sVUFBVSxHQUFHLHFCQUFZLENBQUMsUUFBUSxFQUFFLENBQUMsRUFBRSxFQUFFLEVBQUUsQ0FBQyxFQUFFLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLENBQUE7SUFFM0QsT0FBTyxDQUNMLDZCQUFLLEtBQUssRUFBQyw0QkFBNEIsRUFBQyxLQUFLLEVBQUMsTUFBTSxFQUFDLE1BQU0sRUFBQyxLQUFLO1FBQy9ELG9CQUFDLGVBQU0sQ0FBQyxJQUFJLElBQ1YsQ0FBQyxFQUFDLHlMQUF5TCxFQUMzTCxJQUFJLEVBQUMsYUFBYSxFQUNsQixXQUFXLEVBQUMsR0FBRyxFQUNmLE1BQU0sRUFBQyxPQUFPLEVBQ2QsS0FBSyxFQUFFLEVBQUUsVUFBVSxFQUFFLGVBQWUsRUFBRSxHQUN0QztRQUNGLG9CQUFDLGVBQU0sQ0FBQyxJQUFJLElBQ1YsQ0FBQyxFQUFDLDZDQUE2QyxFQUMvQyxJQUFJLEVBQUMsYUFBYSxFQUNsQixNQUFNLEVBQUMsT0FBTyxFQUNkLEtBQUssRUFBRSxFQUFFLFVBQVUsRUFBRSxlQUFlLEVBQUUsR0FDdEM7UUFDRixvQkFBQyxlQUFNLENBQUMsSUFBSSxJQUNWLENBQUMsRUFBQywySkFBMkosRUFDN0osSUFBSSxFQUFDLGFBQWEsRUFDbEIsTUFBTSxFQUFDLE9BQU8sRUFDZCxLQUFLLEVBQUUsRUFBRSxVQUFVLEVBQUUsWUFBWSxFQUFFLEdBQ25DO1FBQ0Ysb0JBQUMsZUFBTSxDQUFDLElBQUksSUFDVixDQUFDLEVBQUMsaUpBQWlKLEVBQ25KLElBQUksRUFBQyxhQUFhLEVBQ2xCLE1BQU0sRUFBQyxPQUFPLEVBQ2QsS0FBSyxFQUFFLEVBQUUsVUFBVSxFQUFFLFVBQVUsRUFBRSxHQUNqQyxDQUNFLENBQ1AsQ0FBQTtDQUNGO0FBbkNELDBCQW1DQztBQUVELE9BQU8sQ0FBQyxZQUFZLEdBQUc7SUFDckIsSUFBSSxFQUFFLGNBQWM7SUFDcEIsUUFBUSxFQUFFLENBQUM7Q0FDWixDQUFBO0FBRUQsNEJBQW1CLENBQUMsT0FBTyxFQUFFO0lBQzNCLFFBQVEsRUFBRSxFQUFFLElBQUksRUFBRSxvQkFBVyxDQUFDLE1BQU0sRUFBRSxLQUFLLEVBQUUsVUFBVSxFQUFFLEdBQUcsRUFBRSxDQUFDLEVBQUUsR0FBRyxFQUFFLEVBQUUsRUFBRTtDQUMzRSxDQUFDLENBQUEifQ==
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = __webpack_require__(/*! react */ "react");
-const framer_1 = __webpack_require__(/*! framer */ "framer");
-function IPadSvg({ progress }) {
-    window["__checkBudget__"]();
-    const outerEdgeLength = framer_1.useTransform(progress, [0, 50], [0, 1]);
-    const innerEdgeLength = framer_1.useTransform(progress, [20, 80], [0, 1]);
-    const cameraLength = framer_1.useTransform(progress, [80, 90], [0, 1]);
-    const homeLength = framer_1.useTransform(progress, [90, 99], [0, 1]);
-    return (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "1000", height: "600" },
-        React.createElement(framer_1.motion.path, { d: "M 122 314.5 L 553 108 C 559 106.5 567.5 105 582 110.5 L 878.5 220.5 C 886.5 224 884 231 879 234 L 461.5 470 C 448 477.5 436.5 479 426 474 L 122 326.5 C 116.5 321 118 318.5 122 314.5 Z", fill: "transparent", strokeWidth: "3", stroke: "white", style: { pathLength: outerEdgeLength } }),
-        React.createElement(framer_1.motion.path, { d: "M 168 308 L 546 125 L 839 237 L 461.5 447 Z", fill: "transparent", stroke: "white", style: { pathLength: innerEdgeLength } }),
-        React.createElement(framer_1.motion.path, { d: "M 703.5 168 C 705.985 168 708 169.343 708 171 C 708 172.657 705.985 174 703.5 174 C 701.015 174 699 172.657 699 171 C 699 169.343 701.015 168 703.5 168 Z", fill: "transparent", stroke: "white", style: { pathLength: cameraLength } }),
-        React.createElement(framer_1.motion.path, { d: "M 286 379 C 293.18 379 299 382.582 299 387 C 299 391.418 293.18 395 286 395 C 278.82 395 273 391.418 273 387 C 273 382.582 278.82 379 286 379 Z", fill: "transparent", stroke: "white", style: { pathLength: homeLength } })));
-}
-exports.IPadSvg = IPadSvg;
-IPadSvg.defaultProps = {
-    text: "Hello World!",
-    progress: 0
-};
-framer_1.addPropertyControls(IPadSvg, {
-    progress: { type: framer_1.ControlType.Number, title: "Progress", min: 0, max: 99 }
-});
-exports.__info__ = [{ "name": "IPadSvg", "children": false, "type": "component" }];
 
 
 /***/ }),
@@ -680,41 +639,6 @@ exports.__info__ = [{ "name": "About", "type": "override" }, { "name": "Portfoli
 
 /***/ }),
 
-/***/ "./code/SvgTrace.tsx":
-/*!***************************!*\
-  !*** ./code/SvgTrace.tsx ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-//# framerSourceMap=eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU3ZnVHJhY2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9jb2RlL1N2Z1RyYWNlLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLG1DQUErQztBQUMvQyx3QkFBNkI7QUFFaEIsUUFBQSxHQUFHLEdBQWEsR0FBRyxFQUFFOztJQUNoQyxNQUFNLEVBQUUsT0FBTyxFQUFFLEdBQUcsWUFBUyxFQUFFLENBQUE7SUFDL0IsTUFBTSxRQUFRLEdBQUcscUJBQVksQ0FBQyxPQUFPLEVBQUUsQ0FBQyxDQUFDLEVBQUUsR0FBRyxDQUFDLEVBQUUsQ0FBQyxDQUFDLEVBQUUsR0FBRyxDQUFDLENBQUMsQ0FBQTtJQUMxRCxPQUFPO1FBQ0wsUUFBUTtLQUNULENBQUE7Q0FDRixDQUFBO0FBRVksUUFBQSxPQUFPLEdBQWEsR0FBRyxFQUFFOztJQUNwQyxNQUFNLEVBQUUsT0FBTyxFQUFFLEdBQUcsWUFBUyxFQUFFLENBQUE7SUFDL0IsTUFBTSxPQUFPLEdBQUcscUJBQVksQ0FBQyxPQUFPLEVBQUUsQ0FBQyxHQUFHLEVBQUUsR0FBRyxDQUFDLEVBQUUsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQTtJQUN6RCxPQUFPO1FBQ0wsT0FBTztLQUNSLENBQUE7Q0FDRixDQUFBIn0=
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const framer_1 = __webpack_require__(/*! framer */ "framer");
-const _1 = __webpack_require__(/*! . */ "./code/index.tsx");
-exports.Svg = () => {
-    window["__checkBudget__"]();
-    const { scrollY } = _1.useScroll();
-    const progress = framer_1.useTransform(scrollY, [0, 200], [0, 100]);
-    return {
-        progress
-    };
-};
-exports.iPadImg = () => {
-    window["__checkBudget__"]();
-    const { scrollY } = _1.useScroll();
-    const opacity = framer_1.useTransform(scrollY, [200, 300], [0, 1]);
-    return {
-        opacity
-    };
-};
-exports.__info__ = [{ "name": "Svg", "type": "override" }, { "name": "iPadImg", "type": "override" }];
-
-
-/***/ }),
-
 /***/ "./code/canvas.tsx":
 /*!*************************!*\
   !*** ./code/canvas.tsx ***!
@@ -727,9 +651,7 @@ exports.__info__ = [{ "name": "Svg", "type": "override" }, { "name": "iPadImg", 
 Object.defineProperty(exports, "__esModule", { value: true });
 // WARNING: this file is auto generated, any changes will be lost
 const framer_1 = __webpack_require__(/*! framer */ "framer");
-const canvas = framer_1.CanvasStore.shared({"children":[{"componentClass":"Frame","props":{"key":"GqOLIUSCX","id":"id_GqOLIUSCX","willChangeTransform":false,"_constraints":{"enabled":true,"intrinsicWidth":442,"intrinsicHeight":70},"_border":{},"visible":true,"style":{"rotate":0,"overflow":"visible","backgroundColor":"#1199EE","borderRadius":"14px"},"background":{"r":17,"g":153,"b":238,"a":1,"h":203.07692307692307,"s":0.8666666666666667,"l":0.5,"initialValue":"#1199EE","roundA":1,"format":"rgb"},"name":"Label"},"children":[{"componentClass":"Text","props":{"key":"jXDIZNADb","id":"id_jXDIZNADb","willChangeTransform":false,"_constraints":{"enabled":true,"autoSize":true},"width":312,"height":55,"left":"47.511312217194565%","top":"50.71428571428571%","center":true,"rawHTML":"<div data-offset-key=\"6eo9-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"6eo9-0-0\" style=\"tab-size:4;font-family:&quot;HelveticaNeue&quot;, &quot;Helvetica Neue&quot;, sans-serif;-webkit-text-fill-color:#fff;font-size:46px;letter-spacing:0px;line-height:1.2;font-weight:400\"><span data-text=\"true\">Sticky 100-200</span></span></div>","fonts":["HelveticaNeue"],"opacity":1,"rotation":0,"visible":true,"autoSize":true,"calculatedSize":{"height":55,"width":312},"isEditable":false,"shadows":[]},"name":null}],"name":"Label"}]});
-exports.Label = framer_1.createDesignComponent(canvas, "id_GqOLIUSCX", {}, 442, 70);
-exports.__info__ = [];
+const canvas = framer_1.CanvasStore.shared({"children":[]});
 
 
 /***/ }),
@@ -898,7 +820,7 @@ exports.__framer__ = package
 /*! exports provided: main, license, devDependencies, peerDependencies, framer, author, dependencies, name, version, scripts, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"main\":\"dist/index.js\",\"license\":\"MIT\",\"devDependencies\":{\"@types/jest\":\"^23.3.12\",\"@types/react\":\"^16.3.0\",\"ReactDOM\":\"./ReactDOM\",\"jest\":\"^23.6.0\",\"react\":\"^16.3.0\",\"react-dom\":\"^16.3.0\",\"ts-jest\":\"^23.10.5\",\"typescript\":\"^3.2.2\"},\"peerDependencies\":{\"framer\":\"^0.10.5 || ^1\",\"react\":\"^16.3.0\",\"react-dom\":\"^16.3.0\"},\"framer\":{\"id\":\"a34493cf-104a-47b0-8e80-586424e0929e\",\"displayName\":\"Parallax: Scroll Effects\"},\"author\":\"Linton Ye\",\"dependencies\":{\"mathjs\":\"^5.2.0\",\"use-parallax\":\"^0.0.4\"},\"name\":\"@framer/lintonye.parallax\",\"version\":\"1.39.0\",\"scripts\":{\"test\":\"jest\"}}");
+module.exports = JSON.parse("{\"main\":\"dist/index.js\",\"license\":\"MIT\",\"devDependencies\":{\"@types/jest\":\"^23.3.12\",\"@types/react\":\"^16.8\",\"ReactDOM\":\"./ReactDOM\",\"jest\":\"^23.6.0\",\"react\":\"^16.8\",\"react-dom\":\"^16.8\",\"ts-jest\":\"^23.10.5\",\"typescript\":\"^3.2.2\"},\"peerDependencies\":{\"framer\":\"^0.10.5 || ^1\",\"react\":\"^16.8\",\"react-dom\":\"^16.8\"},\"framer\":{\"id\":\"a34493cf-104a-47b0-8e80-586424e0929e\",\"displayName\":\"Parallax: Scroll Effects\"},\"author\":\"Linton Ye\",\"dependencies\":{\"mathjs\":\"^5.2.0\",\"use-parallax\":\"^0.0.4\"},\"name\":\"@framer/lintonye.parallax\",\"version\":\"1.41.0\",\"scripts\":{\"test\":\"jest\"}}");
 
 /***/ }),
 
