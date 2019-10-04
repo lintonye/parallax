@@ -16,9 +16,6 @@ Check out some quick demos:
 - https://twitter.com/lintonye/status/1084845396164112385
 - https://twitter.com/lintonye/status/1042262028339933184
 
-Demo file:
-
-- https://www.dropbox.com/s/6tpjipqxyftbz1v/parallax-webinar.framerx?dl=0
 
 # Getting started
 
@@ -34,6 +31,9 @@ Demo file:
   4. Profit!
 
 # Code overrides
+
+NOTE: This is not working yet. The import isn't recognized by Framer for some reason. Working with the team to find out why.
+
 ## A simple example: make an item sticky
 
 ![sticky](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsticky.gif?1547676401227)
