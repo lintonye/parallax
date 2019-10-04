@@ -30,7 +30,7 @@ Demo file:
 
 - Code overrides:
   1. Drop a `ParallaxScroll` and connect with the entire scroll content. The usage is exactly the same as the standard `Scroll` component.
-  2. Add an override to any Frames in the scroll content (details below)
+  2. Add an override to any Frames in the scroll content (details below). Yes, it doesn't have to be `ParallaxLayer`!
   4. Profit!
 
 # Code overrides
@@ -39,25 +39,17 @@ Demo file:
 ![sticky](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsticky.gif?1547676401227)
 
 ```js
-import {
-  scrollOverrides,
-  modulate,
-  speed,
-  sticky
-} from "@framer/lintonye.parallax/code/Parallax";
+import { useSticky, useScroll } from "@framer/lintonye.parallax/code"
 
-// Define custom scrolling behavior
-const overrides = scrollOverrides(
-  [100, 200],  // scrolling range
-  { id: "sticky100200", op: sticky() } // custom behavior
-)
-
-// Define code overrides
-//   1. There will always be a "overrides.scroll" function
-//   2. Note "overrides.sticky100200" comes from the "id" above
-//   3. Don't forget to call the functions and pass along the "props" parameter.
-export const Scroll : Override = props => overrides.scroll(props);
-export const Sticky100200 : Override = props => overrides.sticky100200(props);
+export function Sticky100400(): Override {
+  // scrollY here is a MotionValue
+  const { scrollY } = useScroll()
+  // y is a MotionValue too
+  const y = useSticky(scrollY, [100, 400])
+  // This is short for { y: y }, where the first "y" is the property key, the second "y"
+  // is the variable name.
+  return { y }
+};
 ```
 
 ## Make an item sticky and then fades away
@@ -65,12 +57,18 @@ export const Sticky100200 : Override = props => overrides.sticky100200(props);
 ![sticky and fade](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsticky-then-fade.gif?1547676313324)
 
 ```js
-const overrides = scrollOverrides(
-  [100, 200], 
-  { id: "sticky100200", op: sticky() },
-  [200, 500], 
-  { id: "sticky100200", op: modulate('opacity', [1, 0]) }
-)
+import { useSticky, useScroll } from "@framer/lintonye.parallax/code"
+import { Override, useTransform } from "framer"
+
+export function Sticky100400(): Override {
+  // scrollY here is a MotionValue
+  const { scrollY } = useScroll()
+  // y is a MotionValue too
+  const y = useSticky(scrollY, [100, 400])
+  const opacity = useTransform(scrollY, [400, 500], [1, 0])
+  // short for { y: y, opacity: opacity }
+  return { y, opacity }
+};
 ```
 
 ## Move an item move at a different speed
@@ -78,16 +76,26 @@ const overrides = scrollOverrides(
 ![speed](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fspeed.gif?1547676135337)
 
 ```js
-const overrides = scrollOverrides(
-  [0, 1000], 
-  [
-    { id: "speed0", op: speed(0) },
-    { id: "speed05", op: speed(0.5) },
-    { id: "speedminus1", op: speed(-1) },
-    { id: "speedminus2", op: speed(-2) },
-    { id: "speed1", op: speed(1) }
-  ]
-)
+import { useSpeed, useScroll } from "@framer/lintonye.parallax/code"
+
+export function Speed0(): Override {
+  const { scrollY } = useScroll()
+  const y = useSpeed(scrollY, [0, 1000], 0)
+  return { y }
+};
+
+export function Speed05(): Override {
+  const { scrollY } = useScroll()
+  const y = useSpeed(scrollY, [0, 1000], 0.5)
+  return { y }
+};
+
+export function SpeedMinus1(): Override {
+  const { scrollY } = useScroll()
+  const y = useSpeed(scrollY, [0, 1000], -1)
+  return { y }
+};
+...
 ```
 
 ## Trigger an animation when scrolling into a range
@@ -95,30 +103,31 @@ const overrides = scrollOverrides(
 ![trigger](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Ftrigger.gif?1547676228710)
 
 ```js
-const overrides = scrollOverrides(
-  [600, 650],
-  {
-    // This function will only be executed once per direction when
-    // the scrolling position falls into the range specified above.
-    // i.e. scrolling down, it'll be called, but if keep scrolling down,
-    // it won't be called anymore. But if scrolling up at this point,
-    // it'll be called again.
-    //
-    // Don't forget the "getData =>" in the front!
-    op: getData => ({ vy }) => {
-      // vy: the velocity of scrolling in y direction
-      //   vy > 0: scrolling down
-      //   vy < 0: scrolling up
-      animate.spring(data.rotation, vy > 0 ? 180 : 0);
-    }
+import { useTrigger, useScroll } from "@framer/lintonye.parallax/code"
+import { useAnimation } from "framer"
+export const TriggerAnimation: Override = props => {
+  const animate = useAnimation()
+  const { scrollY } = useScroll()
+  useTrigger(scrollY, [600, 650], direction => {
+    animate.start({ rotate: direction > 0 ? 0 : 180 })
+  })
+  return {
+    animate
   }
-)
+}
 ```
+
+## `useSticky` and other hooks
+Check out the documentation [here](https://github.com/lintonye/useParallax).
 
 # Contact
 Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
 
 # Change Log
+- 10/04/2019
+  - Update to support the latest Framer library (1.1.3)! Yay!
+  - You can now control the speed, rotation, scale and opacity of a layer WITHOUT CODE!
+  - React Hook based API for more advanced control
 - 02/21/2019
   - Hide internal components
 - 02/03/2019
