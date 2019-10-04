@@ -6,7 +6,7 @@ import {
   useTransform,
   RenderTarget
 } from "framer"
-import { ScrollContext } from "./ScrollContext"
+import { useScroll } from "."
 import { EmptyConnector } from "./EmptyConnector"
 
 function ParallaxLayerPreview({
@@ -17,7 +17,7 @@ function ParallaxLayerPreview({
   dependsOn,
   ...props
 }) {
-  const { scrollX, scrollY } = React.useContext(ScrollContext)
+  const { scrollX, scrollY } = useScroll()
   const outputMin = props[`${property}_outputMin`]
   const outputMax = props[`${property}_outputMax`]
   const value = useTransform(

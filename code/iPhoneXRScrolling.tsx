@@ -1,23 +1,21 @@
 import { useAnimation, Override, useTransform } from "framer"
-import { useContext } from "react"
-import { ScrollContext } from "./ScrollContext"
-import { useSticky, useSpeed, useTrigger } from "use-parallax"
+import { useSticky, useSpeed, useTrigger, useScroll } from "."
 
 export const Blocker: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [0, 200], [0, 1])
   return { opacity }
 }
 
 export const IPhoneXR: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const y = useSpeed(scrollY, [100, 350], 2, [500, 1050], -1)
   const scale = useTransform(scrollY, [300, 750], [1.5, 1])
   return { y, scale }
 }
 
 export const PhoneNameSize: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const y = useSticky(scrollY, [500, 1050])
   const animate = useAnimation()
   useTrigger(scrollY, [750, 800], direction => {
@@ -33,31 +31,31 @@ export const FeatureContainer: Override = () => {
 }
 
 export const Feature1: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [800, 850], [0, 1])
   return { opacity }
 }
 
 export const Feature2: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [850, 900], [0, 1])
   return { opacity }
 }
 
 export const Feature3: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [900, 950], [0, 1])
   return { opacity }
 }
 
 export const Feature4: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [950, 1000], [0, 1])
   return { opacity }
 }
 
 export const Feature5: Override = () => {
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [1000, 1050], [0, 1])
   return { opacity }
 }
