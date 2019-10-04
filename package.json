@@ -1,33 +1,33 @@
 {
-	"main": "dist/index.js",
-	"license": "MIT",
-	"devDependencies": {
-		"@types/jest": "^23.3.12",
-		"@types/react": "^16.3.0",
-		"ReactDOM": "./ReactDOM",
-		"jest": "^23.6.0",
-		"react": "^16.3.0",
-		"react-dom": "^16.3.0",
-		"ts-jest": "^23.10.5",
-		"typescript": "^3.2.2"
-	},
-	"peerDependencies": {
-		"framer": "^0.10.5 || ^1",
-		"react": "^16.3.0",
-		"react-dom": "^16.3.0"
-	},
-	"framer": {
-		"id": "a34493cf-104a-47b0-8e80-586424e0929e",
-		"displayName": "Parallax: Scroll Effects"
-	},
-	"author": "Linton Ye",
-	"dependencies": {
-		"mathjs": "^5.2.0",
-		"use-parallax": "^0.0.4"
-	},
-	"name": "@framer/lintonye.parallax",
-	"version": "1.40.0",
-	"scripts": {
-		"test": "jest"
-	}
+  "main": "dist/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/react": "^16.8",
+    "ReactDOM": "./ReactDOM",
+    "jest": "^23.6.0",
+    "react": "^16.8",
+    "react-dom": "^16.8",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  },
+  "peerDependencies": {
+    "framer": "^0.10.5 || ^1",
+    "react": "^16.8",
+    "react-dom": "^16.8"
+  },
+  "framer": {
+    "id": "a34493cf-104a-47b0-8e80-586424e0929e",
+    "displayName": "Parallax: Scroll Effects"
+  },
+  "author": "Linton Ye",
+  "dependencies": {
+    "mathjs": "^5.2.0",
+    "use-parallax": "^0.0.4"
+  },
+  "name": "@framer/lintonye.parallax",
+  "version": "1.40.0",
+  "scripts": {
+    "test": "jest"
+  }
 }
