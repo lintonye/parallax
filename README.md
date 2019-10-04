@@ -32,8 +32,6 @@ Check out some quick demos:
 
 # Code overrides
 
-NOTE: This is not working yet. The import isn't recognized by Framer for some reason. Working with the team to find out why.
-
 ## A simple example: make an item sticky
 
 ![sticky](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fsticky.gif?1547676401227)
@@ -51,6 +49,10 @@ export function Sticky100400(): Override {
   return { y }
 };
 ```
+
+You may see an error in Framer's code editor. This is a known bug of Framer. The override still works. Or you can edit the file with an external editor.
+
+![import-error](https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fimport-error.png?v=1570228728674)
 
 ## Make an item sticky and then fades away
 
