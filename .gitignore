@@ -13,3 +13,5 @@ node_modules
 *.framerxproj
 .yarnrc
 .project.log
+
+dist
