@@ -1,4 +1,5 @@
 import * as React from "react"
+import { MotionValue, motionValue } from "framer-motion"
 
 const key = "lintonye.parallax.ScrollContext"
 
@@ -9,9 +10,14 @@ const key = "lintonye.parallax.ScrollContext"
 // of `ScrollContext`.
 if (!window[key]) {
   window[key] = React.createContext({
-    scrollX: null,
-    scrollY: null
+    scrollX: motionValue(0),
+    scrollY: motionValue(0)
   })
+}
+
+export type ScrollContextType = {
+  scrollX: MotionValue<number>
+  scrollY: MotionValue<number>
 }
 
 export const ScrollContext = window[key]

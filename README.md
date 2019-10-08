@@ -127,9 +127,12 @@ export const TriggerAnimation: Override = props => {
 Check out the documentation [here](https://github.com/lintonye/useParallax).
 
 # Contact
-Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
+- Find me on Twitter [@lintonye](https://twitter.com/lintonye)!
+- [Share what you've built with me](https://twitter.com/intent/tweet?url=https%3A%2F%2Fstore.framer.com%2Fpackage%2Flintonye%2Fparallax&text=Just%20created%20this%20with%20the%20Parallax%20package%20by%20@lintonye%20on%20@Framer%20Store%20%5BInsert%20your%20video%20or%20GIF%5D)! I'd be so thrilled! 😍
 
 # Change Log
+- 10/08/2019
+  - Add new hooks: `useTrackScrollX`, `useTrackScrollY`
 - 10/04/2019
   - Update to support the latest Framer library (1.1.3)! Yay!
   - You can now control the speed, rotation, scale and opacity of a layer WITHOUT CODE!
