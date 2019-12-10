@@ -131,6 +131,10 @@ Check out the documentation [here](https://github.com/lintonye/useParallax).
 - [Share what you've built with me](https://twitter.com/intent/tweet?url=https%3A%2F%2Fstore.framer.com%2Fpackage%2Flintonye%2Fparallax&text=Just%20created%20this%20with%20the%20Parallax%20package%20by%20@lintonye%20on%20@Framer%20Store%20%5BInsert%20your%20video%20or%20GIF%5D)! I'd be so thrilled! 😍
 
 # Change Log
+- 12/10/2019 (v1.52)
+  - Fix BgColor of ParallaxLayer
+  - Allow negative scroll range and values 
+  - Allow decimal for scale values
 - 10/08/2019
   - Add new hooks: `useTrackScrollX`, `useTrackScrollY`
 - 10/04/2019

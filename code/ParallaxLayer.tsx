@@ -4,7 +4,8 @@ import {
   addPropertyControls,
   ControlType,
   useTransform,
-  RenderTarget
+  RenderTarget,
+  Color
 } from "framer"
 import { useScroll } from "."
 import { EmptyConnector } from "./EmptyConnector"
@@ -18,8 +19,14 @@ function ParallaxLayerPreview({
   ...props
 }) {
   const { scrollX, scrollY } = useScroll()
-  const outputMin = props[`${property}_outputMin`]
-  const outputMax = props[`${property}_outputMax`]
+  const getPropValue = suffix => {
+    const v = props[`${property}${suffix}`]
+    return property.toLowerCase().includes("color")
+      ? Color.toHexString(Color(v))
+      : v
+  }
+  const outputMin = getPropValue(`_outputMin`)
+  const outputMax = getPropValue(`_outputMax`)
   const value = useTransform(
     dependsOn === "y" ? scrollY : scrollX,
     [inputMin, inputMax],
@@ -98,35 +105,39 @@ const properties = {
       type: ControlType.Number,
       min: 0,
       max: 1,
+      step: 0.1,
       title: "Opacity Min"
     },
     opacity_outputMax: {
       type: ControlType.Number,
       min: 0,
       max: 1,
+      step: 0.1,
       title: "Opacity Max"
     }
   },
   scale: {
     scale_outputMin: {
       type: ControlType.Number,
-      title: "Scale Min"
+      title: "Scale Min",
+      step: 0.1
     },
     scale_outputMax: {
       type: ControlType.Number,
-      title: "Scale Max"
+      title: "Scale Max",
+      step: 0.1
     }
   },
   rotate: {
     rotate_outputMin: {
       type: ControlType.Number,
-      min: 0,
+      min: -360,
       max: 360,
       title: "Rotate Min"
     },
     rotate_outputMax: {
       type: ControlType.Number,
-      min: 0,
+      min: -360,
       max: 360,
       title: "Rotate Max"
     }
@@ -181,13 +192,13 @@ addPropertyControls(ParallaxLayer, {
   },
   inputMin: {
     type: ControlType.Number,
-    title: "Scroll Min",
-    min: 0
+    title: "Scroll Min"
+    // min: 0
   },
   inputMax: {
     type: ControlType.Number,
-    title: "Scroll Max",
-    min: 0
+    title: "Scroll Max"
+    // min: 0
   },
   ...getOutputPropertyControls()
 })
